@@ -1,7 +1,6 @@
-
 import React from 'react';
 import SectionHeading from './ui/SectionHeading';
-import { Award, Clock, User, Star } from 'lucide-react';
+import { Award, Clock, User, Star, ArrowRight } from 'lucide-react';
 
 const AboutSection = () => {
   return (
