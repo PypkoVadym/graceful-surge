@@ -39,7 +39,7 @@ const AboutSection = () => {
           <div className="relative animate-fade-in">
             <div className="absolute inset-0 bg-primary/10 rounded-2xl transform rotate-3 -z-10"></div>
             <img
-              src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=1740&auto=format&fit=crop"
+              src="https://i.imgur.com/K1WJzoi.jpeg"
               alt="Portrait of Dr. Elizabeth Chen, a board-certified plastic surgeon"
               loading="lazy"
               className="rounded-2xl shadow-lg object-cover w-full h-full transform -rotate-3 transition-transform duration-500 hover:rotate-0"

@@ -51,7 +51,7 @@ const HeroSection = () => {
           <div className="relative animate-slide-in">
             <div className="absolute inset-0 -z-10 bg-gradient-to-tr from-primary/20 to-accent/30 rounded-2xl transform rotate-3"></div>
             <img
-              src="https://i.imgur.com/TgtKhVK.png"
+              src="https://i.imgur.com/MPz1ULE.jpeg"
               alt="Doctor with patient"
               className="rounded-2xl shadow-lg object-cover w-full h-full aspect-[4/3] transform -rotate-3 transition-transform duration-500 hover:rotate-0"
             />
