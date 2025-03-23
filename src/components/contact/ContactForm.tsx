@@ -24,17 +24,17 @@ const ContactForm = () => {
       <FormField
         id="name"
         name="name"
-        label="Full Name"
+        label="Ваше ім'я"
         value={formData.name}
         onChange={handleChange}
-        placeholder="Enter your full name"
+        placeholder="Введіть ваше ім'я"
         error={errors.name}
       />
       
       <FormField
         id="phone"
         name="phone"
-        label="Phone Number"
+        label="Номер телефону"
         type="tel"
         value={formData.phone}
         onChange={handleChange}
@@ -45,7 +45,7 @@ const ContactForm = () => {
       <FormField
         id="message"
         name="message"
-        label="Message"
+        label="Повідомлення"
         type="textarea"
         value={formData.message}
         onChange={handleChange}

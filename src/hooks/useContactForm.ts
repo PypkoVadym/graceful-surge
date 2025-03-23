@@ -71,22 +71,26 @@ export const useContactForm = () => {
     e.preventDefault();
     
     if (!validate()) {
+      console.log("Validation failed:", errors);
       return;
     }
     
     setIsSubmitting(true);
     
     try {
-      console.log("Saving contact message to Supabase...");
+      console.log("Preparing to save contact message with data:", {
+        full_name: formData.name,
+        phone: formData.phone,
+        message: formData.message
+      });
       
-      // Use type assertion to work around type issues
       const { error, data } = await supabase
         .from('contact_messages')
         .insert({
           full_name: formData.name,
           phone: formData.phone,
           message: formData.message
-        } as any)
+        })
         .select();
         
       if (error) {
@@ -115,7 +119,7 @@ export const useContactForm = () => {
       }, 5000);
       
     } catch (error) {
-      console.error('Error:', error);
+      console.error('Unexpected error during form submission:', error);
       toast.error("Сталася помилка при спробі зв'язатися з сервером.");
       setIsSubmitting(false);
     }
