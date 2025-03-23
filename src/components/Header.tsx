@@ -68,31 +68,31 @@ const Header = () => {
               onClick={() => scrollToSection('about')}
               className="text-sm font-medium hover:text-primary transition-colors"
             >
-              About
+              Про нас
             </button>
             <button 
               onClick={() => scrollToSection('services')}
               className="text-sm font-medium hover:text-primary transition-colors"
             >
-              Services
+              Послуги
             </button>
             <button 
               onClick={() => scrollToSection('testimonials')}
               className="text-sm font-medium hover:text-primary transition-colors"
             >
-              Testimonials
+              Відгуки
             </button>
             <button 
               onClick={() => scrollToSection('clinic')}
               className="text-sm font-medium hover:text-primary transition-colors"
             >
-              Our Clinic
+              Наша клініка
             </button>
             <button 
               onClick={() => scrollToSection('contact')}
               className="bg-primary hover:bg-primary/90 text-white rounded-full px-5 py-2 text-sm font-medium transition-colors"
             >
-              Contact Us
+              Зв’язатися з нами
             </button>
           </nav>
 
@@ -100,7 +100,7 @@ const Header = () => {
           <button
             className="md:hidden text-foreground p-2"
             onClick={toggleMobileMenu}
-            aria-label="Toggle menu"
+            aria-label="Перемкнути меню"
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -119,31 +119,31 @@ const Header = () => {
             onClick={() => scrollToSection('about')}
             className="text-lg font-medium py-2 border-b border-gray-100"
           >
-            About
+            Про нас
           </button>
           <button 
             onClick={() => scrollToSection('services')}
             className="text-lg font-medium py-2 border-b border-gray-100"
           >
-            Services
+            Послуги
           </button>
           <button 
             onClick={() => scrollToSection('testimonials')}
             className="text-lg font-medium py-2 border-b border-gray-100"
           >
-            Testimonials
+            Відгуки
           </button>
           <button 
             onClick={() => scrollToSection('clinic')}
             className="text-lg font-medium py-2 border-b border-gray-100"
           >
-            Our Clinic
+            Наша клініка
           </button>
           <button 
             onClick={() => scrollToSection('contact')}
             className="bg-primary text-white rounded-lg py-3 text-center font-medium mt-4"
           >
-            Contact Us
+            Зв’язатися з нами
           </button>
         </nav>
       </div>

@@ -7,14 +7,14 @@ import { ArrowRight } from 'lucide-react';
 const ServicesSection = () => {
   // Sample service data
   const facialServices = {
-    title: "Facial Procedures",
-    description: "Restore youthful contours and reduce signs of aging with our comprehensive facial procedures.",
+    title: "Процедури для обличчя",
+    description: "Відновіть молоді контури та зменшіть ознаки старіння завдяки нашим комплексним процедурам для обличчя.",
     details: [
-      "Facelift & Neck Lift",
-      "Eyelid Surgery (Blepharoplasty)",
-      "Rhinoplasty",
-      "Facial Fat Transfer",
-      "Non-Surgical Facial Rejuvenation"
+      "Підтяжка обличчя та шиї",
+      "Пластика повік (блефаропластика)",
+      "Ринопластика",
+      "Перенесення жиру в обличчя",
+      "Безопераційне омолодження обличчя"
     ],
     images: [
       "https://images.unsplash.com/photo-1623096991899-37a7361fd375?q=80&w=1887&auto=format&fit=crop",
@@ -24,14 +24,14 @@ const ServicesSection = () => {
   };
 
   const bodyServices = {
-    title: "Body Contouring",
-    description: "Sculpt and refine your body contours with our advanced surgical and non-surgical procedures.",
+    title: "Контурна пластика тіла",
+    description: "Сформуйте та підкресліть контури тіла за допомогою наших хірургічних та нехірургічних процедур.",
     details: [
-      "Liposuction & Body Sculpting",
-      "Tummy Tuck (Abdominoplasty)",
-      "Brazilian Butt Lift",
-      "Mommy Makeover",
-      "Post-Weight Loss Body Contouring"
+      "Ліпосакція та скульптурування тіла",
+      "Абдомінопластика",
+      "Бразильська підтяжка сідниць",
+      "Мамопластика після пологів",
+      "Контурна пластика після схуднення"
     ],
     images: [
       "https://images.unsplash.com/photo-1581595219315-a187dd40c322?q=80&w=1887&auto=format&fit=crop",
@@ -41,14 +41,14 @@ const ServicesSection = () => {
   };
 
   const breastServices = {
-    title: "Breast Procedures",
-    description: "Enhance, reduce, or restore your breast contours with our personalized breast procedures.",
+    title: "Процедури для грудей",
+    description: "Збільшіть, зменшіть або відновіть форму грудей завдяки персоналізованим процедурам.",
     details: [
-      "Breast Augmentation",
-      "Breast Lift (Mastopexy)",
-      "Breast Reduction",
-      "Breast Reconstruction",
-      "Male Breast Reduction"
+      "Збільшення грудей",
+      "Підтяжка грудей (мастопексія)",
+      "Зменшення грудей",
+      "Реконструкція грудей",
+      "Зменшення чоловічих грудей"
     ],
     images: [
       "https://images.unsplash.com/photo-1579165466949-3180a3d056d5?q=80&w=1887&auto=format&fit=crop",
@@ -61,9 +61,9 @@ const ServicesSection = () => {
     <section id="services" className="section-padding bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto px-4 md:px-6">
         <SectionHeading
-          pretitle="Our Services"
-          title="Comprehensive Aesthetic Procedures"
-          description="We offer a wide range of surgical and non-surgical procedures tailored to enhance your natural beauty and confidence."
+          pretitle="Наші послуги"
+          title="Комплексні естетичні процедури"
+          description="Ми пропонуємо широкий спектр хірургічних і нехірургічних процедур, спрямованих на підкреслення вашої природної краси та впевненості."
           centered={true}
         />
         
@@ -89,7 +89,7 @@ const ServicesSection = () => {
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               className="inline-flex items-center text-primary font-medium hover:underline"
             >
-              Schedule a Consultation <ArrowRight className="ml-1" size={16} />
+              Записатися на консультацію <ArrowRight className="ml-1" size={16} />
             </button>
           </div>
           
@@ -130,7 +130,7 @@ const ServicesSection = () => {
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               className="inline-flex items-center text-primary font-medium hover:underline"
             >
-              Schedule a Consultation <ArrowRight className="ml-1" size={16} />
+              Записатися на консультацію <ArrowRight className="ml-1" size={16} />
             </button>
           </div>
         </div>
@@ -157,7 +157,7 @@ const ServicesSection = () => {
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               className="inline-flex items-center text-primary font-medium hover:underline"
             >
-              Schedule a Consultation <ArrowRight className="ml-1" size={16} />
+              Записатися на консультацію <ArrowRight className="ml-1" size={16} />
             </button>
           </div>
           
