@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import SectionHeading from './ui/SectionHeading';
 import { Phone, Mail, MapPin, Clock, CheckCircle } from 'lucide-react';
@@ -33,21 +34,25 @@ const ContactSection = () => {
   const validate = () => {
     let isValid = true;
     const newErrors = { name: '', phone: '', message: '' };
+    
     if (!formData.name.trim()) {
-      newErrors.name = 'Ім'я обов'язкове';
+      newErrors.name = "Ім'я обов'язкове";
       isValid = false;
     }
+    
     if (!formData.phone.trim()) {
-      newErrors.phone = 'Номер телефону обов'язковий';
+      newErrors.phone = "Номер телефону обов'язковий";
       isValid = false;
     } else if (!/^\d{10}$/.test(formData.phone.replace(/\D/g, ''))) {
-      newErrors.phone = 'Введіть дійсний номер телефону з 10 цифр';
+      newErrors.phone = "Введіть дійсний номер телефону з 10 цифр";
       isValid = false;
     }
+    
     if (!formData.message.trim()) {
-      newErrors.message = 'Повідомлення обов'язкове';
+      newErrors.message = "Повідомлення обов'язкове";
       isValid = false;
     }
+    
     setErrors(newErrors);
     return isValid;
   };
