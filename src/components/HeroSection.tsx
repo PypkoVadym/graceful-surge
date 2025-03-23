@@ -23,26 +23,26 @@ const HeroSection = () => {
           {/* Text Content */}
           <div className="animate-fade-in">
             <span className="inline-block py-1 px-3 mb-5 text-xs font-medium tracking-wider text-primary bg-accent rounded-full">
-              Premium Aesthetic Care
+              Преміальний естетичний догляд
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold mb-6 tracking-tight">
-              Enhance Your Natural Beauty With Expert Care
+              Підкресліть свою природну красу з експертним доглядом
             </h1>
             <p className="text-muted-foreground text-lg mb-8 max-w-xl">
-              Discover the perfect balance between artistry and medical expertise with our personalized aesthetic treatments designed to bring out your natural beauty.
+              Відкрийте для себе ідеальний баланс між мистецтвом і медичною експертизою завдяки нашим персоналізованим естетичним процедурам, створеним для розкриття вашої природної краси.
             </p>
             <div className="flex flex-wrap gap-4">
               <button
                 onClick={scrollToContact}
                 className="bg-primary hover:bg-primary/90 text-white rounded-full px-8 py-3 font-medium transition-all duration-300 shadow-md hover:shadow-lg"
               >
-                Book Consultation <ArrowRight className="inline ml-2" size={16} />
+                Записатися на консультацію <ArrowRight className="inline ml-2" size={16} />
               </button>
               <button
                 onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
                 className="bg-white hover:bg-gray-50 text-foreground rounded-full px-8 py-3 font-medium transition-all duration-300 shadow-sm hover:shadow-md border border-gray-100"
               >
-                Explore Services
+                Переглянути послуги
               </button>
             </div>
           </div>
@@ -52,12 +52,12 @@ const HeroSection = () => {
             <div className="absolute inset-0 -z-10 bg-gradient-to-tr from-primary/20 to-accent/30 rounded-2xl transform rotate-3"></div>
             <img
               src="https://i.imgur.com/MPz1ULE.jpeg"
-              alt="Doctor with patient"
+              alt="Лікар з пацієнткою"
               className="rounded-2xl shadow-lg object-cover w-full h-full aspect-[4/3] transform -rotate-3 transition-transform duration-500 hover:rotate-0"
             />
             <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-lg animate-scale-in">
-              <p className="text-sm font-medium">Dr. Elizabeth Chen</p>
-              <p className="text-xs text-muted-foreground">Board Certified Plastic Surgeon</p>
+              <p className="text-sm font-medium">Д-р Денис Маркович</p>
+              <p className="text-xs text-muted-foreground">Сертифікований пластичний хірург</p>
             </div>
           </div>
         </div>
