@@ -1,8 +1,8 @@
-
 import React, { useState } from 'react';
 import SectionHeading from './ui/SectionHeading';
 import { Phone, Mail, MapPin, Clock, CheckCircle } from 'lucide-react';
 import { toast } from "sonner";
+import { supabase } from "@/integrations/supabase/client";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -34,25 +34,25 @@ const ContactSection = () => {
     let isValid = true;
     const newErrors = { name: '', phone: '', message: '' };
     if (!formData.name.trim()) {
-      newErrors.name = 'Ім’я обов’язкове';
+      newErrors.name = 'Ім'я обов'язкове';
       isValid = false;
     }
     if (!formData.phone.trim()) {
-      newErrors.phone = 'Номер телефону обов’язковий';
+      newErrors.phone = 'Номер телефону обов'язковий';
       isValid = false;
     } else if (!/^\d{10}$/.test(formData.phone.replace(/\D/g, ''))) {
       newErrors.phone = 'Введіть дійсний номер телефону з 10 цифр';
       isValid = false;
     }
     if (!formData.message.trim()) {
-      newErrors.message = 'Повідомлення обов’язкове';
+      newErrors.message = 'Повідомлення обов'язкове';
       isValid = false;
     }
     setErrors(newErrors);
     return isValid;
   };
   
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     if (!validate()) {
@@ -60,10 +60,28 @@ const ContactSection = () => {
     }
     
     setIsSubmitting(true);
-    setTimeout(() => {
+    
+    try {
+      // Save the contact message to Supabase
+      const { error } = await supabase
+        .from('contact_messages')
+        .insert({
+          full_name: formData.name,
+          phone: formData.phone,
+          message: formData.message
+        });
+        
+      if (error) {
+        console.error('Error saving contact message:', error);
+        toast.error("Помилка при відправці повідомлення. Спробуйте ще раз.");
+        setIsSubmitting(false);
+        return;
+      }
+      
+      // Show success message
       setIsSubmitting(false);
       setIsSubmitted(true);
-      toast.success("Your message has been sent successfully!");
+      toast.success("Ваше повідомлення успішно надіслано!");
       
       // Reset form after submission
       setFormData({
@@ -76,14 +94,19 @@ const ContactSection = () => {
       setTimeout(() => {
         setIsSubmitted(false);
       }, 5000);
-    }, 1500);
+      
+    } catch (error) {
+      console.error('Error:', error);
+      toast.error("Сталася помилка при спробі зв'язатися з сервером.");
+      setIsSubmitting(false);
+    }
   };
   
   return (
     <section id="contact" className="section-padding bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto px-4 md:px-6">
         <SectionHeading
-          pretitle="Зв’язок з нами"
+          pretitle="Зв'язок з нами"
           title="Запишіться на консультацію"
           description="Зробіть перший крок до досягнення ваших естетичних цілей, записавшись на персональну консультацію."
           centered={true}
@@ -138,7 +161,7 @@ const ContactSection = () => {
                   <div>
                     <h4 className="font-medium mb-1">Години роботи</h4>
                     <p className="text-muted-foreground">
-                      Понеділок – П’ятниця: 9:00 – 17:00<br />
+                      Понеділок – П'ятниця: 9:00 – 17:00<br />
                       Субота: 10:00 – 14:00<br />
                       Неділя: Вихідний
                     </p>
@@ -157,7 +180,7 @@ const ContactSection = () => {
                   </div>
                   <h4 className="text-xl font-medium mb-2">Дякуємо!</h4>
                   <p className="text-muted-foreground mb-4">
-                    Ваше повідомлення успішно надіслано. Ми зв’яжемося з вами найближчим часом.
+                    Ваше повідомлення успішно надіслано. Ми зв'яжемося з вами найближчим часом.
                   </p>
                 </div>
               ) : (
