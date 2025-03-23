@@ -78,20 +78,19 @@ export const useContactForm = () => {
     setIsSubmitting(true);
     
     try {
-      console.log("Preparing to save contact message with data:", {
+      console.log("Submitting contact message with data:", {
         full_name: formData.name,
         phone: formData.phone,
         message: formData.message
       });
       
-      const { error, data } = await supabase
+      const { error } = await supabase
         .from('contact_messages')
         .insert({
           full_name: formData.name,
           phone: formData.phone,
           message: formData.message
-        })
-        .select();
+        });
         
       if (error) {
         console.error('Error saving contact message:', error);
@@ -100,7 +99,7 @@ export const useContactForm = () => {
         return;
       }
       
-      console.log("Successfully saved contact message:", data);
+      console.log("Successfully saved contact message");
       // Show success message
       setIsSubmitting(false);
       setIsSubmitted(true);
