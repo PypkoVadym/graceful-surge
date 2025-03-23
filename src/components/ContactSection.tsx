@@ -67,14 +67,16 @@ const ContactSection = () => {
     setIsSubmitting(true);
     
     try {
+      console.log("Saving contact message to Supabase...");
       // Save the contact message to Supabase
-      const { error } = await supabase
+      const { error, data } = await supabase
         .from('contact_messages')
         .insert({
           full_name: formData.name,
           phone: formData.phone,
           message: formData.message
-        });
+        })
+        .select();
         
       if (error) {
         console.error('Error saving contact message:', error);
@@ -83,6 +85,7 @@ const ContactSection = () => {
         return;
       }
       
+      console.log("Successfully saved contact message:", data);
       // Show success message
       setIsSubmitting(false);
       setIsSubmitted(true);
