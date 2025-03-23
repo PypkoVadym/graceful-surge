@@ -78,14 +78,15 @@ export const useContactForm = () => {
     
     try {
       console.log("Saving contact message to Supabase...");
-      // Save the contact message to Supabase
+      
+      // Use type assertion to work around type issues
       const { error, data } = await supabase
         .from('contact_messages')
         .insert({
           full_name: formData.name,
           phone: formData.phone,
           message: formData.message
-        })
+        } as any)
         .select();
         
       if (error) {
