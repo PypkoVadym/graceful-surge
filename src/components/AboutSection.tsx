@@ -41,7 +41,7 @@ const AboutSection = () => {
             <div className="absolute inset-0 bg-primary/10 rounded-2xl transform rotate-3 -z-10"></div>
             <img
               src="https://i.imgur.com/K1WJzoi.jpeg"
-              alt="Портрет доктора Дениса Марковича"
+              alt="Портрет докторки Елізабет Чен, сертифікованої пластичної хірургині"
               loading="lazy"
               className="rounded-2xl shadow-lg object-cover w-full h-full transform -rotate-3 transition-transform duration-500 hover:rotate-0"
             />
@@ -60,18 +60,18 @@ const AboutSection = () => {
 
           {/* Text Content */}
           <div className="animate-slide-in">
-            <h3 className="text-2xl font-semibold mb-4">Д-р Денис Маркович</h3>
-            <h4 className="text-lg text-primary mb-6">Експерт з пластичної хірургії з понад 15-річним досвідом</h4>
+            <h3 className="text-2xl font-semibold mb-4">Д-р Елізабет Чен</h3>
+            <h4 className="text-lg text-primary mb-6">Експертка з пластичної хірургії з понад 15-річним досвідом</h4>
 
             <p className="text-muted-foreground mb-6">
-              Д-р Денис Маркович — сертифікований пластичний хірург, який спеціалізується на естетичних та реконструктивних процедурах. Він поєднує хірургічну точність з художнім баченням для досягнення природного вигляду, адаптованого до унікальної анатомії та цілей кожного пацієнта.
+              Д-р Елізабет Чен — сертифікована пластична хірургиня, яка спеціалізується на естетичних та реконструктивних процедурах. З понад 15-річним досвідом, вона поєднує хірургічну точність з художнім баченням для досягнення природного вигляду, адаптованого до унікальної анатомії та цілей кожного пацієнта.
             </p>
 
             <p className="text-muted-foreground mb-8">
-              Після отримання медичної освіти в Гарвардській медичній школі, Д-р Маркович проходив резидентуру з пластичної хірургії в престижній клініці Майо, а згодом — стажування з естетичної хірургії в лікарні Manhattan Eye, Ear and Throat у Нью-Йорку.
+              Після отримання медичної освіти в Гарвардській медичній школі, д-р Чен проходила резидентуру з пластичної хірургії в престижній клініці Майо, а згодом — стажування з естетичної хірургії в лікарні Manhattan Eye, Ear and Throat у Нью-Йорку.
             </p>
 
-            {/* Stats */}
+            {/* Статистика */}
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 mb-8">
               <StatCard icon={Clock} value="15+" label="Років досвіду" />
               <StatCard icon={User} value="5,000+" label="Задоволених пацієнтів" />

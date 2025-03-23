@@ -18,7 +18,7 @@ const Footer = () => {
               <span className="text-primary">Aesthetic</span>MD
             </a>
             <p className="text-muted-foreground text-sm">
-              Premium plastic surgery and aesthetic services tailored to enhance your natural beauty.
+              Преміальна пластична хірургія та естетичні послуги, спрямовані на підкреслення вашої природної краси.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
@@ -38,14 +38,14 @@ const Footer = () => {
           
           {/* Quick Links */}
           <div>
-            <h3 className="font-semibold mb-4">Quick Links</h3>
+            <h3 className="font-semibold mb-4">Швидкі посилання</h3>
             <ul className="space-y-2">
               <li>
                 <button 
                   onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
-                  About Dr. Chen
+                  Про д-ра Марковича
                 </button>
               </li>
               <li>
@@ -53,7 +53,7 @@ const Footer = () => {
                   onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
-                  Our Services
+                  Наші послуги
                 </button>
               </li>
               <li>
@@ -61,7 +61,7 @@ const Footer = () => {
                   onClick={() => document.getElementById('testimonials')?.scrollIntoView({ behavior: 'smooth' })}
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
-                  Patient Testimonials
+                  Відгуки пацієнтів
                 </button>
               </li>
               <li>
@@ -69,7 +69,7 @@ const Footer = () => {
                   onClick={() => document.getElementById('clinic')?.scrollIntoView({ behavior: 'smooth' })}
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
-                  Our Clinic
+                  Наша клініка
                 </button>
               </li>
               <li>
@@ -77,22 +77,22 @@ const Footer = () => {
                   onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
-                  Contact Us
+                  Зв’язатися з нами
                 </button>
               </li>
             </ul>
           </div>
           
-          {/* Contact */}
+          {/* Контактна інформація */}
           <div>
-            <h3 className="font-semibold mb-4">Contact Information</h3>
+            <h3 className="font-semibold mb-4">Контактна інформація</h3>
             <ul className="space-y-2">
               <li className="text-muted-foreground">
-                <strong className="text-foreground">Address:</strong> 123 Beverly Hills Boulevard, Beverly Hills, CA 90210
+                <strong className="text-foreground">Адреса:</strong> 123 Beverly Hills Boulevard, Beverly Hills, CA 90210
               </li>
               <li>
                 <a href="tel:+1-800-123-4567" className="text-muted-foreground hover:text-primary transition-colors">
-                  <strong className="text-foreground">Phone:</strong> (800) 123-4567
+                  <strong className="text-foreground">Телефон:</strong> (800) 123-4567
                 </a>
               </li>
               <li>
@@ -105,16 +105,16 @@ const Footer = () => {
           
           {/* Office Hours */}
           <div>
-            <h3 className="font-semibold mb-4">Office Hours</h3>
+            <h3 className="font-semibold mb-4">Години роботи</h3>
             <ul className="space-y-2 text-muted-foreground">
               <li>
-                <strong className="text-foreground">Monday - Friday:</strong> 9:00 AM - 5:00 PM
+                <strong className="text-foreground">Понеділок – П’ятниця:</strong> 9:00 – 17:00
               </li>
               <li>
-                <strong className="text-foreground">Saturday:</strong> 10:00 AM - 2:00 PM
+                <strong className="text-foreground">Субота:</strong> 10:00 – 14:00
               </li>
               <li>
-                <strong className="text-foreground">Sunday:</strong> Closed
+                <strong className="text-foreground">Неділя:</strong> Вихідний
               </li>
             </ul>
           </div>
@@ -122,23 +122,23 @@ const Footer = () => {
         
         <div className="mt-12 pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-muted-foreground mb-4 md:mb-0">
-            © {new Date().getFullYear()} AestheticMD. All rights reserved.
+            © {new Date().getFullYear()} AestheticMD. Всі права захищено.
           </p>
           
           <div className="flex flex-col md:flex-row items-center gap-4">
             <div className="flex gap-4">
               <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                Privacy Policy
+                Політика конфіденційності
               </a>
               <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                Terms of Service
+                Умови користування
               </a>
             </div>
             
             <button 
               onClick={scrollToTop}
               className="inline-flex items-center justify-center w-10 h-10 bg-primary/10 rounded-full text-primary hover:bg-primary/20 transition-colors"
-              aria-label="Scroll to top"
+              aria-label="Прокрутити вгору"
             >
               <ArrowUp size={20} />
             </button>

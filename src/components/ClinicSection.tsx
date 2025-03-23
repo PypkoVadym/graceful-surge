@@ -18,9 +18,9 @@ const ClinicSection = () => {
       
       <div className="container mx-auto px-4 md:px-6">
         <SectionHeading
-          pretitle="Our Clinic"
-          title="State-of-the-Art Facility"
-          description="Experience premium care in our modern, comfortable clinic designed with your safety and comfort in mind."
+          pretitle="Наша Клініка"
+          title="Сучасний медичний заклад"
+          description="Відчуйте преміальний догляд у нашій сучасній, комфортній клініці, створеній з урахуванням вашої безпеки та зручності."
           centered={false}
         />
         
@@ -28,7 +28,7 @@ const ClinicSection = () => {
           {/* Text Content */}
           <div className="animate-fade-in">
             <p className="text-muted-foreground mb-8">
-              Our clinic combines luxury and cutting-edge technology to provide you with an exceptional experience. From our reception area to our procedure rooms, every detail has been considered to ensure your comfort, privacy, and safety.
+              Наша клініка поєднує розкіш та передові технології, щоб забезпечити вам винятковий досвід. Від зони рецепції до процедурних кабінетів — кожну деталь продумано для вашого комфорту, приватності та безпеки.
             </p>
             
             <div className="space-y-6 mb-8">
@@ -37,9 +37,9 @@ const ClinicSection = () => {
                   <MapPin className="text-primary" size={24} />
                 </div>
                 <div>
-                  <h4 className="font-medium mb-1">Prime Location</h4>
+                  <h4 className="font-medium mb-1">Вигідне розташування</h4>
                   <p className="text-sm text-muted-foreground">
-                    Conveniently located in the heart of Beverly Hills with easy access and private parking.
+                    Зручно розташована в центрі Беверлі-Гіллз із легким доступом і приватною парковкою.
                   </p>
                 </div>
               </div>
@@ -49,9 +49,9 @@ const ClinicSection = () => {
                   <Shield className="text-primary" size={24} />
                 </div>
                 <div>
-                  <h4 className="font-medium mb-1">Safety First</h4>
+                  <h4 className="font-medium mb-1">Безпека перш за все</h4>
                   <p className="text-sm text-muted-foreground">
-                    Our facility is AAAASF accredited, adhering to the highest safety standards in outpatient surgery.
+                    Наша установа акредитована AAAASF та відповідає найвищим стандартам безпеки амбулаторної хірургії.
                   </p>
                 </div>
               </div>
@@ -61,9 +61,9 @@ const ClinicSection = () => {
                   <HeartPulse className="text-primary" size={24} />
                 </div>
                 <div>
-                  <h4 className="font-medium mb-1">Advanced Technology</h4>
+                  <h4 className="font-medium mb-1">Передові технології</h4>
                   <p className="text-sm text-muted-foreground">
-                    Equipped with the latest medical technology and innovations for optimal results.
+                    Оснащена новітнім медичним обладнанням та інноваціями для досягнення найкращих результатів.
                   </p>
                 </div>
               </div>
@@ -73,9 +73,9 @@ const ClinicSection = () => {
                   <Clock className="text-primary" size={24} />
                 </div>
                 <div>
-                  <h4 className="font-medium mb-1">Dedicated Care</h4>
+                  <h4 className="font-medium mb-1">Індивідуальний підхід</h4>
                   <p className="text-sm text-muted-foreground">
-                    Our attentive staff provides personalized care throughout your entire journey.
+                    Наш уважний персонал надає персоналізований догляд протягом усього вашого шляху.
                   </p>
                 </div>
               </div>
@@ -85,7 +85,7 @@ const ClinicSection = () => {
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               className="bg-white hover:bg-gray-50 text-foreground rounded-full px-8 py-3 font-medium transition-all duration-300 shadow-sm hover:shadow-md border border-gray-100"
             >
-              Schedule a Visit
+              Записатися на візит
             </button>
           </div>
           

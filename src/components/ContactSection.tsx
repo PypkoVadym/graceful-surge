@@ -33,25 +33,21 @@ const ContactSection = () => {
   const validate = () => {
     let isValid = true;
     const newErrors = { name: '', phone: '', message: '' };
-    
     if (!formData.name.trim()) {
-      newErrors.name = 'Name is required';
+      newErrors.name = 'Ім’я обов’язкове';
       isValid = false;
     }
-    
     if (!formData.phone.trim()) {
-      newErrors.phone = 'Phone number is required';
+      newErrors.phone = 'Номер телефону обов’язковий';
       isValid = false;
     } else if (!/^\d{10}$/.test(formData.phone.replace(/\D/g, ''))) {
-      newErrors.phone = 'Please enter a valid 10-digit phone number';
+      newErrors.phone = 'Введіть дійсний номер телефону з 10 цифр';
       isValid = false;
     }
-    
     if (!formData.message.trim()) {
-      newErrors.message = 'Message is required';
+      newErrors.message = 'Повідомлення обов’язкове';
       isValid = false;
     }
-    
     setErrors(newErrors);
     return isValid;
   };
@@ -64,8 +60,6 @@ const ContactSection = () => {
     }
     
     setIsSubmitting(true);
-    
-    // Simulate API call
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSubmitted(true);
@@ -89,25 +83,22 @@ const ContactSection = () => {
     <section id="contact" className="section-padding bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto px-4 md:px-6">
         <SectionHeading
-          pretitle="Get In Touch"
-          title="Schedule Your Consultation"
-          description="Take the first step towards achieving your aesthetic goals by scheduling a personalized consultation."
+          pretitle="Зв’язок з нами"
+          title="Запишіться на консультацію"
+          description="Зробіть перший крок до досягнення ваших естетичних цілей, записавшись на персональну консультацію."
           centered={true}
         />
-        
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-          {/* Contact Info */}
           <div className="animate-fade-in">
             <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
-              <h3 className="text-2xl font-semibold mb-6">Contact Information</h3>
-              
+              <h3 className="text-2xl font-semibold mb-6">Контактна інформація</h3>
               <div className="space-y-6">
                 <div className="flex items-start">
                   <div className="bg-primary/10 p-3 rounded-lg mr-4">
                     <Phone className="text-primary" size={20} />
                   </div>
                   <div>
-                    <h4 className="font-medium mb-1">Phone</h4>
+                    <h4 className="font-medium mb-1">Телефон</h4>
                     <p className="text-muted-foreground">
                       <a href="tel:+1-800-123-4567" className="hover:text-primary transition-colors">
                         (800) 123-4567
@@ -115,7 +106,6 @@ const ContactSection = () => {
                     </p>
                   </div>
                 </div>
-                
                 <div className="flex items-start">
                   <div className="bg-primary/10 p-3 rounded-lg mr-4">
                     <Mail className="text-primary" size={20} />
@@ -129,50 +119,45 @@ const ContactSection = () => {
                     </p>
                   </div>
                 </div>
-                
                 <div className="flex items-start">
                   <div className="bg-primary/10 p-3 rounded-lg mr-4">
                     <MapPin className="text-primary" size={20} />
                   </div>
                   <div>
-                    <h4 className="font-medium mb-1">Address</h4>
+                    <h4 className="font-medium mb-1">Адреса</h4>
                     <p className="text-muted-foreground">
                       123 Beverly Hills Boulevard<br />
                       Beverly Hills, CA 90210
                     </p>
                   </div>
                 </div>
-                
                 <div className="flex items-start">
                   <div className="bg-primary/10 p-3 rounded-lg mr-4">
                     <Clock className="text-primary" size={20} />
                   </div>
                   <div>
-                    <h4 className="font-medium mb-1">Office Hours</h4>
+                    <h4 className="font-medium mb-1">Години роботи</h4>
                     <p className="text-muted-foreground">
-                      Monday - Friday: 9:00 AM - 5:00 PM<br />
-                      Saturday: 10:00 AM - 2:00 PM<br />
-                      Sunday: Closed
+                      Понеділок – П’ятниця: 9:00 – 17:00<br />
+                      Субота: 10:00 – 14:00<br />
+                      Неділя: Вихідний
                     </p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          
-          {/* Contact Form */}
           <div className="animate-slide-in">
             <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
-              <h3 className="text-2xl font-semibold mb-6">Send Us a Message</h3>
-              
+              <h3 className="text-2xl font-semibold mb-6">Надіслати повідомлення</h3>
               {isSubmitted ? (
                 <div className="text-center py-8">
                   <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-4">
                     <CheckCircle className="text-primary" size={32} />
                   </div>
-                  <h4 className="text-xl font-medium mb-2">Thank You!</h4>
+                  <h4 className="text-xl font-medium mb-2">Дякуємо!</h4>
                   <p className="text-muted-foreground mb-4">
-                    Your message has been sent successfully. We'll get back to you shortly.
+                    Ваше повідомлення успішно надіслано. Ми зв’яжемося з вами найближчим часом.
                   </p>
                 </div>
               ) : (
@@ -194,7 +179,6 @@ const ContactSection = () => {
                       <p className="mt-1 text-sm text-destructive">{errors.name}</p>
                     )}
                   </div>
-                  
                   <div>
                     <label htmlFor="phone" className="block text-sm font-medium mb-2">
                       Phone Number
@@ -206,13 +190,12 @@ const ContactSection = () => {
                       value={formData.phone}
                       onChange={handleChange}
                       className={`w-full px-4 py-3 rounded-lg border ${errors.phone ? 'border-destructive' : 'border-input'} focus:outline-none focus:ring-2 focus:ring-primary/50`}
-                      placeholder="Enter your phone number"
+                      placeholder="Введіть номер телефону"
                     />
                     {errors.phone && (
                       <p className="mt-1 text-sm text-destructive">{errors.phone}</p>
                     )}
                   </div>
-                  
                   <div>
                     <label htmlFor="message" className="block text-sm font-medium mb-2">
                       Message
@@ -223,7 +206,7 @@ const ContactSection = () => {
                       value={formData.message}
                       onChange={handleChange}
                       className={`w-full px-4 py-3 rounded-lg border ${errors.message ? 'border-destructive' : 'border-input'} focus:outline-none focus:ring-2 focus:ring-primary/50 min-h-[120px]`}
-                      placeholder="Tell us about your aesthetic goals or questions"
+                      placeholder="Розкажіть про свої естетичні цілі або запитання"
                     />
                     {errors.message && (
                       <p className="mt-1 text-sm text-destructive">{errors.message}</p>
@@ -241,11 +224,11 @@ const ContactSection = () => {
                           <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                           <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                         </svg>
-                        Processing...
+                        Обробка...
                       </span>
                     ) : (
                       <>
-                        <span className="relative z-10">Send Message</span>
+                        <span className="relative z-10">Надіслати повідомлення</span>
                         <span className="absolute inset-0 bg-primary-foreground/10 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300"></span>
                       </>
                     )}
