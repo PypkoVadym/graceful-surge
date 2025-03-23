@@ -41,7 +41,7 @@ const AboutSection = () => {
             <div className="absolute inset-0 bg-primary/10 rounded-2xl transform rotate-3 -z-10"></div>
             <img
               src="https://i.imgur.com/K1WJzoi.jpeg"
-              alt="Портрет докторки Елізабет Чен, сертифікованої пластичної хірургині"
+              alt="Портрет доктора Дениса Марковича"
               loading="lazy"
               className="rounded-2xl shadow-lg object-cover w-full h-full transform -rotate-3 transition-transform duration-500 hover:rotate-0"
             />
@@ -61,7 +61,7 @@ const AboutSection = () => {
           {/* Text Content */}
           <div className="animate-slide-in">
             <h3 className="text-2xl font-semibold mb-4">Д-р Денис Маркович</h3>
-            <h4 className="text-lg text-primary mb-6">Експертка з пластичної хірургії з понад 15-річним досвідом</h4>
+            <h4 className="text-lg text-primary mb-6">Експерт з пластичної хірургії з понад 15-річним досвідом</h4>
 
             <p className="text-muted-foreground mb-6">
               Д-р Денис Маркович — сертифікований пластичний хірург, який спеціалізується на естетичних та реконструктивних процедурах. Він поєднує хірургічну точність з художнім баченням для досягнення природного вигляду, адаптованого до унікальної анатомії та цілей кожного пацієнта.
