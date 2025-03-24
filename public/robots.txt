@@ -1,0 +1,7 @@
+
+# https://denysmarkovych.com robots.txt
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://denysmarkovych.com/sitemap.xml
