@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import ImageOptimizer from '../ImageOptimizer';
 
 interface ImageSliderProps {
   images: string[];
@@ -21,6 +22,7 @@ const ImageSlider = ({
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
   const [touchStartX, setTouchStartX] = useState(0);
+  const [imagesLoaded, setImagesLoaded] = useState<boolean[]>(Array(images.length).fill(false));
 
   const goToNextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -30,8 +32,14 @@ const ImageSlider = ({
     setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
   };
 
-  const handleImageLoad = () => {
-    setIsLoaded(true);
+  const handleImageLoad = (index: number) => {
+    const newImagesLoaded = [...imagesLoaded];
+    newImagesLoaded[index] = true;
+    setImagesLoaded(newImagesLoaded);
+    
+    if (index === currentIndex) {
+      setIsLoaded(true);
+    }
   };
 
   const handleTouchStart = (e: React.TouchEvent) => {
@@ -48,6 +56,11 @@ const ImageSlider = ({
       goToPrevSlide();
     }
   };
+
+  // Reset isLoaded when changing slides
+  useEffect(() => {
+    setIsLoaded(imagesLoaded[currentIndex]);
+  }, [currentIndex, imagesLoaded]);
 
   useEffect(() => {
     let timer: NodeJS.Timeout;
@@ -88,17 +101,18 @@ const ImageSlider = ({
         >
           <div className={cn(
             'absolute inset-0 bg-primary/20 backdrop-blur-md',
-            isLoaded ? 'opacity-0' : 'opacity-100',
+            isLoaded && currentIndex === index ? 'opacity-0' : 'opacity-100',
             'transition-opacity duration-300'
           )} />
-          <img
+          <ImageOptimizer
             src={image}
             alt={`Slide ${index + 1}`}
             className="w-full h-full object-cover transition-transform duration-500 ease-out"
+            priority={index === 0}
+            onLoad={() => handleImageLoad(index)}
             style={{ 
               transform: currentIndex === index ? 'scale(1)' : 'scale(1.1)',
             }}
-            onLoad={handleImageLoad}
           />
         </div>
       ))}

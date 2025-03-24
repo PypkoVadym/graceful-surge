@@ -2,6 +2,7 @@
 import React from 'react';
 import SectionHeading from './ui/SectionHeading';
 import { Award, Clock, User, Star, ArrowRight } from 'lucide-react';
+import ImageOptimizer from './ImageOptimizer';
 
 // Повторно використовуваний компонент StatCard
 const StatCard = ({ icon: Icon, value, label }: { icon: React.ElementType; value: string; label: string }) => (
@@ -36,14 +37,15 @@ const AboutSection = () => {
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Image Side */}
+          {/* Image Side - Optimized */}
           <div className="relative animate-fade-in">
             <div className="absolute inset-0 bg-primary/10 rounded-2xl transform rotate-3 -z-10"></div>
-            <img
+            <ImageOptimizer
               src="https://i.imgur.com/K1WJzoi.jpeg"
               alt="Портрет доктора Дениса Марковича, сертифікованого пластичного хірурга"
-              loading="lazy"
               className="rounded-2xl shadow-lg object-cover w-full h-full transform -rotate-3 transition-transform duration-500 hover:rotate-0"
+              width={600}
+              height={800}
             />
 
             {/* Certification Badge */}

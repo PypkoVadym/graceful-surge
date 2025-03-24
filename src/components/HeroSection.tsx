@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
+import ImageOptimizer from './ImageOptimizer';
 
 const HeroSection = () => {
   const scrollToContact = () => {
@@ -47,13 +48,14 @@ const HeroSection = () => {
             </div>
           </div>
           
-          {/* Image */}
+          {/* Image - Optimized */}
           <div className="relative animate-slide-in">
             <div className="absolute inset-0 -z-10 bg-gradient-to-tr from-primary/20 to-accent/30 rounded-2xl transform rotate-3"></div>
-            <img
+            <ImageOptimizer
               src="https://i.imgur.com/MPz1ULE.jpeg"
               alt="Лікар з пацієнткою"
               className="rounded-2xl shadow-lg object-cover w-full h-full aspect-[4/3] transform -rotate-3 transition-transform duration-500 hover:rotate-0"
+              priority={true}
             />
             <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-lg animate-scale-in">
               <p className="text-sm font-medium">Д-р Денис Маркович</p>
