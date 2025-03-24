@@ -58,7 +58,7 @@ const Header = () => {
                 closeMobileMenu();
               }}
             >
-              <span className="text-primary">Aesthetic</span>MD
+              <span className="text-primary">Денис</span>Маркович
             </a>
           </div>
 

@@ -122,7 +122,7 @@ const Footer = () => {
         
         <div className="mt-12 pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-muted-foreground mb-4 md:mb-0">
-            © {new Date().getFullYear()} AestheticMD. Всі права захищено.
+            © {new Date().getFullYear()} Денис Маркович. Всі права захищено.
           </p>
           
           <div className="flex flex-col md:flex-row items-center gap-4">
