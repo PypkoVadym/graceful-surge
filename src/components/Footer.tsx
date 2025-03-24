@@ -15,7 +15,7 @@ const Footer = () => {
           {/* Logo & About */}
           <div className="space-y-4">
             <a href="#" className="text-2xl font-display font-semibold tracking-tight inline-block">
-              <span className="text-primary">Aesthetic</span>MD
+              <span className="text-primary">Денис</span>Маркович
             </a>
             <p className="text-muted-foreground text-sm">
               Преміальна пластична хірургія та естетичні послуги, спрямовані на підкреслення вашої природної краси.
@@ -88,11 +88,11 @@ const Footer = () => {
             <h3 className="font-semibold mb-4">Контактна інформація</h3>
             <ul className="space-y-2">
               <li className="text-muted-foreground">
-                <strong className="text-foreground">Адреса:</strong> 123 Beverly Hills Boulevard, Beverly Hills, CA 90210
+                <strong className="text-foreground">Адреса:</strong> м.Київ, вул. Хрещатик, 123
               </li>
               <li>
                 <a href="tel:+1-800-123-4567" className="text-muted-foreground hover:text-primary transition-colors">
-                  <strong className="text-foreground">Телефон:</strong> (800) 123-4567
+                  <strong className="text-foreground">Телефон:</strong> (063) 1234567
                 </a>
               </li>
               <li>
