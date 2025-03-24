@@ -9,6 +9,8 @@ interface ImageOptimizerProps {
   height?: number;
   className?: string;
   priority?: boolean;
+  onLoad?: () => void;
+  style?: React.CSSProperties;
 }
 
 const ImageOptimizer = ({
@@ -18,6 +20,8 @@ const ImageOptimizer = ({
   height,
   className,
   priority = false,
+  onLoad,
+  style,
 }: ImageOptimizerProps) => {
   // Convert image URLs to WebP if they're not already
   const optimizedSrc = src.includes('.webp') 
@@ -33,6 +37,8 @@ const ImageOptimizer = ({
       className={cn('', className)}
       loading={priority ? 'eager' : 'lazy'}
       decoding={priority ? 'sync' : 'async'}
+      onLoad={onLoad}
+      style={style}
     />
   );
 };

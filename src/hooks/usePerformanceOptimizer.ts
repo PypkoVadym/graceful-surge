@@ -1,6 +1,11 @@
 
 import { useEffect } from 'react';
 
+interface LayoutShiftEntry extends PerformanceEntry {
+  hadRecentInput?: boolean;
+  value?: number;
+}
+
 export const usePerformanceOptimizer = () => {
   useEffect(() => {
     // Defer offscreen images
@@ -82,8 +87,9 @@ export const usePerformanceOptimizer = () => {
           const entries = entryList.getEntries();
           entries.forEach(entry => {
             // Only count layout shifts without recent user input
-            if (!entry.hadRecentInput) {
-              clsValue += entry.value;
+            const layoutShiftEntry = entry as LayoutShiftEntry;
+            if (!layoutShiftEntry.hadRecentInput && layoutShiftEntry.value) {
+              clsValue += layoutShiftEntry.value;
               clsEntries.push(entry);
               console.log('CLS updated:', clsValue);
             }
