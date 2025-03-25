@@ -10,16 +10,16 @@ const ServicesSection = () => {
     title: "Процедури для обличчя",
     description: "Відновіть молоді контури та зменшіть ознаки старіння завдяки нашим комплексним процедурам для обличчя.",
     details: [
-      "Підтяжка обличчя та шиї",
-      "Пластика повік (блефаропластика)",
       "Ринопластика",
+      "Пластика повік (блефаропластика)",
+      "Підтяжка обличчя та шиї",
       "Перенесення жиру в обличчя",
       "Безопераційне омолодження обличчя"
     ],
     images: [
-      "https://images.unsplash.com/photo-1623096991899-37a7361fd375?q=80&w=1887&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1560750588-73207b1ef5b8?q=80&w=1887&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1591687657355-93dae6a26d7f?q=80&w=1887&auto=format&fit=crop"
+      "https://i.imgur.com/bBbQdor.jpeg",
+      "https://i.imgur.com/Uxnfrto.jpeg",
+      "https://i.imgur.com/RwsO9XW.jpeg"
     ]
   };
 
