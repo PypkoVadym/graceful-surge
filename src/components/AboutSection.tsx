@@ -41,7 +41,7 @@ const AboutSection = () => {
           <div className="relative animate-fade-in">
             <div className="absolute inset-0 bg-primary/10 rounded-2xl transform rotate-3 -z-10"></div>
             <ImageOptimizer
-              src="https://i.imgur.com/K1WJzoi.jpeg"
+              src="https://i.imgur.com/7jZsUD2.jpeg"
               alt="Портрет доктора Дениса Марковича, сертифікованого пластичного хірурга"
               className="rounded-2xl shadow-lg object-cover w-full h-full transform -rotate-3 transition-transform duration-500 hover:rotate-0"
               width={600}
@@ -66,7 +66,7 @@ const AboutSection = () => {
             <h4 className="text-lg text-primary mb-6">Експерт з пластичної хірургії з понад 15-річним досвідом</h4>
 
             <p className="text-muted-foreground mb-6">
-              Д-р Денис Маркович — сертифікована пластична хірургиня, яка спеціалізується на естетичних та реконструктивних процедурах. З понад 15-річним досвідом, вона поєднує хірургічну точність з художнім баченням для досягнення природного вигляду, адаптованого до унікальної анатомії та цілей кожного пацієнта.
+              Д-р Денис Маркович — сертифікований пластичний хірург, який спеціалізується на естетичних та реконструктивних процедурах. З понад 15-річним досвідом, вона поєднує хірургічну точність з художнім баченням для досягнення природного вигляду, адаптованого до унікальної анатомії та цілей кожного пацієнта.
             </p>
 
             <p className="text-muted-foreground mb-8">
