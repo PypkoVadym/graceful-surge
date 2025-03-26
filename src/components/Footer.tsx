@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import { Facebook, Instagram, Twitter, Linkedin, ArrowUp } from 'lucide-react';
 
@@ -77,7 +78,7 @@ const Footer = () => {
                   onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
-                  Зв’язатися з нами
+                  Зв'язатися з нами
                 </button>
               </li>
             </ul>
@@ -108,7 +109,7 @@ const Footer = () => {
             <h3 className="font-semibold mb-4">Години роботи</h3>
             <ul className="space-y-2 text-muted-foreground">
               <li>
-                <strong className="text-foreground">Понеділок – П’ятниця:</strong> 9:00 – 17:00
+                <strong className="text-foreground">Понеділок – П'ятниця:</strong> 9:00 – 17:00
               </li>
               <li>
                 <strong className="text-foreground">Субота:</strong> 10:00 – 14:00
@@ -127,12 +128,12 @@ const Footer = () => {
           
           <div className="flex flex-col md:flex-row items-center gap-4">
             <div className="flex gap-4">
-              <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+              <Link to="/privacy-policy" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                 Політика конфіденційності
-              </a>
-              <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+              </Link>
+              <Link to="/terms-of-use" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                 Умови користування
-              </a>
+              </Link>
             </div>
             
             <button 
