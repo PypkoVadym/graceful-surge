@@ -8,12 +8,12 @@ import {
 import ImageOptimizer from '@/components/ImageOptimizer';
 
 interface TestimonialPopupProps {
-  image: string;
+  popupImage: string;
   name: string;
   children: React.ReactNode;
 }
 
-const TestimonialPopup = ({ image, name, children }: TestimonialPopupProps) => {
+const TestimonialPopup = ({ popupImage, name, children }: TestimonialPopupProps) => {
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -23,8 +23,8 @@ const TestimonialPopup = ({ image, name, children }: TestimonialPopupProps) => {
         <div className="flex flex-col items-center space-y-4">
           <div className="w-full max-w-sm max-h-[70vh] overflow-hidden rounded-lg">
             <ImageOptimizer 
-              src={image} 
-              alt={`Photo of ${name}`} 
+              src={popupImage} 
+              alt={`Результат операції ${name}`} 
               className="w-full h-auto object-cover"
               priority={true}
             />
