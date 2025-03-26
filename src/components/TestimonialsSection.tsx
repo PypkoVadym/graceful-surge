@@ -1,8 +1,8 @@
-// Ukrainian translation of TestimonialsSection.tsx
 
 import React from 'react';
 import SectionHeading from './ui/SectionHeading';
 import TestimonialCard from './ui/TestimonialCard';
+import TestimonialPopup from './ui/TestimonialPopup';
 
 const TestimonialsSection = () => {
   const testimonials = [
@@ -63,13 +63,19 @@ const TestimonialsSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {testimonials.map((testimonial, index) => (
             <div key={index} className={`animate-fade-in`} style={{ animationDelay: `${index * 0.1}s` }}>
-              <TestimonialCard
-                quote={testimonial.quote}
+              <TestimonialPopup 
+                image={testimonial.image} 
                 name={testimonial.name}
-                title={testimonial.title}
-                rating={testimonial.rating}
-                image={testimonial.image}
-              />
+              >
+                <TestimonialCard
+                  quote={testimonial.quote}
+                  name={testimonial.name}
+                  title={testimonial.title}
+                  rating={testimonial.rating}
+                  image={testimonial.image}
+                  className="transition-transform hover:scale-[1.02] duration-300"
+                />
+              </TestimonialPopup>
             </div>
           ))}
         </div>
