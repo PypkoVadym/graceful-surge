@@ -92,7 +92,7 @@ const Header = () => {
               onClick={() => scrollToSection('contact')}
               className="bg-primary hover:bg-primary/90 text-white rounded-full px-5 py-2 text-sm font-medium transition-colors"
             >
-              Зв’язатися з нами
+              Зв'язатися з нами
             </button>
           </nav>
 
@@ -114,6 +114,15 @@ const Header = () => {
           isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
         )}
       >
+        <div className="absolute right-4 top-4">
+          <button
+            onClick={closeMobileMenu}
+            className="p-2 rounded-full hover:bg-gray-100"
+            aria-label="Закрити меню"
+          >
+            <X size={24} />
+          </button>
+        </div>
         <nav className="flex flex-col space-y-6">
           <button 
             onClick={() => scrollToSection('about')}
@@ -143,7 +152,7 @@ const Header = () => {
             onClick={() => scrollToSection('contact')}
             className="bg-primary text-white rounded-lg py-3 text-center font-medium mt-4"
           >
-            Зв’язатися з нами
+            Зв'язатися з нами
           </button>
         </nav>
       </div>
