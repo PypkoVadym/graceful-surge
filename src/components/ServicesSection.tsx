@@ -47,13 +47,12 @@ const ServicesSection = () => {
       "Збільшення грудей",
       "Підтяжка грудей (мастопексія)",
       "Зменшення грудей",
-      "Реконструкція грудей",
-      "Зменшення чоловічих грудей"
+      "Реконструкція грудей"
     ],
     images: [
-      "https://images.unsplash.com/photo-1579165466949-3180a3d056d5?q=80&w=1887&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1584515933487-779824d29309?q=80&w=1887&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1887&auto=format&fit=crop"
+      "https://i.imgur.com/K701ddL.jpeg",
+      "https://i.imgur.com/rE7phUj.jpeg",
+      "https://i.imgur.com/MGPvIW1.jpeg"
     ]
   };
 
