@@ -34,9 +34,9 @@ const ServicesSection = () => {
       "Контурна пластика після схуднення"
     ],
     images: [
-      "https://images.unsplash.com/photo-1581595219315-a187dd40c322?q=80&w=1887&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1532446871339-283f8d4b7788?q=80&w=1887&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1626735808880-66016c3a9167?q=80&w=1887&auto=format&fit=crop"
+      "https://i.imgur.com/AEqzc88.jpeg",
+      "https://i.imgur.com/AEqzc88.jpeg",
+      "https://i.imgur.com/AEqzc88.jpeg"
     ]
   };
 
