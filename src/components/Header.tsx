@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Menu } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -56,13 +55,11 @@ const Header = () => {
           {/* Logo */}
           <Logo onClick={handleLogoClick} />
 
-          {/* Social Media Icons - Desktop Only */}
-          <div className="hidden md:block mr-8">
+          {/* Desktop Navigation and Social Icons */}
+          <div className="hidden md:flex items-center space-x-8">
+            <DesktopNavigation scrollToSection={scrollToSection} />
             <SocialMediaIcons />
           </div>
-
-          {/* Desktop Navigation */}
-          <DesktopNavigation scrollToSection={scrollToSection} />
 
           {/* Mobile Menu Button */}
           <button
