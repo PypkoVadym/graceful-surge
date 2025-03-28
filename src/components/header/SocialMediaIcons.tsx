@@ -11,12 +11,12 @@ const SocialMediaIcons: React.FC<SocialMediaIconsProps> = ({ isMobile = false })
   
   return (
     <div className={`flex items-center space-x-${isMobile ? '6' : '4'} ${isMobile ? 'justify-center mt-6 pt-6 border-t border-gray-100' : ''}`}>
-      <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" 
+      <a href="https://www.instagram.com/markovych_work/" target="_blank" rel="noopener noreferrer" 
          className="text-gray-600 hover:text-primary transition-colors" 
          aria-label="Instagram">
         <Instagram size={iconSize} />
       </a>
-      <a href="https://threads.net" target="_blank" rel="noopener noreferrer" 
+      <a href="https://www.threads.net/@markovych_work?igshid=NTc4MTIwNjQ2YQ==" target="_blank" rel="noopener noreferrer" 
          className="text-gray-600 hover:text-primary transition-colors" 
          aria-label="Threads">
         <svg width={iconSize} height={iconSize} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-gray-600">
@@ -28,7 +28,7 @@ const SocialMediaIcons: React.FC<SocialMediaIconsProps> = ({ isMobile = false })
           <path d="M5.25 4.5V4.51" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       </a>
-      <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" 
+      <a href="https://www.tiktok.com/search?q=%D0%B4%D0%B5%D0%BD%D0%B8%D1%81%20%D0%BC%D0%B0%D1%80%D0%BA%D0%BE%D0%B2%D0%B8%D1%87&t=1743145079306" target="_blank" rel="noopener noreferrer" 
          className="text-gray-600 hover:text-primary transition-colors" 
          aria-label="TikTok">
         <svg width={iconSize} height={iconSize} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-gray-600">
