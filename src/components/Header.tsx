@@ -1,6 +1,8 @@
+
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Facebook, Instagram, Linkedin, Twitter } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { Button } from '@/components/ui/button';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -58,6 +60,30 @@ const Header = () => {
             </a>
           </div>
 
+          {/* Social Media Icons - Desktop Only */}
+          <div className="hidden md:flex items-center space-x-4 mr-8">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" 
+               className="text-gray-600 hover:text-primary transition-colors" 
+               aria-label="Facebook">
+              <Facebook size={20} />
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" 
+               className="text-gray-600 hover:text-primary transition-colors" 
+               aria-label="Instagram">
+              <Instagram size={20} />
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" 
+               className="text-gray-600 hover:text-primary transition-colors" 
+               aria-label="LinkedIn">
+              <Linkedin size={20} />
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" 
+               className="text-gray-600 hover:text-primary transition-colors" 
+               aria-label="Twitter">
+              <Twitter size={20} />
+            </a>
+          </div>
+
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             <button 
@@ -84,12 +110,12 @@ const Header = () => {
             >
               Наша клініка
             </button>
-            <button 
+            <Button 
               onClick={() => scrollToSection('contact')}
               className="bg-primary hover:bg-primary/90 text-white rounded-full px-5 py-2 text-sm font-medium transition-colors"
             >
               Зв'язатися з нами
-            </button>
+            </Button>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -150,6 +176,30 @@ const Header = () => {
           >
             Зв'язатися з нами
           </button>
+          
+          {/* Social Media Icons - Mobile */}
+          <div className="flex items-center justify-center space-x-6 mt-6 pt-6 border-t border-gray-100">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" 
+               className="text-gray-600 hover:text-primary transition-colors" 
+               aria-label="Facebook">
+              <Facebook size={24} />
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" 
+               className="text-gray-600 hover:text-primary transition-colors" 
+               aria-label="Instagram">
+              <Instagram size={24} />
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" 
+               className="text-gray-600 hover:text-primary transition-colors" 
+               aria-label="LinkedIn">
+              <Linkedin size={24} />
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" 
+               className="text-gray-600 hover:text-primary transition-colors" 
+               aria-label="Twitter">
+              <Twitter size={24} />
+            </a>
+          </div>
         </nav>
       </div>
     </header>
