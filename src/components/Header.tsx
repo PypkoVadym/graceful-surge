@@ -1,10 +1,8 @@
 
 import React, { useState, useEffect } from 'react';
-import { Menu } from 'lucide-react';
+import { Menu, X, Instagram, Linkedin } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import DesktopNavigation from './header/DesktopNavigation';
-import MobileMenu from './header/MobileMenu';
-import SocialMediaIcons from './header/SocialMediaIcons';
+import { Button } from '@/components/ui/button';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -41,6 +39,7 @@ const Header = () => {
     <header
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4',
+        // Always white (or subtly opaque if desired)
         isScrolled ? 'bg-white shadow-sm' : 'bg-white'
       )}
     >
@@ -62,14 +61,13 @@ const Header = () => {
           </div>
 
           {/* Social Media Icons - Desktop Only */}
-<<<<<<< HEAD
           <div className="hidden md:flex items-center space-x-4 mr-8">
-            <a href="https://www.instagram.com/markovych_work/" target="_blank" rel="noopener noreferrer" 
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" 
                className="text-gray-600 hover:text-primary transition-colors" 
                aria-label="Instagram">
               <Instagram size={20} />
             </a>
-            <a href="https://www.threads.net/@markovych_work?igshid=NTc4MTIwNjQ2YQ==" target="_blank" rel="noopener noreferrer" 
+            <a href="https://threads.net" target="_blank" rel="noopener noreferrer" 
                className="text-gray-600 hover:text-primary transition-colors" 
                aria-label="Threads">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-gray-600">
@@ -81,7 +79,7 @@ const Header = () => {
                 <path d="M5.25 4.5V4.51" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </a>
-            <a href="https://www.tiktok.com/@lifeislplastic?_t=ZM-8v3SeGt8jx9&_r=1" target="_blank" rel="noopener noreferrer" 
+            <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" 
                className="text-gray-600 hover:text-primary transition-colors" 
                aria-label="TikTok">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-gray-600">
@@ -96,14 +94,41 @@ const Header = () => {
                aria-label="LinkedIn">
               <Linkedin size={20} />
             </a>
-=======
-          <div className="hidden md:block mr-8">
-            <SocialMediaIcons />
->>>>>>> 138e7bfb9e991e6ae9e185d138878feb6357db15
           </div>
 
           {/* Desktop Navigation */}
-          <DesktopNavigation scrollToSection={scrollToSection} />
+          <nav className="hidden md:flex items-center space-x-8">
+            <button 
+              onClick={() => scrollToSection('about')}
+              className="text-sm font-medium hover:text-primary transition-colors"
+            >
+              Про нас
+            </button>
+            <button 
+              onClick={() => scrollToSection('services')}
+              className="text-sm font-medium hover:text-primary transition-colors"
+            >
+              Послуги
+            </button>
+            <button 
+              onClick={() => scrollToSection('testimonials')}
+              className="text-sm font-medium hover:text-primary transition-colors"
+            >
+              Відгуки
+            </button>
+            <button 
+              onClick={() => scrollToSection('clinic')}
+              className="text-sm font-medium hover:text-primary transition-colors"
+            >
+              Наша клініка
+            </button>
+            <Button 
+              onClick={() => scrollToSection('contact')}
+              className="bg-primary hover:bg-primary/90 text-white rounded-full px-5 py-2 text-sm font-medium transition-colors"
+            >
+              Зв'язатися з нами
+            </Button>
+          </nav>
 
           {/* Mobile Menu Button */}
           <button
@@ -111,13 +136,12 @@ const Header = () => {
             onClick={toggleMobileMenu}
             aria-label="Перемкнути меню"
           >
-            <Menu size={24} />
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </div>
 
       {/* Mobile Navigation */}
-<<<<<<< HEAD
       <div
         className={cn(
           'fixed inset-0 bg-white z-40 pt-20 px-4 transition-transform duration-300 ease-in-out transform md:hidden',
@@ -167,12 +191,12 @@ const Header = () => {
           
           {/* Social Media Icons - Mobile */}
           <div className="flex items-center justify-center space-x-6 mt-6 pt-6 border-t border-gray-100">
-            <a href="https://www.instagram.com/markovych_work/" target="_blank" rel="noopener noreferrer" 
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" 
                className="text-gray-600 hover:text-primary transition-colors" 
                aria-label="Instagram">
               <Instagram size={24} />
             </a>
-            <a href="https://www.threads.net/@markovych_work?igshid=NTc4MTIwNjQ2YQ==" target="_blank" rel="noopener noreferrer" 
+            <a href="https://threads.net" target="_blank" rel="noopener noreferrer" 
                className="text-gray-600 hover:text-primary transition-colors" 
                aria-label="Threads">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-gray-600">
@@ -184,7 +208,7 @@ const Header = () => {
                 <path d="M5.25 4.5V4.51" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </a>
-            <a href="https://www.tiktok.com/@lifeislplastic?_t=ZM-8v3SeGt8jx9&_r=1" target="_blank" rel="noopener noreferrer" 
+            <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" 
                className="text-gray-600 hover:text-primary transition-colors" 
                aria-label="TikTok">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-gray-600">
@@ -202,13 +226,6 @@ const Header = () => {
           </div>
         </nav>
       </div>
-=======
-      <MobileMenu 
-        isOpen={isMobileMenuOpen}
-        onClose={closeMobileMenu}
-        scrollToSection={scrollToSection}
-      />
->>>>>>> 138e7bfb9e991e6ae9e185d138878feb6357db15
     </header>
   );
 };
