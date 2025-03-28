@@ -52,7 +52,7 @@ const SocialMediaIcons: React.FC<SocialMediaIconsProps> = ({ isMobile = false })
 
       {/* TikTok PNG */}
       <a
-        href="https://www.tiktok.com/search?q=%D0%B4%D0%B5%D0%BD%D0%B8%D1%81%20%D0%BC%D0%B0%D1%80%D0%BA%D0%BE%D0%B2%D0%B8%D1%87&t=1743145079306"
+        href="https://www.tiktok.com/@lifeislplastic?_t=ZM-8v3SeGt8jx9&_r=1"
         target="_blank"
         rel="noopener noreferrer"
         className="text-gray-600 hover:text-primary transition-colors"
