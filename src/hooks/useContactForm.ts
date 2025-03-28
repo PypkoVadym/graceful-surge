@@ -78,12 +78,6 @@ export const useContactForm = () => {
     setIsSubmitting(true);
     
     try {
-      console.log("Submitting contact message with data:", {
-        full_name: formData.name,
-        phone: formData.phone,
-        message: formData.message
-      });
-      
       const { error } = await supabase
         .from('contact_messages')
         .insert({
