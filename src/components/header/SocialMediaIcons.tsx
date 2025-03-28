@@ -1,9 +1,5 @@
-import React from 'react';
 
-// Example: using public folder references
-// If you’re using imports instead, you can do:
-// import instagramIcon from '/images/instagram.png'; 
-// ...and so on, then use it as src={instagramIcon}
+import React from 'react';
 
 interface SocialMediaIconsProps {
   isMobile?: boolean;
@@ -14,9 +10,11 @@ const SocialMediaIcons: React.FC<SocialMediaIconsProps> = ({ isMobile = false })
 
   return (
     <div
-      className={`flex items-center space-x-${
-        isMobile ? '6' : '4'
-      } ${isMobile ? 'justify-center mt-6 pt-6 border-t border-gray-100' : ''}`}
+      className={`flex items-center ${
+        isMobile 
+          ? 'space-x-8 justify-center mt-6 pt-6 border-t border-gray-100' 
+          : 'space-x-4'
+      }`}
     >
       {/* Instagram PNG */}
       <a
