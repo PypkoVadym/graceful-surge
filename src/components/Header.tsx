@@ -1,8 +1,10 @@
 
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Instagram, Linkedin } from 'lucide-react';
+import { Menu } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { Button } from '@/components/ui/button';
+import DesktopNavigation from './header/DesktopNavigation';
+import MobileMenu from './header/MobileMenu';
+import SocialMediaIcons from './header/SocialMediaIcons';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -39,7 +41,6 @@ const Header = () => {
     <header
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4',
-        // Always white (or subtly opaque if desired)
         isScrolled ? 'bg-white shadow-sm' : 'bg-white'
       )}
     >
@@ -61,6 +62,7 @@ const Header = () => {
           </div>
 
           {/* Social Media Icons - Desktop Only */}
+<<<<<<< HEAD
           <div className="hidden md:flex items-center space-x-4 mr-8">
             <a href="https://www.instagram.com/markovych_work/" target="_blank" rel="noopener noreferrer" 
                className="text-gray-600 hover:text-primary transition-colors" 
@@ -94,41 +96,14 @@ const Header = () => {
                aria-label="LinkedIn">
               <Linkedin size={20} />
             </a>
+=======
+          <div className="hidden md:block mr-8">
+            <SocialMediaIcons />
+>>>>>>> 138e7bfb9e991e6ae9e185d138878feb6357db15
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            <button 
-              onClick={() => scrollToSection('about')}
-              className="text-sm font-medium hover:text-primary transition-colors"
-            >
-              Про нас
-            </button>
-            <button 
-              onClick={() => scrollToSection('services')}
-              className="text-sm font-medium hover:text-primary transition-colors"
-            >
-              Послуги
-            </button>
-            <button 
-              onClick={() => scrollToSection('testimonials')}
-              className="text-sm font-medium hover:text-primary transition-colors"
-            >
-              Відгуки
-            </button>
-            <button 
-              onClick={() => scrollToSection('clinic')}
-              className="text-sm font-medium hover:text-primary transition-colors"
-            >
-              Наша клініка
-            </button>
-            <Button 
-              onClick={() => scrollToSection('contact')}
-              className="bg-primary hover:bg-primary/90 text-white rounded-full px-5 py-2 text-sm font-medium transition-colors"
-            >
-              Зв'язатися з нами
-            </Button>
-          </nav>
+          <DesktopNavigation scrollToSection={scrollToSection} />
 
           {/* Mobile Menu Button */}
           <button
@@ -136,12 +111,13 @@ const Header = () => {
             onClick={toggleMobileMenu}
             aria-label="Перемкнути меню"
           >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            <Menu size={24} />
           </button>
         </div>
       </div>
 
       {/* Mobile Navigation */}
+<<<<<<< HEAD
       <div
         className={cn(
           'fixed inset-0 bg-white z-40 pt-20 px-4 transition-transform duration-300 ease-in-out transform md:hidden',
@@ -226,6 +202,13 @@ const Header = () => {
           </div>
         </nav>
       </div>
+=======
+      <MobileMenu 
+        isOpen={isMobileMenuOpen}
+        onClose={closeMobileMenu}
+        scrollToSection={scrollToSection}
+      />
+>>>>>>> 138e7bfb9e991e6ae9e185d138878feb6357db15
     </header>
   );
 };
