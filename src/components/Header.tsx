@@ -62,12 +62,12 @@ const Header = () => {
 
           {/* Social Media Icons - Desktop Only */}
           <div className="hidden md:flex items-center space-x-4 mr-8">
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" 
+            <a href="https://www.instagram.com/markovych_work/" target="_blank" rel="noopener noreferrer" 
                className="text-gray-600 hover:text-primary transition-colors" 
                aria-label="Instagram">
               <Instagram size={20} />
             </a>
-            <a href="https://threads.net" target="_blank" rel="noopener noreferrer" 
+            <a href="https://www.threads.net/@markovych_work?igshid=NTc4MTIwNjQ2YQ==" target="_blank" rel="noopener noreferrer" 
                className="text-gray-600 hover:text-primary transition-colors" 
                aria-label="Threads">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-gray-600">
@@ -79,7 +79,7 @@ const Header = () => {
                 <path d="M5.25 4.5V4.51" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </a>
-            <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" 
+            <a href="https://www.tiktok.com/@lifeislplastic?_t=ZM-8v3SeGt8jx9&_r=1" target="_blank" rel="noopener noreferrer" 
                className="text-gray-600 hover:text-primary transition-colors" 
                aria-label="TikTok">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-gray-600">
@@ -191,12 +191,12 @@ const Header = () => {
           
           {/* Social Media Icons - Mobile */}
           <div className="flex items-center justify-center space-x-6 mt-6 pt-6 border-t border-gray-100">
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" 
+            <a href="https://www.instagram.com/markovych_work/" target="_blank" rel="noopener noreferrer" 
                className="text-gray-600 hover:text-primary transition-colors" 
                aria-label="Instagram">
               <Instagram size={24} />
             </a>
-            <a href="https://threads.net" target="_blank" rel="noopener noreferrer" 
+            <a href="https://www.threads.net/@markovych_work?igshid=NTc4MTIwNjQ2YQ==" target="_blank" rel="noopener noreferrer" 
                className="text-gray-600 hover:text-primary transition-colors" 
                aria-label="Threads">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-gray-600">
@@ -208,7 +208,7 @@ const Header = () => {
                 <path d="M5.25 4.5V4.51" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </a>
-            <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" 
+            <a href="https://www.tiktok.com/@lifeislplastic?_t=ZM-8v3SeGt8jx9&_r=1" target="_blank" rel="noopener noreferrer" 
                className="text-gray-600 hover:text-primary transition-colors" 
                aria-label="TikTok">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-gray-600">
