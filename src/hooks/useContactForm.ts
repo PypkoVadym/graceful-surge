@@ -1,7 +1,7 @@
-
 import { useState } from 'react';
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
+import { useNavigate } from 'react-router-dom';
 
 interface ContactFormData {
   name: string;
@@ -16,6 +16,7 @@ interface ContactFormErrors {
 }
 
 export const useContactForm = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState<ContactFormData>({
     name: '',
     phone: '',
@@ -94,22 +95,13 @@ export const useContactForm = () => {
       }
       
       console.log("Successfully saved contact message");
-      // Show success message
       setIsSubmitting(false);
       setIsSubmitted(true);
       toast.success("Ваше повідомлення успішно надіслано!");
       
-      // Reset form after submission
-      setFormData({
-        name: '',
-        phone: '',
-        message: ''
-      });
-      
-      // Reset submission state after a delay
-      setTimeout(() => {
-        setIsSubmitted(false);
-      }, 5000);
+      // Instead of showing the success message in the same page,
+      // navigate to the thank-you page
+      navigate('/thank-you');
       
     } catch (error) {
       console.error('Unexpected error during form submission:', error);
