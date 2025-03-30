@@ -94,7 +94,7 @@ const FormField = ({
           value={displayValue}
           onChange={handlePhoneInput}
           className={`w-full px-4 py-3 rounded-lg ${error ? 'border-destructive' : 'border-input'}`}
-          placeholder={placeholder}
+          placeholder={placeholder || 'xx)xxxxxxx'}
         />
       ) : (
         <Input
@@ -116,3 +116,4 @@ const FormField = ({
 };
 
 export default FormField;
+

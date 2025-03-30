@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
@@ -72,10 +71,10 @@ export const useContactForm = () => {
     }
     
     if (!formData.phone.trim()) {
-      newErrors.phone = "Номер телефону обов'язковий";
+      newErrors.phone = "Введіть номер телефону";
       isValid = false;
-    } else if (formData.phone.length < 9) {
-      newErrors.phone = "Введіть 9 цифр номера телефону";
+    } else if (formData.phone.length !== 9) {
+      newErrors.phone = "Номер телефону повинен містити 9 цифр";
       isValid = false;
     }
     
