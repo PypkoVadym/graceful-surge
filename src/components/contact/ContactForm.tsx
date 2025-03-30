@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useContactForm } from '@/hooks/useContactForm';
 import FormField from './FormField';
@@ -37,7 +38,7 @@ const ContactForm = () => {
         type="tel"
         value={formData.phone}
         onChange={handleChange}
-        placeholder="xx)xxxxxxx"
+        placeholder=""
         error={errors.phone}
       />
       
