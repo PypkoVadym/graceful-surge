@@ -28,23 +28,48 @@ const FormField = ({
 }: FormFieldProps) => {
   const [displayValue, setDisplayValue] = useState('');
   
-  // For phone input, format with prefix
+  // For phone input, format with prefix and placeholder
   useEffect(() => {
     if (type === 'tel') {
-      // If user has entered digits, format them accordingly
+      // Base prefix is always shown
+      let formatted = '+38(0';
+      
       if (value) {
-        // Format first 2 digits as area code, then the rest
-        if (value.length <= 2) {
-          setDisplayValue(`+38(0${value}`);
+        // Add area code (first 2 digits)
+        if (value.length >= 1) {
+          formatted += value[0];
+          if (value.length >= 2) {
+            formatted += value[1];
+          } else {
+            formatted += 'x';
+          }
         } else {
-          const areaCode = value.substring(0, 2);
+          formatted += 'xx';
+        }
+        
+        // Close the parenthesis
+        formatted += ')';
+        
+        // Add remaining digits (up to 7 more)
+        if (value.length > 2) {
           const remainingDigits = value.substring(2);
-          setDisplayValue(`+38(0${areaCode})${remainingDigits}`);
+          formatted += remainingDigits;
+          
+          // Add placeholder x's for remaining positions
+          const missingDigits = 7 - remainingDigits.length;
+          if (missingDigits > 0) {
+            formatted += 'x'.repeat(missingDigits);
+          }
+        } else {
+          // If no remaining digits yet, show all placeholders
+          formatted += 'xxxxxxx';
         }
       } else {
-        // If no value, show just the prefix
-        setDisplayValue('+38(0');
+        // If no value at all, show complete placeholder
+        formatted += 'xx)xxxxxxx';
       }
+      
+      setDisplayValue(formatted);
     }
   }, [value, type]);
 
@@ -63,15 +88,15 @@ const FormField = ({
       if (afterPrefix.includes(')')) {
         const parts = afterPrefix.split(')');
         const areaCode = parts[0].replace(/\D/g, '');
-        const rest = parts[1].replace(/\D/g, '');
+        const rest = parts[1].replace(/[^0-9]/g, ''); // Only keep digits, remove x's
         digits = areaCode + rest;
       } else {
         // Just get digits from after prefix
-        digits = afterPrefix.replace(/\D/g, '');
+        digits = afterPrefix.replace(/[^0-9]/g, ''); // Only keep digits, remove x's
       }
     } else {
       // Fallback if somehow the prefix is missing
-      digits = input.replace(/\D/g, '');
+      digits = input.replace(/[^0-9]/g, ''); // Only keep digits, remove x's
     }
     
     // Limit to 9 digits (2 for area code + 7 for number)
@@ -88,14 +113,6 @@ const FormField = ({
     } as React.ChangeEvent<HTMLInputElement>;
     
     onChange(syntheticEvent);
-  };
-
-  // Get phone placeholder based on current input state
-  const getPhonePlaceholder = () => {
-    if (value.length === 0) {
-      return "+38(0xx)xxxxxxx";
-    }
-    return "";
   };
 
   return (
@@ -121,7 +138,6 @@ const FormField = ({
           value={displayValue}
           onChange={handlePhoneInput}
           className={`w-full px-4 py-3 rounded-lg ${error ? 'border-destructive' : 'border-input'}`}
-          placeholder={getPhonePlaceholder()}
         />
       ) : (
         <Input
