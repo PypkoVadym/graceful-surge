@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -36,7 +35,7 @@ const FormField = ({
       if (value) {
         // Format first 2 digits as area code, then the rest
         if (value.length <= 2) {
-          setDisplayValue(`+38(0${value}`)
+          setDisplayValue(`+38(0${value}`);
         } else {
           const areaCode = value.substring(0, 2);
           const remainingDigits = value.substring(2);
@@ -91,28 +90,11 @@ const FormField = ({
     onChange(syntheticEvent);
   };
 
-  // Determine placeholder visibility based on phone value
+  // Get phone placeholder based on current input state
   const getPhonePlaceholder = () => {
-    if (!value) {
-      return "xx)xxxxxxx";
+    if (value.length === 0) {
+      return "+38(0xx)xxxxxxx";
     }
-    
-    // If user has only entered area code, show placeholder for remaining digits
-    if (value.length <= 2) {
-      const remainingPlaceholder = "xxxxxxx";
-      return value.length === 0 ? "xx)xxxxxxx" : 
-             value.length === 1 ? `${value}x)xxxxxxx` :
-             value.length === 2 ? `${value})xxxxxxx` : "";
-    }
-    
-    // If user has started entering number after area code
-    if (value.length > 2) {
-      const areaCode = value.substring(0, 2);
-      const enteredDigits = value.substring(2);
-      const remainingPlaceholder = "xxxxxxx".substring(enteredDigits.length);
-      return remainingPlaceholder ? `${areaCode})${enteredDigits}${remainingPlaceholder}` : "";
-    }
-    
     return "";
   };
 
@@ -139,7 +121,7 @@ const FormField = ({
           value={displayValue}
           onChange={handlePhoneInput}
           className={`w-full px-4 py-3 rounded-lg ${error ? 'border-destructive' : 'border-input'}`}
-          placeholder={value.length === 0 ? "+38(0xx)xxxxxxx" : undefined}
+          placeholder={getPhonePlaceholder()}
         />
       ) : (
         <Input
