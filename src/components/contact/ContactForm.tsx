@@ -38,7 +38,7 @@ const ContactForm = () => {
         type="tel"
         value={formData.phone}
         onChange={handleChange}
-        placeholder="Введіть номер телефону"
+        placeholder="+38(0xx)xxxxxxx"
         error={errors.phone}
       />
       

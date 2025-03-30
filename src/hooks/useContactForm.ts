@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
@@ -34,7 +35,26 @@ export const useContactForm = () => {
   
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    
+    // Special handling for phone number
+    if (name === 'phone') {
+      // Remove any non-digit characters
+      const digitsOnly = value.replace(/\D/g, '');
+      
+      // Limit to 9 digits (excluding country code)
+      const truncated = digitsOnly.slice(0, 9);
+      
+      // Format the display value based on what's been entered
+      // This will show the user their input with the proper format
+      let formattedValue = '';
+      if (truncated.length > 0) {
+        formattedValue = truncated;
+      }
+      
+      setFormData(prev => ({ ...prev, [name]: formattedValue }));
+    } else {
+      setFormData(prev => ({ ...prev, [name]: value }));
+    }
     
     // Clear error when user types
     if (errors[name as keyof typeof errors]) {
@@ -54,8 +74,8 @@ export const useContactForm = () => {
     if (!formData.phone.trim()) {
       newErrors.phone = "Номер телефону обов'язковий";
       isValid = false;
-    } else if (!/^\d{10}$/.test(formData.phone.replace(/\D/g, ''))) {
-      newErrors.phone = "Введіть дійсний номер телефону з 10 цифр";
+    } else if (formData.phone.length < 9) {
+      newErrors.phone = "Введіть 9 цифр номера телефону";
       isValid = false;
     }
     
@@ -78,12 +98,15 @@ export const useContactForm = () => {
     
     setIsSubmitting(true);
     
+    // Format phone number for database
+    const formattedPhone = `+380${formData.phone}`;
+    
     try {
       const { error } = await supabase
         .from('contact_messages')
         .insert({
           full_name: formData.name,
-          phone: formData.phone,
+          phone: formattedPhone,
           message: formData.message
         });
         
@@ -99,8 +122,7 @@ export const useContactForm = () => {
       setIsSubmitted(true);
       toast.success("Ваше повідомлення успішно надіслано!");
       
-      // Instead of showing the success message in the same page,
-      // navigate to the thank-you page
+      // Navigate to the thank-you page
       navigate('/thank-you');
       
     } catch (error) {

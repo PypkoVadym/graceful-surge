@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useRef, useImperativeHandle, forwardRef } from 'react';
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 
@@ -12,6 +12,7 @@ interface FormFieldProps {
   type?: 'text' | 'tel' | 'textarea';
   placeholder: string;
   error?: string;
+  mask?: string;
 }
 
 const FormField = ({
@@ -22,7 +23,8 @@ const FormField = ({
   onChange,
   type = 'text',
   placeholder,
-  error
+  error,
+  mask
 }: FormFieldProps) => {
   return (
     <div>
