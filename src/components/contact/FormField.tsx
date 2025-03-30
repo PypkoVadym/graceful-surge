@@ -26,29 +26,8 @@ const FormField = ({
   error,
   mask
 }: FormFieldProps) => {
-  const [displayValue, setDisplayValue] = useState('');
   const inputRef = useRef<HTMLInputElement>(null);
   
-  // For phone input, format with prefix
-  useEffect(() => {
-    if (type === 'tel') {
-      // Only show the fixed prefix and the entered digits
-      if (value) {
-        // Format first 2 digits as area code, then the rest
-        if (value.length <= 2) {
-          setDisplayValue(`+38(0${value}`);
-        } else {
-          const areaCode = value.substring(0, 2);
-          const remainingDigits = value.substring(2);
-          setDisplayValue(`+38(0${areaCode})${remainingDigits}`);
-        }
-      } else {
-        // If no value, show just the prefix
-        setDisplayValue('+38(0');
-      }
-    }
-  }, [value, type]);
-
   const handlePhoneInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     const input = e.target.value;
     
@@ -91,29 +70,37 @@ const FormField = ({
     onChange(syntheticEvent);
   };
 
-  // Get appropriate placeholder based on current value state
-  const getPhonePlaceholder = () => {
-    if (value.length === 0) {
-      return "xx)xxxxxxx";
-    } else if (value.length === 1) {
-      return `${value}x)xxxxxxx`;
-    } else if (value.length === 2) {
-      return `${value})xxxxxxx`;
-    } else {
-      const areaCode = value.substring(0, 2);
-      const enteredDigits = value.substring(2);
-      const remainingPlaceholder = "xxxxxxx".substring(enteredDigits.length);
-      return remainingPlaceholder ? `${areaCode})${enteredDigits}${remainingPlaceholder}` : "";
+  // Format the display value based on user input
+  const getDisplayValue = () => {
+    if (!value) {
+      return '+38(0';
+    }
+    
+    if (value.length <= 2) {
+      return `+38(0${value}`;
+    }
+    
+    const areaCode = value.substring(0, 2);
+    const remainingDigits = value.substring(2);
+    return `+38(0${areaCode})${remainingDigits}`;
+  };
+
+  // Handle click to position cursor at the end
+  const handleClick = (e: React.MouseEvent<HTMLInputElement>) => {
+    if (inputRef.current) {
+      const length = inputRef.current.value.length;
+      setTimeout(() => {
+        inputRef.current?.setSelectionRange(length, length);
+      }, 0);
     }
   };
 
-  // Focus handler to position cursor correctly
-  const handlePhoneFocus = () => {
+  // Focus handler to position cursor at the end
+  const handleFocus = (e: React.FocusEvent<HTMLInputElement>) => {
     if (inputRef.current) {
-      // Set selection to end of current text
-      const end = displayValue.length;
+      const length = inputRef.current.value.length;
       setTimeout(() => {
-        inputRef.current?.setSelectionRange(end, end);
+        inputRef.current?.setSelectionRange(length, length);
       }, 0);
     }
   };
@@ -134,26 +121,18 @@ const FormField = ({
           placeholder={placeholder}
         />
       ) : type === 'tel' ? (
-        <div className="relative">
-          <Input
-            ref={inputRef}
-            type="tel"
-            id={id}
-            name={name}
-            value={displayValue}
-            onChange={handlePhoneInput}
-            onFocus={handlePhoneFocus}
-            className={`w-full px-4 py-3 rounded-lg ${error ? 'border-destructive' : 'border-input'}`}
-          />
-          {/* Custom placeholder element that appears behind the input */}
-          <div 
-            className="absolute inset-0 flex items-center px-4 pointer-events-none text-gray-400"
-            style={{ display: value.length === 9 ? 'none' : 'flex' }}
-          >
-            <span>{displayValue}</span>
-            <span className="text-gray-400">{getPhonePlaceholder()}</span>
-          </div>
-        </div>
+        <Input
+          ref={inputRef}
+          type="tel"
+          id={id}
+          name={name}
+          value={getDisplayValue()}
+          onChange={handlePhoneInput}
+          onClick={handleClick}
+          onFocus={handleFocus}
+          className={`w-full px-4 py-3 rounded-lg ${error ? 'border-destructive' : 'border-input'}`}
+          placeholder={value.length === 0 ? "+38(0xx)xxxxxxx" : undefined}
+        />
       ) : (
         <Input
           type={type}
