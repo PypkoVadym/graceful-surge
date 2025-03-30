@@ -70,39 +70,57 @@ const FormField = ({
     onChange(syntheticEvent);
   };
 
-  // Format the display value based on user input
+  // Generate the dynamic display value with placeholders
   const getDisplayValue = () => {
     if (!value) {
-      return '+38(0';
+      return '';
     }
     
-    if (value.length <= 2) {
-      return `+38(0${value}`;
+    const areaCodeLength = Math.min(value.length, 2);
+    const areaCode = value.substring(0, areaCodeLength);
+    
+    // Add placeholders for incomplete area code
+    const fullAreaCode = areaCode + 'x'.repeat(Math.max(0, 2 - areaCode.length));
+    
+    // Add remaining digits and placeholders
+    let remainingDigits = '';
+    if (value.length > 2) {
+      remainingDigits = value.substring(2);
     }
     
-    const areaCode = value.substring(0, 2);
-    const remainingDigits = value.substring(2);
-    return `+38(0${areaCode})${remainingDigits}`;
+    // Add placeholder x's for remaining digits (up to 7 total)
+    const fullRemainingDigits = remainingDigits + 'x'.repeat(Math.max(0, 7 - remainingDigits.length));
+    
+    return `+38(0${fullAreaCode})${fullRemainingDigits}`;
   };
 
-  // Handle click to position cursor at the end
+  // Handle click to position cursor correctly
   const handleClick = (e: React.MouseEvent<HTMLInputElement>) => {
     if (inputRef.current) {
-      const length = inputRef.current.value.length;
+      // Calculate cursor position based on visible characters
+      const visibleValue = getDisplayValue();
+      const length = visibleValue.length;
+      const startingPrefixLength = 5; // '+38(0'
+      const closingParenPos = visibleValue.indexOf(')');
+      
+      let cursorPos;
+      if (value.length <= 2) {
+        // Position after the area code digits entered so far
+        cursorPos = startingPrefixLength + value.length;
+      } else {
+        // Position after the entered digits (accounting for formatting)
+        cursorPos = closingParenPos + 1 + (value.length - 2);
+      }
+      
       setTimeout(() => {
-        inputRef.current?.setSelectionRange(length, length);
+        inputRef.current?.setSelectionRange(cursorPos, cursorPos);
       }, 0);
     }
   };
 
-  // Focus handler to position cursor at the end
+  // Position cursor correctly on focus
   const handleFocus = (e: React.FocusEvent<HTMLInputElement>) => {
-    if (inputRef.current) {
-      const length = inputRef.current.value.length;
-      setTimeout(() => {
-        inputRef.current?.setSelectionRange(length, length);
-      }, 0);
-    }
+    handleClick(e as unknown as React.MouseEvent<HTMLInputElement>);
   };
 
   return (
@@ -131,7 +149,7 @@ const FormField = ({
           onClick={handleClick}
           onFocus={handleFocus}
           className={`w-full px-4 py-3 rounded-lg ${error ? 'border-destructive' : 'border-input'}`}
-          placeholder={value.length === 0 ? "+38(0xx)xxxxxxx" : undefined}
+          placeholder="+38(0xx)xxxxxxx"
         />
       ) : (
         <Input
