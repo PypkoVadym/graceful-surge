@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -27,49 +27,25 @@ const FormField = ({
   mask
 }: FormFieldProps) => {
   const [displayValue, setDisplayValue] = useState('');
+  const inputRef = useRef<HTMLInputElement>(null);
   
-  // For phone input, format with prefix and placeholder
+  // For phone input, format with prefix
   useEffect(() => {
     if (type === 'tel') {
-      // Base prefix is always shown
-      let formatted = '+38(0';
-      
+      // Only show the fixed prefix and the entered digits
       if (value) {
-        // Add area code (first 2 digits)
-        if (value.length >= 1) {
-          formatted += value[0];
-          if (value.length >= 2) {
-            formatted += value[1];
-          } else {
-            formatted += 'x';
-          }
+        // Format first 2 digits as area code, then the rest
+        if (value.length <= 2) {
+          setDisplayValue(`+38(0${value}`);
         } else {
-          formatted += 'xx';
-        }
-        
-        // Close the parenthesis
-        formatted += ')';
-        
-        // Add remaining digits (up to 7 more)
-        if (value.length > 2) {
+          const areaCode = value.substring(0, 2);
           const remainingDigits = value.substring(2);
-          formatted += remainingDigits;
-          
-          // Add placeholder x's for remaining positions
-          const missingDigits = 7 - remainingDigits.length;
-          if (missingDigits > 0) {
-            formatted += 'x'.repeat(missingDigits);
-          }
-        } else {
-          // If no remaining digits yet, show all placeholders
-          formatted += 'xxxxxxx';
+          setDisplayValue(`+38(0${areaCode})${remainingDigits}`);
         }
       } else {
-        // If no value at all, show complete placeholder
-        formatted += 'xx)xxxxxxx';
+        // If no value, show just the prefix
+        setDisplayValue('+38(0');
       }
-      
-      setDisplayValue(formatted);
     }
   }, [value, type]);
 
@@ -88,15 +64,15 @@ const FormField = ({
       if (afterPrefix.includes(')')) {
         const parts = afterPrefix.split(')');
         const areaCode = parts[0].replace(/\D/g, '');
-        const rest = parts[1].replace(/[^0-9]/g, ''); // Only keep digits, remove x's
+        const rest = parts[1].replace(/\D/g, '');
         digits = areaCode + rest;
       } else {
         // Just get digits from after prefix
-        digits = afterPrefix.replace(/[^0-9]/g, ''); // Only keep digits, remove x's
+        digits = afterPrefix.replace(/\D/g, '');
       }
     } else {
       // Fallback if somehow the prefix is missing
-      digits = input.replace(/[^0-9]/g, ''); // Only keep digits, remove x's
+      digits = input.replace(/\D/g, '');
     }
     
     // Limit to 9 digits (2 for area code + 7 for number)
@@ -115,6 +91,33 @@ const FormField = ({
     onChange(syntheticEvent);
   };
 
+  // Get appropriate placeholder based on current value state
+  const getPhonePlaceholder = () => {
+    if (value.length === 0) {
+      return "xx)xxxxxxx";
+    } else if (value.length === 1) {
+      return `${value}x)xxxxxxx`;
+    } else if (value.length === 2) {
+      return `${value})xxxxxxx`;
+    } else {
+      const areaCode = value.substring(0, 2);
+      const enteredDigits = value.substring(2);
+      const remainingPlaceholder = "xxxxxxx".substring(enteredDigits.length);
+      return remainingPlaceholder ? `${areaCode})${enteredDigits}${remainingPlaceholder}` : "";
+    }
+  };
+
+  // Focus handler to position cursor correctly
+  const handlePhoneFocus = () => {
+    if (inputRef.current) {
+      // Set selection to end of current text
+      const end = displayValue.length;
+      setTimeout(() => {
+        inputRef.current?.setSelectionRange(end, end);
+      }, 0);
+    }
+  };
+
   return (
     <div>
       <label htmlFor={id} className="block text-sm font-medium mb-2">
@@ -131,14 +134,26 @@ const FormField = ({
           placeholder={placeholder}
         />
       ) : type === 'tel' ? (
-        <Input
-          type="tel"
-          id={id}
-          name={name}
-          value={displayValue}
-          onChange={handlePhoneInput}
-          className={`w-full px-4 py-3 rounded-lg ${error ? 'border-destructive' : 'border-input'}`}
-        />
+        <div className="relative">
+          <Input
+            ref={inputRef}
+            type="tel"
+            id={id}
+            name={name}
+            value={displayValue}
+            onChange={handlePhoneInput}
+            onFocus={handlePhoneFocus}
+            className={`w-full px-4 py-3 rounded-lg ${error ? 'border-destructive' : 'border-input'}`}
+          />
+          {/* Custom placeholder element that appears behind the input */}
+          <div 
+            className="absolute inset-0 flex items-center px-4 pointer-events-none text-gray-400"
+            style={{ display: value.length === 9 ? 'none' : 'flex' }}
+          >
+            <span>{displayValue}</span>
+            <span className="text-gray-400">{getPhonePlaceholder()}</span>
+          </div>
+        </div>
       ) : (
         <Input
           type={type}
