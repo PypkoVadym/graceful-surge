@@ -33,18 +33,18 @@ const FormField = ({
   useEffect(() => {
     if (type === 'tel') {
       if (value) {
-        setDisplayValue(`+38(0${value}`);
+        setDisplayValue(`+380${value}`);
       } else {
-        setDisplayValue('+38(0');
+        setDisplayValue('+380');
       }
     }
   }, [value, type]);
 
   const handlePhoneInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     const input = e.target.value;
-    // Extract only the digits after +38(0
-    if (input.length >= 5) {
-      const digits = input.substring(5);
+    // Extract only the digits after +380
+    if (input.length >= 4) {
+      const digits = input.substring(4);
       // Create a synthetic event
       const syntheticEvent = {
         ...e,
