@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -28,12 +27,20 @@ const FormField = ({
   mask
 }: FormFieldProps) => {
   const [displayValue, setDisplayValue] = useState('');
-  
-  // For phone input, format with prefix
+
+  // Format phone input with +38(0xxx)...
   useEffect(() => {
     if (type === 'tel') {
       if (value) {
-        setDisplayValue(`+38(0${value}`);
+        // 1. Remove all non-digit characters
+        const digits = value.replace(/\D/g, '');
+        // 2. Slice your preferred place for city/operator code
+        const cityCode = digits.slice(0, 3); // e.g. '12' or '123'
+        const rest = digits.slice(3);
+        // 3. Build final display string
+        //    If you want the parenthesis after 2 digits, do slice(0, 2)
+        //    and slice(2) for the rest
+        setDisplayValue(`+38(0${cityCode})${rest}`);
       } else {
         setDisplayValue('+38(0');
       }
@@ -42,33 +49,19 @@ const FormField = ({
 
   const handlePhoneInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     const input = e.target.value;
-    // Extract only the digits after +38(0
-    if (input.length >= 5) {
-      const digits = input.substring(5);
-      // Create a synthetic event
-      const syntheticEvent = {
-        ...e,
-        target: {
-          ...e.target,
-          name: e.target.name,
-          value: digits
-        }
-      } as React.ChangeEvent<HTMLInputElement>;
-      
-      onChange(syntheticEvent);
-    } else {
-      // If user deleted too much, reset to empty
-      const syntheticEvent = {
-        ...e,
-        target: {
-          ...e.target,
-          name: e.target.name,
-          value: ''
-        }
-      } as React.ChangeEvent<HTMLInputElement>;
-      
-      onChange(syntheticEvent);
-    }
+    // We only want to preserve the digits from the entire input
+    const allDigits = input.replace(/\D/g, '');
+    // Prepare a synthetic event that sets "value" to only those digits
+    const syntheticEvent = {
+      ...e,
+      target: {
+        ...e.target,
+        name: e.target.name,
+        // Store only the clean digits for the actual "value"
+        value: allDigits
+      }
+    } as React.ChangeEvent<HTMLInputElement>;
+    onChange(syntheticEvent);
   };
 
   return (
@@ -76,7 +69,7 @@ const FormField = ({
       <label htmlFor={id} className="block text-sm font-medium mb-2">
         {label}
       </label>
-      
+
       {type === 'textarea' ? (
         <Textarea
           id={id}
@@ -107,7 +100,7 @@ const FormField = ({
           placeholder={placeholder}
         />
       )}
-      
+
       {error && (
         <p className="mt-1 text-sm text-destructive">{error}</p>
       )}
