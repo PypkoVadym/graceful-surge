@@ -38,7 +38,7 @@ const ContactForm = () => {
         type="tel"
         value={formData.phone}
         onChange={handleChange}
-        placeholder=""
+        placeholder="xx)xxxxxxx"
         error={errors.phone}
       />
       
