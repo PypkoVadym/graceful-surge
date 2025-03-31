@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -29,11 +28,18 @@ const FormField = ({
 }: FormFieldProps) => {
   const [displayValue, setDisplayValue] = useState('');
   
-  // For phone input, format with prefix
+  // For phone input, format with prefix and dynamic formatting
   useEffect(() => {
     if (type === 'tel') {
       if (value) {
-        setDisplayValue(`+38(0${value}`);
+        // Check if we need to add the closing parenthesis
+        if (value.length >= 3) {
+          const areaCode = value.substring(0, 3);
+          const restOfNumber = value.substring(3);
+          setDisplayValue(`+38(0${areaCode})${restOfNumber}`);
+        } else {
+          setDisplayValue(`+38(0${value}`);
+        }
       } else {
         setDisplayValue('+38(0');
       }
@@ -42,9 +48,23 @@ const FormField = ({
 
   const handlePhoneInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     const input = e.target.value;
-    // Extract only the digits after +38(0
-    if (input.length >= 5) {
-      const digits = input.substring(5);
+    
+    // Extract only the digits after the prefix
+    if (input.startsWith('+38(0')) {
+      let digits = '';
+      
+      // Handle the case with closing parenthesis
+      if (input.includes(')')) {
+        // Format: +38(0123)456...
+        const match = input.match(/^\+38\(0(\d{0,3})\)(.*)$/);
+        if (match) {
+          digits = match[1] + match[2];
+        }
+      } else {
+        // Format: +38(0123...
+        digits = input.substring(5);
+      }
+      
       // Create a synthetic event
       const syntheticEvent = {
         ...e,
