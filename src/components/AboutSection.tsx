@@ -33,7 +33,7 @@ const AboutSection = () => {
         <SectionHeading
           pretitle="Про мене"
           title="Ваша унікальність — моя філософія"
-          centered={false}
+          centered={true}
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
