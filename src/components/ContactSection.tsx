@@ -12,9 +12,9 @@ const ContactSection = () => {
     <section id="contact" className="section-padding bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto px-4 md:px-6">
         <SectionHeading
-          pretitle="Зв'язок з нами"
-          title="Запишіться на консультацію"
-          description="Зробіть перший крок до досягнення ваших естетичних цілей, записавшись на персональну консультацію."
+          pretitle="Зв'язатися з нами"
+          title="Запишіться на безкоштовну консультацію"
+          description="Зробіть перший крок до досягнення ваших естетичних цілей, записавшись на персональну безкоштовну консультацію."
           centered={true}
         />
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">

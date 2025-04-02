@@ -13,7 +13,7 @@ const DesktopNavigation: React.FC<DesktopNavigationProps> = ({ scrollToSection }
         onClick={() => scrollToSection('about')}
         className="text-sm font-medium hover:text-primary transition-colors"
       >
-        Про нас
+        Про мене
       </button>
       <button 
         onClick={() => scrollToSection('services')}
