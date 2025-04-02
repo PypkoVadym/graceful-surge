@@ -21,7 +21,7 @@ const ClinicSection = () => {
           pretitle="Наша Клініка"
           title="Комфортний медичний заклад"
           description="Відчуйте преміальний догляд у нашій комфортній клініці, створеній з урахуванням вашої безпеки та затишку."
-          centered={false}
+          centered={true}
         />
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
