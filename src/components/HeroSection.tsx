@@ -27,10 +27,10 @@ const HeroSection = () => {
               Преміальний естетичний догляд
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold mb-6 tracking-tight">
-              Підкресліть свою природну красу з експертним доглядом
+              Гармонія природної краси та сучасної хірургії
             </h1>
             <p className="text-muted-foreground text-lg mb-8 max-w-xl">
-              Відкрийте для себе ідеальний баланс між мистецтвом і медичною експертизою завдяки нашим персоналізованим естетичним процедурам, створеним для розкриття вашої природної краси.
+            Справжня естетика — це не кардинальні зміни, а вдосконалення того, що вже закладено природою. Моє завдання — допомогти вам досягти гармонійного вигляду, зберігаючи індивідуальність.
             </p>
             <div className="flex flex-wrap gap-4">
               <button
@@ -58,8 +58,8 @@ const HeroSection = () => {
               priority={true}
             />
             <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-lg animate-scale-in">
-              <p className="text-sm font-medium">Д-р Денис Маркович</p>
-              <p className="text-xs text-muted-foreground">Сертифікований пластичний хірург</p>
+              <p className="text-sm font-medium">Денис Маркович</p>
+              <p className="text-xs text-muted-foreground">Пластичний хірург</p>
             </div>
           </div>
         </div>
