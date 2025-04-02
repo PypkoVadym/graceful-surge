@@ -32,7 +32,7 @@ const AboutSection = () => {
       <div className="container mx-auto px-4 md:px-6">
         <SectionHeading
           pretitle="Про мене"
-          title="Присвячено досконалості в естетичній медицині"
+          title="Ваша унікальність — моя філософія"
           centered={false}
         />
 
@@ -53,8 +53,7 @@ const AboutSection = () => {
               <div className="flex items-center">
                 <Award className="text-primary mr-2" size={20} />
                 <div>
-                  <p className="text-sm font-medium">Сертифікований фахівець</p>
-                  <p className="text-xs text-muted-foreground">Американська рада пластичної хірургії</p>
+                  <p className="text-xs text-muted-foreground">Працює в клініці, що відповідає міжнародним стандартам безпеки та якості</p>
                 </div>
               </div>
             </div>
@@ -62,21 +61,23 @@ const AboutSection = () => {
 
           {/* Text Content */}
           <div className="animate-slide-in">
-            <h3 className="text-2xl font-semibold mb-4">Д-р Денис Маркович</h3>
-            <h4 className="text-lg text-primary mb-6">Експерт з пластичної хірургії з понад 15-річним досвідом</h4>
+            <h3 className="text-2xl font-semibold mb-4">Денис Маркович</h3>
+            <h4 className="text-lg text-primary mb-6">Спеціалізується на реконструктивній та естетичній хірургії обличчя</h4>
 
             <p className="text-muted-foreground mb-6">
-              Д-р Денис Маркович — сертифікований пластичний хірург, який спеціалізується на естетичних та реконструктивних процедурах. З понад 15-річним досвідом, вона поєднує хірургічну точність з художнім баченням для досягнення природного вигляду, адаптованого до унікальної анатомії та цілей кожного пацієнта.
+              Я працюю з сучасними техніками пластичної хірургії, які дозволяють отримати натуральні, витончені результати без зайвого втручання.
             </p>
-
-            <p className="text-muted-foreground mb-8">
-              Після отримання медичної освіти в Гарвардській медичній школі, д-р Маркович проходила резидентуру з пластичної хірургії в престижній клініці Майо, а згодом — стажування з естетичної хірургії в лікарні Manhattan Eye, Ear and Throat у Нью-Йорку.
+            <p className="text-sm font-medium">
+            ✔ Професійний досвід та міжнародні техніки
+            ✔ Індивідуальний підхід до кожного пацієнта
+            ✔ Результати, що підкреслюють природну красу
+            ✔ Безпека, якість та сучасні методи хірургії
             </p>
 
             {/* Статистика */}
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 mb-8">
-              <StatCard icon={Clock} value="15+" label="Років досвіду" />
-              <StatCard icon={User} value="5,000+" label="Задоволених пацієнтів" />
+              <StatCard icon={Clock} value="94%" label="пацієнтів відновлюються за <7 днів" />
+              <StatCard icon={User} value="37%" label="пацієнтів звертаються повторно" />
               <StatCard icon={Star} value="4.9/5" label="Оцінка пацієнтів" />
             </div>
 
