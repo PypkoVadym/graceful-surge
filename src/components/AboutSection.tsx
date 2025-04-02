@@ -1,7 +1,7 @@
 
 import React from 'react';
 import SectionHeading from './ui/SectionHeading';
-import { Award, Clock, Star, ArrowRight, Repeat } from 'lucide-react';
+import { Award, Clock, Star, ArrowRight, Syringe } from 'lucide-react';
 import ImageOptimizer from './ImageOptimizer';
 
 // Повторно використовуваний компонент StatCard
@@ -62,12 +62,12 @@ const AboutSection = () => {
           {/* Text Content */}
           <div className="animate-slide-in">
             <h3 className="text-2xl font-semibold mb-4">Денис Маркович</h3>
-            <h4 className="text-lg text-primary mb-6">Спеціалізується на реконструктивній та естетичній хірургії обличчя</h4>
+            <h4 className="text-lg text-primary mb-6">Спеціалізуюсь на реконструктивній хірургії <br/>обличчя та грудей</h4>
 
             <p className="text-muted-foreground mb-6">
               Я працюю з сучасними техніками пластичної хірургії, які дозволяють отримати натуральні, витончені результати без зайвого втручання.
             </p>
-            <div className="text-sm font-medium">
+            <div className="text-muted-foreground mb-6">
               <p>✔ Професійний досвід та міжнародні техніки</p>
               <p>✔ Індивідуальний підхід до кожного пацієнта</p>
               <p>✔ Результати, що підкреслюють природну красу</p>
@@ -76,8 +76,8 @@ const AboutSection = () => {
 
             {/* Статистика */}
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 mb-8">
-              <StatCard icon={Clock} value="94% пацієнтів" label="відновлюються за 7 днів" />
-              <StatCard icon={Repeat} value="37% пацієнтів" label="звертаються повторно" />
+              <StatCard icon={Syringe} value="250+" label="Успішних процедур" />
+              <StatCard icon={Clock} value="90% пацієнтів" label="Відновлюються за 14 днів" />
               <StatCard icon={Star} value="4.9/5" label="Оцінка пацієнтів" />
             </div>
 
