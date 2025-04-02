@@ -53,7 +53,7 @@ const AboutSection = () => {
               <div className="flex items-center">
                 <Award className="text-primary mr-2" size={20} />
                 <div>
-                  <p className="text-xs text-muted-foreground">Працює в клініці, що відповідає міжнародним стандартам безпеки та якості</p>
+                  <p className="text-xs text-muted-foreground">Працюю в клініці, що відповідає<br/>міжнародним стандартам безпеки та якості</p>
                 </div>
               </div>
             </div>
@@ -62,7 +62,7 @@ const AboutSection = () => {
           {/* Text Content */}
           <div className="animate-slide-in">
             <h3 className="text-2xl font-semibold mb-4">Денис Маркович</h3>
-            <h4 className="text-lg text-primary mb-6">Спеціалізуюсь на реконструктивній хірургії <br/>обличчя та грудей</h4>
+            <h4 className="text-lg text-primary mb-6">Спеціалізуюсь на реконструктивній хірургії обличчя та грудей</h4>
 
             <p className="text-muted-foreground mb-6">
               Я працюю з сучасними техніками пластичної хірургії, які дозволяють отримати натуральні, витончені результати без зайвого втручання.
