@@ -1,7 +1,7 @@
 
 import React from 'react';
 import SectionHeading from './ui/SectionHeading';
-import { Award, Clock, User, Star, ArrowRight } from 'lucide-react';
+import { Award, Clock, Star, ArrowRight, Repeat } from 'lucide-react';
 import ImageOptimizer from './ImageOptimizer';
 
 // Повторно використовуваний компонент StatCard
@@ -67,17 +67,17 @@ const AboutSection = () => {
             <p className="text-muted-foreground mb-6">
               Я працюю з сучасними техніками пластичної хірургії, які дозволяють отримати натуральні, витончені результати без зайвого втручання.
             </p>
-            <p className="text-sm font-medium">
-            ✔ Професійний досвід та міжнародні техніки
-            ✔ Індивідуальний підхід до кожного пацієнта
-            ✔ Результати, що підкреслюють природну красу
-            ✔ Безпека, якість та сучасні методи хірургії
-            </p>
+            <div className="text-sm font-medium">
+              <p>✔ Професійний досвід та міжнародні техніки</p>
+              <p>✔ Індивідуальний підхід до кожного пацієнта</p>
+              <p>✔ Результати, що підкреслюють природну красу</p>
+              <p>✔ Безпека, якість та сучасні методи хірургії</p>
+            </div>
 
             {/* Статистика */}
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 mb-8">
-              <StatCard icon={Clock} value="94%" label="пацієнтів відновлюються за <7 днів" />
-              <StatCard icon={User} value="37%" label="пацієнтів звертаються повторно" />
+              <StatCard icon={Clock} value="94% пацієнтів" label="відновлюються за 7 днів" />
+              <StatCard icon={Repeat} value="37% пацієнтів" label="звертаються повторно" />
               <StatCard icon={Star} value="4.9/5" label="Оцінка пацієнтів" />
             </div>
 
