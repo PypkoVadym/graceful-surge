@@ -19,8 +19,8 @@ const ClinicSection = () => {
       <div className="container mx-auto px-4 md:px-6">
         <SectionHeading
           pretitle="Наша Клініка"
-          title="Сучасний медичний заклад"
-          description="Відчуйте преміальний догляд у нашій сучасній, комфортній клініці, створеній з урахуванням вашої безпеки та зручності."
+          title="Комфортний медичний заклад"
+          description="Відчуйте преміальний догляд у нашій комфортній клініці, створеній з урахуванням вашої безпеки та затишку."
           centered={false}
         />
         
@@ -28,7 +28,7 @@ const ClinicSection = () => {
           {/* Text Content */}
           <div className="animate-fade-in">
             <p className="text-muted-foreground mb-8">
-              Наша клініка поєднує розкіш та передові технології, щоб забезпечити вам винятковий досвід. Від зони рецепції до процедурних кабінетів — кожну деталь продумано для вашого комфорту, приватності та безпеки.
+            Наша клініка має поєднання класики та сучасних технологій, що створює атмосферу комфорту, надійності та високого рівня обслуговування.
             </p>
             
             <div className="space-y-6 mb-8">
@@ -39,7 +39,7 @@ const ClinicSection = () => {
                 <div>
                   <h4 className="font-medium mb-1">Вигідне розташування</h4>
                   <p className="text-sm text-muted-foreground">
-                    Зручно розташована в центрі Беверлі-Гіллз із легким доступом і приватною парковкою.
+                    Зручно розташована в місті Київ біля метро Лукʼянівська з легким доступом та великою приватною парковкою.
                   </p>
                 </div>
               </div>
@@ -49,13 +49,25 @@ const ClinicSection = () => {
                   <Shield className="text-primary" size={24} />
                 </div>
                 <div>
-                  <h4 className="font-medium mb-1">Безпека перш за все</h4>
+                  <h4 className="font-medium mb-1">Комфортні палати</h4>
                   <p className="text-sm text-muted-foreground">
-                    Наша установа акредитована AAAASF та відповідає найвищим стандартам безпеки амбулаторної хірургії.
+                  Обладнані сучасними ліжками, кондиціонерами, телевізорами, душовими кімнатами та необхідними засобами для гігієни.
                   </p>
                 </div>
               </div>
               
+              <div className="flex items-start">
+                <div className="bg-primary/10 p-3 rounded-lg mr-4">
+                  <Shield className="text-primary" size={24} />
+                </div>
+                <div>
+                  <h4 className="font-medium mb-1">Безпека та якість</h4>
+                  <p className="text-sm text-muted-foreground">
+                  Працюємо за найвищими медичними стандартами та використовуємо лише перевірені сучасні препарати для анестезії. Наша мета – створити простір, де пацієнти почуваються впевнено, спокійно та комфортно.
+                  </p>
+                </div>
+              </div>
+
               <div className="flex items-start">
                 <div className="bg-primary/10 p-3 rounded-lg mr-4">
                   <HeartPulse className="text-primary" size={24} />
@@ -63,7 +75,7 @@ const ClinicSection = () => {
                 <div>
                   <h4 className="font-medium mb-1">Передові технології</h4>
                   <p className="text-sm text-muted-foreground">
-                    Оснащена новітнім медичним обладнанням та інноваціями для досягнення найкращих результатів.
+                  Клініка обладнана сучасними апаратами для RF-ліфтингу, лазерних процедур, а також наркозним апаратом із BIS-моніторингом, що забезпечує максимальну точність та безпеку анестезії.
                   </p>
                 </div>
               </div>
@@ -75,7 +87,7 @@ const ClinicSection = () => {
                 <div>
                   <h4 className="font-medium mb-1">Індивідуальний підхід</h4>
                   <p className="text-sm text-muted-foreground">
-                    Наш уважний персонал надає персоналізований догляд протягом усього вашого шляху.
+                    Наш уважний персонал надає індивідуальний догляд протягом усього вашого шляху.
                   </p>
                 </div>
               </div>
@@ -85,7 +97,7 @@ const ClinicSection = () => {
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               className="bg-white hover:bg-gray-50 text-foreground rounded-full px-8 py-3 font-medium transition-all duration-300 shadow-sm hover:shadow-md border border-gray-100"
             >
-              Записатися на візит
+              Записатися на безкоштовну консультацію
             </button>
           </div>
           

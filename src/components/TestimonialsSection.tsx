@@ -24,7 +24,7 @@ const TestimonialsSection = () => {
     },
     {
       quote: "Все чудово дихає!",
-      name: "Вікторія",
+      name: "Вероніка",
       title: "Пацієнтка після ринопластики",
       rating: 5,
       image: "https://i.imgur.com/thTOcmt.jpeg",
