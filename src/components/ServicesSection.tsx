@@ -42,7 +42,7 @@ const ServicesSection = () => {
 
   const breastServices = {
     title: "Процедури для грудей",
-    description: "Збільшіть, зменшіть або відновіть форму грудей завдяки персоналізованим процедурам.",
+    description: "Досягніть бажаного об’єму та форми грудей завдяки індивідуально підібраним методам естетичної корекції.",
     details: [
       "Збільшення грудей",
       "Підтяжка грудей (мастопексія)",
@@ -50,9 +50,12 @@ const ServicesSection = () => {
       "Реконструкція грудей"
     ],
     images: [
-      "https://i.imgur.com/K701ddL.jpeg",
-      "https://i.imgur.com/rE7phUj.jpeg",
-      "https://i.imgur.com/MGPvIW1.jpeg"
+      "/images/mamo 1.jpg",
+      "/images/mamo 2.jpg",
+      "/images/mamo 3.jpg",
+      //"https://i.imgur.com/K701ddL.jpeg",
+      //"https://i.imgur.com/rE7phUj.jpeg",
+      //"https://i.imgur.com/MGPvIW1.jpeg"
     ]
   };
 
