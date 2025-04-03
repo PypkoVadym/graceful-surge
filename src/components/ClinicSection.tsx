@@ -1,7 +1,7 @@
 import React from 'react';
 import SectionHeading from './ui/SectionHeading';
 import ImageSlider from './ui/ImageSlider';
-import { MapPin, Clock, Shield, HeartPulse } from 'lucide-react';
+import { MapPin, User, Bed, Shield, HeartPulse } from 'lucide-react';
 
 const ClinicSection = () => {
   const clinicImages = [
@@ -45,7 +45,7 @@ const ClinicSection = () => {
               
               <div className="flex items-start">
                 <div className="bg-primary/10 p-3 rounded-lg mr-4">
-                  <Shield className="text-primary" size={24} />
+                  <Bed className="text-primary" size={24} />
                 </div>
                 <div>
                   <h4 className="font-medium mb-1">Комфортні палати</h4>
@@ -81,7 +81,7 @@ const ClinicSection = () => {
               
               <div className="flex items-start">
                 <div className="bg-primary/10 p-3 rounded-lg mr-4">
-                  <Clock className="text-primary" size={24} />
+                  <User className="text-primary" size={24} />
                 </div>
                 <div>
                   <h4 className="font-medium mb-1">Індивідуальний підхід</h4>
