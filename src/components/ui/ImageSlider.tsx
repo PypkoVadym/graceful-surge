@@ -13,6 +13,7 @@ interface ImageSliderProps {
   interval?: number;
   width?: string;
   height?: string;
+  alt?: string; // Added alt property to the interface
 }
 
 const ImageSlider = ({
@@ -23,6 +24,7 @@ const ImageSlider = ({
   interval = 5000,
   width,
   height,
+  alt = 'Image slide', // Added alt with a default value
 }: ImageSliderProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -117,7 +119,7 @@ const ImageSlider = ({
           )} />
           <ImageOptimizer
             src={image}
-            alt={`Slide ${index + 1}`}
+            alt={`${alt} ${index + 1}`} // Using the alt prop with index for better accessibility
             className="w-full h-full object-contain transition-transform duration-500 ease-out"
             priority={index === 0}
             onLoad={() => handleImageLoad(index)}
