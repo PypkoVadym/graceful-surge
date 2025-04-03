@@ -75,16 +75,16 @@ const Footer = () => {
             <h3 className="font-semibold mb-4">Контактна інформація</h3>
             <ul className="space-y-2">
               <li className="text-muted-foreground">
-                <strong className="text-foreground">Адреса:</strong> м.Київ, вул. Хрещатик, 123
+                <strong className="text-foreground">Адреса:</strong> Київ, вул. Миколи Пимоненка, 8
               </li>
               <li>
-                <a href="tel:+1-800-123-4567" className="text-muted-foreground hover:text-primary transition-colors">
-                  <strong className="text-foreground">Телефон:</strong> (063) 1234567
+                <a href="tel:+380 73 283 01 29" className="text-muted-foreground hover:text-primary transition-colors">
+                  <strong className="text-foreground">Телефон:</strong> +380 73 283 01 29
                 </a>
               </li>
               <li>
-                <a href="mailto:info@aestheticmd.com" className="text-muted-foreground hover:text-primary transition-colors">
-                  <strong className="text-foreground">Email:</strong> info@aestheticmd.com
+                <a href="mailto:Denismrkv4@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
+                  <strong className="text-foreground">Email:</strong> Denismrkv4@gmail.com
                 </a>
               </li>
             </ul>
@@ -95,10 +95,7 @@ const Footer = () => {
             <h3 className="font-semibold mb-4">Години роботи</h3>
             <ul className="space-y-2 text-muted-foreground">
               <li>
-                <strong className="text-foreground">Понеділок – П'ятниця:</strong> 9:00 – 17:00
-              </li>
-              <li>
-                <strong className="text-foreground">Субота:</strong> 10:00 – 14:00
+                <strong className="text-foreground">Понеділок – Субота:</strong> 9:00 – 20:00
               </li>
               <li>
                 <strong className="text-foreground">Неділя:</strong> Вихідний

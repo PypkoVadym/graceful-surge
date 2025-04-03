@@ -14,8 +14,8 @@ const ContactInfo = () => {
           <div>
             <h4 className="font-medium mb-1">Телефон</h4>
             <p className="text-muted-foreground">
-              <a href="tel:+1-800-123-4567" className="hover:text-primary transition-colors">
-                (800) 123-4567
+              <a href="tel:+380 73 283 01 29" className="hover:text-primary transition-colors">
+                +380 73 283 01 29
               </a>
             </p>
           </div>
@@ -28,7 +28,7 @@ const ContactInfo = () => {
             <h4 className="font-medium mb-1">Email</h4>
             <p className="text-muted-foreground">
               <a href="mailto:info@aestheticmd.com" className="hover:text-primary transition-colors">
-                info@aestheticmd.com
+                Denismrkv4@gmail.com
               </a>
             </p>
           </div>
@@ -40,8 +40,7 @@ const ContactInfo = () => {
           <div>
             <h4 className="font-medium mb-1">Адреса</h4>
             <p className="text-muted-foreground">
-              123 Beverly Hills Boulevard<br />
-              Beverly Hills, CA 90210
+              Київ, вул. Миколи Пимоненка, 8
             </p>
           </div>
         </div>
@@ -52,8 +51,7 @@ const ContactInfo = () => {
           <div>
             <h4 className="font-medium mb-1">Години роботи</h4>
             <p className="text-muted-foreground">
-              Понеділок – П'ятниця: 9:00 – 17:00<br />
-              Субота: 10:00 – 14:00<br />
+              Понеділок – Субота: 9:00 – 20:00<br />
               Неділя: Вихідний
             </p>
           </div>

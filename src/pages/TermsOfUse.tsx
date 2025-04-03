@@ -68,9 +68,8 @@ const TermsOfUse = () => {
                 Якщо у вас є будь-які запитання щодо цих умов користування, будь ласка, зв'яжіться з нами:
               </p>
               <ul className="list-none pl-0 space-y-1 mt-2">
-                <li><strong>Email:</strong> info@aestheticmd.com</li>
-                <li><strong>Телефон:</strong> (063) 1234567</li>
-                <li><strong>Адреса:</strong> м.Київ, вул. Хрещатик, 123</li>
+                <li><strong>Email:</strong> Denismrkv4@gmail.com</li>
+                <li><strong>Телефон:</strong> +380 73 283 01 29</li>
               </ul>
             </div>
           </div>

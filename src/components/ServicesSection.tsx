@@ -88,7 +88,7 @@ const ServicesSection = () => {
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               className="inline-flex items-center text-primary font-medium hover:underline"
             >
-              Записатися на консультацію <ArrowRight className="ml-1" size={16} />
+              Записатися на безкоштовну консультацію <ArrowRight className="ml-1" size={16} />
             </button>
           </div>
           
@@ -129,7 +129,7 @@ const ServicesSection = () => {
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               className="inline-flex items-center text-primary font-medium hover:underline"
             >
-              Записатися на консультацію <ArrowRight className="ml-1" size={16} />
+              Записатися на безкоштовну консультацію <ArrowRight className="ml-1" size={16} />
             </button>
           </div>
         </div>
@@ -156,7 +156,7 @@ const ServicesSection = () => {
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               className="inline-flex items-center text-primary font-medium hover:underline"
             >
-              Записатися на консультацію <ArrowRight className="ml-1" size={16} />
+              Записатися на безкоштовну консультацію <ArrowRight className="ml-1" size={16} />
             </button>
           </div>
           
