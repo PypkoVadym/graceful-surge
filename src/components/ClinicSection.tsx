@@ -105,7 +105,7 @@ const ClinicSection = () => {
           <div className="animate-scale-in">
             <ImageSlider 
               images={clinicImages} 
-              aspectRatio="video"
+              aspectRatio="portrait"
             />
           </div>
         </div>
