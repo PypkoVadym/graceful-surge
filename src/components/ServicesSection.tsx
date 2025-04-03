@@ -1,4 +1,3 @@
-
 import React from 'react';
 import SectionHeading from './ui/SectionHeading';
 import ImageSlider from './ui/ImageSlider';
@@ -52,10 +51,7 @@ const ServicesSection = () => {
     images: [
       "/images/mamo 1.jpg",
       "/images/mamo 2.jpg",
-      "/images/mamo 3.jpg",
-      //"https://i.imgur.com/K701ddL.jpeg",
-      //"https://i.imgur.com/rE7phUj.jpeg",
-      //"https://i.imgur.com/MGPvIW1.jpeg"
+      "/images/mamo 3.jpg"
     ]
   };
 
@@ -168,7 +164,7 @@ const ServicesSection = () => {
           <div className="animate-scale-in">
             <ImageSlider 
               images={breastServices.images} 
-              alt="збільшення об’єму жировими клітинами"
+              alt="збільшення грудей, підтяжка грудей, зменшення грудей"
               aspectRatio="wide"
             />
           </div>

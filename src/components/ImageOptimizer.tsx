@@ -23,10 +23,11 @@ const ImageOptimizer = ({
   onLoad,
   style,
 }: ImageOptimizerProps) => {
-  // Convert image URLs to WebP if they're not already
-  const optimizedSrc = src.includes('.webp') 
-    ? src 
-    : src.replace(/\.(jpe?g|png)($|\?)/, '.webp$2');
+  // Only convert external URLs (like imgur) to WebP if they're not already WebP
+  // Local paths like /images/mamo 1.jpg should be left as is
+  const optimizedSrc = src.includes('://') && !src.includes('.webp') 
+    ? src.replace(/\.(jpe?g|png)($|\?)/, '.webp$2')
+    : src;
 
   return (
     <img
