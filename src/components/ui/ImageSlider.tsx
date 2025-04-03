@@ -118,7 +118,7 @@ const ImageSlider = ({
           <ImageOptimizer
             src={image}
             alt={`Slide ${index + 1}`}
-            className="w-full h-full object-cover transition-transform duration-500 ease-out"
+            className="w-full h-full object-contain transition-transform duration-500 ease-out"
             priority={index === 0}
             onLoad={() => handleImageLoad(index)}
             style={{ 
