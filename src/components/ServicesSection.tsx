@@ -65,7 +65,7 @@ const ServicesSection = () => {
         <SectionHeading
           pretitle="Послуги"
           title="Комплексні естетичні процедури"
-          description="Ми пропонуємо широкий спектр хірургічних і нехірургічних процедур, спрямованих на підкреслення вашої природної краси та впевненості."
+          description="Пропоную широкий спектр хірургічних і нехірургічних процедур, спрямованих на підкреслення вашої природної краси та впевненості."
           centered={true}
         />
         
@@ -98,6 +98,7 @@ const ServicesSection = () => {
           <div className="animate-scale-in">
             <ImageSlider 
               images={facialServices.images} 
+              alt="корекція верхніх повік, корекція нижніх повік, хірургія повік, вирівнювання носової перетинки"
               aspectRatio="wide"
             />
           </div>
@@ -108,6 +109,7 @@ const ServicesSection = () => {
           <div className="order-2 lg:order-1 animate-scale-in">
             <ImageSlider 
               images={bodyServices.images} 
+              alt="корекція форми грудей, імпланти грудей, пластична хірургія молочної залози"
               aspectRatio="wide"
             />
           </div>
@@ -166,6 +168,7 @@ const ServicesSection = () => {
           <div className="animate-scale-in">
             <ImageSlider 
               images={breastServices.images} 
+              alt="збільшення об’єму жировими клітинами"
               aspectRatio="wide"
             />
           </div>
