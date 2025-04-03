@@ -32,7 +32,7 @@ const Footer = () => {
                   onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
-                  Про д-ра Марковича
+                  Про мене
                 </button>
               </li>
               <li>
@@ -75,7 +75,7 @@ const Footer = () => {
             <h3 className="font-semibold mb-4">Контактна інформація</h3>
             <ul className="space-y-2">
               <li className="text-muted-foreground">
-                <strong className="text-foreground">Адреса:</strong> Київ, вул. Миколи Пимоненка, 8
+                <strong className="text-foreground">Адреса:</strong> Київ, вул. М. Пимоненка, 8
               </li>
               <li>
                 <a href="tel:+380 73 283 01 29" className="text-muted-foreground hover:text-primary transition-colors">
