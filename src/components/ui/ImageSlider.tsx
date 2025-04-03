@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
@@ -80,7 +79,9 @@ const ImageSlider = ({
       ? 'aspect-square' 
       : aspectRatio === 'video' 
         ? 'aspect-video' 
-        : 'aspect-[16/9]';
+        : aspectRatio === 'portrait'
+          ? 'aspect-[9/16]'
+          : 'aspect-[16/9]';
 
   return (
     <div

@@ -115,3 +115,4 @@ const ClinicSection = () => {
 };
 
 export default ClinicSection;
+
