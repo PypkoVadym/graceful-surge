@@ -6,9 +6,9 @@ import { MapPin, Clock, Shield, HeartPulse } from 'lucide-react';
 
 const ClinicSection = () => {
   const clinicImages = [
-    "https://images.unsplash.com/photo-1629909615184-74f495363b67?q=80&w=1974&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1629909614778-b6d8a620b151?q=80&w=1974&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=1953&auto=format&fit=crop"
+    "https://i.imgur.com/1qypOoG.jpeg",
+    "https://i.imgur.com/mNC0euJ.jpeg",
+    "https://i.imgur.com/FbLgCOi.jpeg"
   ];
 
   return (
