@@ -103,13 +103,10 @@ const ClinicSection = () => {
           
           {/* Image Slider */}
           <div className="animate-scale-in">
-            <div className="max-h-[600px] h-full">
-              <ImageSlider 
-                images={clinicImages} 
-                aspectRatio="portrait"
-                className="h-full"
-              />
-            </div>
+            <ImageSlider 
+              images={clinicImages} 
+              aspectRatio="portrait"
+            />
           </div>
         </div>
       </div>
@@ -118,3 +115,4 @@ const ClinicSection = () => {
 };
 
 export default ClinicSection;
+

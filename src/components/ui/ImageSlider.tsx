@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
@@ -87,7 +86,7 @@ const ImageSlider = ({
   return (
     <div
       className={cn(
-        'relative overflow-hidden rounded-2xl group h-full',
+        'relative overflow-hidden rounded-2xl group',
         aspectRatioClass,
         className
       )}
