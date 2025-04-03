@@ -40,7 +40,7 @@ const Footer = () => {
                   onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
-                  Наші послуги
+                  Послуги
                 </button>
               </li>
               <li>
@@ -56,7 +56,7 @@ const Footer = () => {
                   onClick={() => document.getElementById('clinic')?.scrollIntoView({ behavior: 'smooth' })}
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
-                  Наша клініка
+                  Клініка
                 </button>
               </li>
               <li>

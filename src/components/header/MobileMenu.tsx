@@ -54,7 +54,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
           onClick={() => scrollToSection('clinic')}
           className="text-lg font-medium py-2 border-b border-gray-100"
         >
-          Наша клініка
+          Клініка
         </button>
         <button 
           onClick={() => scrollToSection('contact')}

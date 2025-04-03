@@ -31,7 +31,7 @@ const DesktopNavigation: React.FC<DesktopNavigationProps> = ({ scrollToSection }
         onClick={() => scrollToSection('clinic')}
         className="text-sm font-medium hover:text-primary transition-colors"
       >
-        Наша клініка
+        Клініка
       </button>
       <Button 
         onClick={() => scrollToSection('contact')}

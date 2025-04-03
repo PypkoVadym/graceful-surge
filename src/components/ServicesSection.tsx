@@ -60,7 +60,7 @@ const ServicesSection = () => {
     <section id="services" className="section-padding bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto px-4 md:px-6">
         <SectionHeading
-          pretitle="Наші послуги"
+          pretitle="Послуги"
           title="Комплексні естетичні процедури"
           description="Ми пропонуємо широкий спектр хірургічних і нехірургічних процедур, спрямованих на підкреслення вашої природної краси та впевненості."
           centered={true}
