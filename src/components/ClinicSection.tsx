@@ -106,6 +106,8 @@ const ClinicSection = () => {
             <ImageSlider 
               images={clinicImages} 
               aspectRatio="portrait"
+              height="600px"
+              width="100%"
             />
           </div>
         </div>
@@ -115,4 +117,3 @@ const ClinicSection = () => {
 };
 
 export default ClinicSection;
-

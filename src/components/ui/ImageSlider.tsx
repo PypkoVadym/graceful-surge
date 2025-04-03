@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
@@ -10,6 +11,8 @@ interface ImageSliderProps {
   // Aspect ratio options: 'square', 'video', 'wide', 'portrait'
   autoplay?: boolean;
   interval?: number;
+  width?: string;
+  height?: string;
 }
 
 const ImageSlider = ({
@@ -18,6 +21,8 @@ const ImageSlider = ({
   aspectRatio = 'square',
   autoplay = true,
   interval = 5000,
+  width,
+  height,
 }: ImageSliderProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -87,11 +92,15 @@ const ImageSlider = ({
     <div
       className={cn(
         'relative overflow-hidden rounded-2xl group',
-        aspectRatioClass,
+        !width && !height ? aspectRatioClass : '',
         className
       )}
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
+      style={{
+        width: width || '',
+        height: height || '',
+      }}
     >
       {images.map((image, index) => (
         <div
