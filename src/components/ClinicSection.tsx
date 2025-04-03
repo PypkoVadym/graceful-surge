@@ -1,4 +1,3 @@
-
 import React from 'react';
 import SectionHeading from './ui/SectionHeading';
 import ImageSlider from './ui/ImageSlider';
@@ -101,14 +100,17 @@ const ClinicSection = () => {
             </button>
           </div>
           
-          {/* Image Slider */}
-          <div className="animate-scale-in">
-            <ImageSlider 
-              images={clinicImages} 
-              aspectRatio="portrait"
-              height="600px"
-              width="50%"
-            />
+          {/* Image Slider - Centered */}
+          <div className="animate-scale-in flex justify-center items-center">
+            <div className="w-full">
+              <ImageSlider 
+                images={clinicImages} 
+                aspectRatio="portrait"
+                height="600px"
+                width="50%"
+                className="mx-auto"
+              />
+            </div>
           </div>
         </div>
       </div>
