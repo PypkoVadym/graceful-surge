@@ -53,7 +53,7 @@ const TestimonialsSection = () => {
       <div className="container mx-auto px-4 md:px-6">
         <SectionHeading
           pretitle="Відгуки"
-          title="Що кажуть моъ пацієнтки"
+          title="Що кажуть мої пацієнтки"
           description="Ознайомтеся з реальним досвідом пацієнток та результатами їхніх трансформацій."
           centered={true}
         />
