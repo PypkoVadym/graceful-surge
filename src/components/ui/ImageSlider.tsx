@@ -7,7 +7,8 @@ import ImageOptimizer from '../ImageOptimizer';
 interface ImageSliderProps {
   images: string[];
   className?: string;
-  aspectRatio?: 'square' | 'video' | 'wide';
+  aspectRatio?: 'square' | 'video' | 'wide' | 'portrait';
+  // Aspect ratio options: 'square', 'video', 'wide', 'portrait'
   autoplay?: boolean;
   interval?: number;
 }
