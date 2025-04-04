@@ -3,6 +3,7 @@ import React from 'react';
 import { X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import SocialMediaIcons from './SocialMediaIcons';
+import LanguageSwitcher from './LanguageSwitcher';
 
 interface MobileMenuProps {
   isMobileMenuOpen: boolean;
@@ -62,6 +63,9 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
         >
           Зв'язатися з нами
         </button>
+        
+        {/* Language Switcher - Mobile */}
+        <LanguageSwitcher isMobile={true} />
         
         {/* Social Media Icons - Mobile */}
         <SocialMediaIcons isMobile={true} />

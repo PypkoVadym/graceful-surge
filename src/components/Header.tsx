@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Menu } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -5,6 +6,7 @@ import Logo from './header/Logo';
 import SocialMediaIcons from './header/SocialMediaIcons';
 import DesktopNavigation from './header/DesktopNavigation';
 import MobileMenu from './header/MobileMenu';
+import LanguageSwitcher from './header/LanguageSwitcher';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -55,9 +57,10 @@ const Header = () => {
           {/* Logo */}
           <Logo onClick={handleLogoClick} />
 
-          {/* Desktop Navigation and Social Icons */}
+          {/* Desktop Navigation, Language Switcher and Social Icons */}
           <div className="hidden md:flex items-center space-x-8">
             <DesktopNavigation scrollToSection={scrollToSection} />
+            <LanguageSwitcher />
             <SocialMediaIcons />
           </div>
 
