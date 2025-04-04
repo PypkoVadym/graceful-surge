@@ -11,6 +11,8 @@ import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
 
 // Russian language components
+import HeaderRu from '../components/russian/HeaderRu';
+import FooterRu from '../components/russian/FooterRu';
 import HeroSectionRu from '../components/russian/HeroSectionRu';
 import AboutSectionRu from '../components/russian/AboutSectionRu';
 import ServicesSectionRu from '../components/russian/ServicesSectionRu';
@@ -38,7 +40,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
-      <Header />
+      {isRussianVersion ? <HeaderRu /> : <Header />}
       <main>
         {isRussianVersion ? (
           // Russian content
@@ -62,7 +64,7 @@ const Index = () => {
           </>
         )}
       </main>
-      <Footer />
+      {isRussianVersion ? <FooterRu /> : <Footer />}
     </div>
   );
 };
