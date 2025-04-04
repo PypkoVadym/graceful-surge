@@ -25,7 +25,7 @@ const Index = () => {
   const location = useLocation();
   const isRussianVersion = location.pathname.includes('/alternative');
 
-  // Add language-specific SEO metadata
+  // Set page titles and metadata directly
   useEffect(() => {
     if (isRussianVersion) {
       document.title = "Пластический хирург в Украине Денис Маркович";

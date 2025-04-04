@@ -7,7 +7,27 @@ interface SEOHeadProps {
 
 const SEOHead: React.FC<SEOHeadProps> = ({ isRussianVersion }) => {
   useEffect(() => {
-    // Create hreflang links if they don't exist yet
+    // Set the document title based on the language
+    if (isRussianVersion) {
+      document.title = "Пластический хирург в Украине Денис Маркович";
+    } else {
+      document.title = "Пластичний хірург в Україні Денис Маркович";
+    }
+
+    // Set meta description
+    const metaDescription = isRussianVersion 
+      ? 'Выполняю все виды пластических операций: маммопластику, блефаропластику, ринопластику, липосакцию, абдоминопластику. Пластический хирург: Львов, Днепр, Запорожье, Киев, Харьков.'
+      : 'Виконую всі види пластичних операцій: мамопластику, блефаропластику, ринопластику, ліпосакцію, абдомінопластику. Пластичний хірург: Львів, Дніпро, Запоріжжя, Київ, Харків.';
+    
+    let descriptionMeta = document.querySelector('meta[name="description"]');
+    if (!descriptionMeta) {
+      descriptionMeta = document.createElement('meta');
+      descriptionMeta.setAttribute('name', 'description');
+      document.head.appendChild(descriptionMeta);
+    }
+    descriptionMeta.setAttribute('content', metaDescription);
+    
+    // Create hreflang links
     const currentUrl = window.location.origin;
     const ukLink = `${currentUrl}/`;
     const ruLink = `${currentUrl}/alternative`;
@@ -75,10 +95,6 @@ const SEOHead: React.FC<SEOHeadProps> = ({ isRussianVersion }) => {
       document.head.appendChild(ogUrl);
     }
     ogUrl.setAttribute('content', isRussianVersion ? ruLink : ukLink);
-
-    return () => {
-      // Cleanup function not needed as we want these meta tags to persist
-    };
   }, [isRussianVersion]);
 
   return null; // This is a utility component, it doesn't render anything
