@@ -1,7 +1,7 @@
 
 import React from 'react';
 import SectionHeading from '../ui/SectionHeading';
-import ContactInfo from '../contact/russian/ContactInfoRU';
+import ContactInfoRu from '../contact/russian/ContactInfoRu';
 import ContactFormContainerRu from './ContactFormContainerRu';
 import { useIsMobile } from '@/hooks/use-mobile';
 
@@ -25,14 +25,14 @@ const ContactSectionRu = () => {
                 <ContactFormContainerRu />
               </div>
               <div className="animate-fade-in">
-                <ContactInfoRU />
+                <ContactInfoRu />
               </div>
             </>
           ) : (
             // Desktop order: Contact Info first, then Form
             <>
               <div className="animate-fade-in">
-                <ContactInfoRU />
+                <ContactInfoRu />
               </div>
               <div className="animate-slide-in">
                 <ContactFormContainerRu />
