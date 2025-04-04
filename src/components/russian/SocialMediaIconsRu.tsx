@@ -1,11 +1,11 @@
 
 import React from 'react';
 
-interface SocialMediaIconsProps {
+interface SocialMediaIconsRuProps {
   isMobile?: boolean;
 }
 
-const SocialMediaIcons: React.FC<SocialMediaIconsProps> = ({ isMobile = false }) => {
+const SocialMediaIconsRu: React.FC<SocialMediaIconsRuProps> = ({ isMobile = false }) => {
   const iconSize = isMobile ? 24 : 20;
 
   return (
@@ -85,5 +85,5 @@ const SocialMediaIcons: React.FC<SocialMediaIconsProps> = ({ isMobile = false })
   );
 };
 
-export default SocialMediaIcons;
+export default SocialMediaIconsRu;
 
