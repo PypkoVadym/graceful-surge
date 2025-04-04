@@ -1,7 +1,7 @@
 
 import React from 'react';
 import SectionHeading from '../ui/SectionHeading';
-import ContactInfoRu from '../contact/russian/ContactInfoRu';
+import ContactInfoRu from './ContactInfoRu';
 import ContactFormContainerRu from './ContactFormContainerRu';
 import { useIsMobile } from '@/hooks/use-mobile';
 
