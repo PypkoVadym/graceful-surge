@@ -76,8 +76,8 @@ const AboutSection = () => {
 
             {/* Статистика */}
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 mb-8">
-              <StatCard icon={Syringe} value="250+" label="Успішних процедур" />
-              <StatCard icon={Clock} value="90% пацієнтів" label="Відновлюються за 14 днів" />
+              <StatCard icon={Syringe} value="500+" label="Успішних процедур" />
+              <StatCard icon={Clock} value="95% пацієнтів" label="Відновлюються за 14 днів" />
               <StatCard icon={Star} value="4.9/5" label="Оцінка пацієнтів" />
             </div>
 
