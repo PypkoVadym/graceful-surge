@@ -22,10 +22,10 @@
     </script>
     <!-- End Google Tag Manager -->
     
-    <!-- Set language, title and metadata based on path -->
+    <!-- Set language, title, and metadata based on path -->
     <script>
       function updateLanguageAndMetadata() {
-        // Check if we're on alternative (Russian) page
+        // Check if we're on the /alternative page
         const isRussianPage = window.location.pathname.includes('/alternative');
         
         // Update HTML lang attribute
@@ -43,23 +43,23 @@
             ? 'Выполняю все виды пластических операций: маммопластику, блефаропластику, ринопластику, липосакцию, абдоминопластику. Пластический хирург: Львов, Днепр, Запорожье, Киев, Харьков.'
             : 'Виконую всі види пластичних операцій: мамопластику, блефаропластику, ринопластику, ліпосакцію, абдомінопластику. Пластичний хірург: Львів, Дніпро, Запоріжжя, Київ, Харків.';
         }
-        
-        // Update OG locale
+
+        // Update canonical link
+        const canonicalLink = document.querySelector('link[rel="canonical"]');
+        if (canonicalLink) {
+          canonicalLink.href = isRussianPage 
+            ? 'https://denysmarcovych.com/alternative'
+            : 'https://denysmarcovych.com.com';
+        }
+
+        // Update Open Graph locale
         const ogLocale = document.querySelector('meta[property="og:locale"]');
         if (ogLocale) {
           ogLocale.content = isRussianPage ? 'ru_RU' : 'uk_UA';
         }
-        
-        // Update canonical and og:url with proper URL
-        const currentUrl = window.location.origin + window.location.pathname;
-        const canonical = document.querySelector('link[rel="canonical"]');
-        const ogUrl = document.querySelector('meta[property="og:url"]');
-        
-        if (canonical) canonical.href = currentUrl;
-        if (ogUrl) ogUrl.content = currentUrl;
       }
-      
-      // Run immediately on page load
+
+      // Call the function to update metadata
       updateLanguageAndMetadata();
       
       // Also run when the URL changes (for single-page applications)
