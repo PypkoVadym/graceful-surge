@@ -28,9 +28,9 @@ const Index = () => {
   // Add language-specific SEO metadata
   useEffect(() => {
     if (isRussianVersion) {
-      document.title = "Пластический хирург в России Денис Маркович";
+      document.title = "Пластический хирург в Украине Денис Маркович";
       document.querySelector('meta[name="description"]')?.setAttribute('content', 
-        'Выполняю все виды пластических операций: маммопластику, блефаропластику, ринопластику, липосакцию, абдоминопластику. Пластический хирург Денис Маркович.');
+        'Выполняю все виды пластических операций: маммопластику, блефаропластику, ринопластику, липосакцию, абдоминопластику. Пластический хирург: Львов, Днепр, Запорожье, Киев, Харьков.');
     } else {
       document.title = "Пластичний хірург в Україні Денис Маркович";
       document.querySelector('meta[name="description"]')?.setAttribute('content', 
