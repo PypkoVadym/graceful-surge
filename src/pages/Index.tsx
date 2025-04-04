@@ -19,10 +19,24 @@ import ServicesSectionRu from '../components/russian/ServicesSectionRu';
 import TestimonialsSectionRu from '../components/russian/TestimonialsSectionRu';
 import ClinicSectionRu from '../components/russian/ClinicSectionRu';
 import ContactSectionRu from '../components/russian/ContactSectionRu';
+import SEOHead from '../components/SEOHead';
 
 const Index = () => {
   const location = useLocation();
   const isRussianVersion = location.pathname.includes('/alternative');
+
+  // Add language-specific SEO metadata
+  useEffect(() => {
+    if (isRussianVersion) {
+      document.title = "Пластический хирург в России Денис Маркович";
+      document.querySelector('meta[name="description"]')?.setAttribute('content', 
+        'Выполняю все виды пластических операций: маммопластику, блефаропластику, ринопластику, липосакцию, абдоминопластику. Пластический хирург Денис Маркович.');
+    } else {
+      document.title = "Пластичний хірург в Україні Денис Маркович";
+      document.querySelector('meta[name="description"]')?.setAttribute('content', 
+        'Виконую всі види пластичних операцій: мамопластику, блефаропластику, ринопластику, ліпосакцію, абдомінопластику. Пластичний хірург: Львів, Дніпро, Запоріжжя, Київ, Харків.');
+    }
+  }, [isRussianVersion]);
 
   // Smooth scroll to section when URL contains hash
   useEffect(() => {
@@ -40,6 +54,9 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
+      {/* Add SEO Head with language attributes */}
+      <SEOHead isRussianVersion={isRussianVersion} />
+      
       {isRussianVersion ? <HeaderRu /> : <Header />}
       <main>
         {isRussianVersion ? (

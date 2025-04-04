@@ -8,6 +8,10 @@
     <meta name="description" content="Виконую всі види пластичних операцій: мамопластику, блефаропластику, ринопластику, ліпосакцію, абдомінопластику. Пластичний хірург: Львів, Дніпро, Запоріжжя, Київ, Харків." />
     <meta name="author" content="Денис Маркович" />
     <meta property="og:image" content="https://i.imgur.com/NX4UBTe.jpeg" />
+    <meta property="og:locale" content="uk_UA" />
+    <meta property="og:locale:alternate" content="ru_RU" />
+    <meta property="og:url" content="" />
+    <link rel="canonical" href="" />
 
     <!-- Google Tag Manager -->
     <script>
@@ -93,6 +97,16 @@
             spinner.style.visibility = 'hidden';
           }, 500);
         }
+      });
+
+      // Set canonical and og:url properly based on current URL
+      document.addEventListener('DOMContentLoaded', function() {
+        const currentUrl = window.location.origin + window.location.pathname;
+        const canonical = document.querySelector('link[rel="canonical"]');
+        const ogUrl = document.querySelector('meta[property="og:url"]');
+        
+        if (canonical) canonical.href = currentUrl;
+        if (ogUrl) ogUrl.content = currentUrl;
       });
     </script>
   </body>
