@@ -1,3 +1,4 @@
+
 <!-- index.html - For initial load and non-JS crawlers -->
 <!DOCTYPE html>
 <html lang="uk">
@@ -29,34 +30,38 @@
     </script>
     <!-- End Google Tag Manager -->
     
-    <!-- Simple initial language/metadata setup for baseline SEO and non-JS users -->
+    <!-- Initial language/metadata setup for baseline SEO and non-JS users -->
     <script>
-      // Only run for initial page load - React component will handle subsequent changes
-      // This is for crawlers and initial page load only
-      if (window.location.pathname.includes('/alternative')) {
-        document.documentElement.lang = 'ru';
-        document.title = "Пластический хирург в Украине Денис Маркович";
+      // Set the correct title and metadata based on the current path
+      (function() {
+        var isRussianVersion = window.location.pathname.includes('/alternative');
         
-        // Update meta tags
-        const metaDesc = document.querySelector('meta[name="description"]');
-        if (metaDesc) {
-          metaDesc.content = 'Выполняю все виды пластических операций: маммопластику, блефаропластику, ринопластику, липосакцию, абдоминопластику. Пластический хирург: Львов, Днепр, Запорожье, Киев, Харьков.';
+        if (isRussianVersion) {
+          // Set Russian page metadata
+          document.documentElement.lang = 'ru';
+          document.title = "Пластический хирург в Украине Денис Маркович";
+          
+          // Update meta tags
+          var metaDesc = document.querySelector('meta[name="description"]');
+          if (metaDesc) {
+            metaDesc.content = 'Выполняю все виды пластических операций: маммопластику, блефаропластику, ринопластику, липосакцию, абдоминопластику. Пластический хирург: Львов, Днепр, Запорожье, Киев, Харьков.';
+          }
+          
+          // Update canonical and og:url
+          var canonical = document.querySelector('link[rel="canonical"]');
+          if (canonical) canonical.href = window.location.origin + '/alternative';
+          
+          var ogUrl = document.querySelector('meta[property="og:url"]');
+          if (ogUrl) ogUrl.content = window.location.origin + '/alternative';
+          
+          // Update og:locale
+          var ogLocale = document.querySelector('meta[property="og:locale"]');
+          if (ogLocale) ogLocale.content = 'ru_RU';
+          
+          var ogLocaleAlt = document.querySelector('meta[property="og:locale:alternate"]');
+          if (ogLocaleAlt) ogLocaleAlt.content = 'uk_UA';
         }
-        
-        // Update canonical and og:url
-        const canonical = document.querySelector('link[rel="canonical"]');
-        if (canonical) canonical.href = 'https://denysmarcovych.com/alternative';
-        
-        const ogUrl = document.querySelector('meta[property="og:url"]');
-        if (ogUrl) ogUrl.content = 'https://denysmarcovych.com/alternative';
-        
-        // Update og:locale
-        const ogLocale = document.querySelector('meta[property="og:locale"]');
-        if (ogLocale) ogLocale.content = 'ru_RU';
-        
-        const ogLocaleAlt = document.querySelector('meta[property="og:locale:alternate"]');
-        if (ogLocaleAlt) ogLocaleAlt.content = 'uk_UA';
-      }
+      })();
     </script>
     
     <!-- Rest of your head content -->

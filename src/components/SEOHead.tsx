@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 
 interface SEOHeadProps {
@@ -15,6 +16,8 @@ const SEOHead: React.FC<SEOHeadProps> = ({ isRussianVersion }) => {
     document.title = isRussianVersion 
       ? "Пластический хирург в Украине Денис Маркович"
       : "Пластичний хірург в Україні Денис Маркович";
+    
+    console.log("Setting title to:", isRussianVersion ? "Russian" : "Ukrainian", document.title);
 
     // Set meta description
     const metaDescription = isRussianVersion 
@@ -53,10 +56,6 @@ const SEOHead: React.FC<SEOHeadProps> = ({ isRussianVersion }) => {
     if (ogUrl) {
       ogUrl.setAttribute('content', isRussianVersion ? ruLink : ukLink);
     }
-    
-    // No need to recreate hreflang tags as they're already in the HTML
-    // and don't need to change dynamically - they just inform search engines
-    // about language alternatives regardless of which page the user is on
   }, [isRussianVersion]);
 
   return null; // This component doesn't render anything

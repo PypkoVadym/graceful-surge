@@ -25,6 +25,11 @@ const Index = () => {
   const location = useLocation();
   const isRussianVersion = location.pathname.includes('/alternative');
 
+  // Apply SEO changes as soon as possible
+  useEffect(() => {
+    console.log("Index mounted, isRussianVersion:", isRussianVersion);
+  }, [isRussianVersion]);
+
   // Smooth scroll to section when URL contains hash
   useEffect(() => {
     const hash = window.location.hash;
