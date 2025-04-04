@@ -2,7 +2,7 @@
 import React from 'react';
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 
-const ContactInfo = () => {
+const ContactInfoRu = () => {
   return (
     <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
       <h3 className="text-2xl font-semibold mb-6">Контактная информация</h3>
