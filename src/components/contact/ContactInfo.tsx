@@ -27,7 +27,7 @@ const ContactInfo = () => {
           <div>
             <h4 className="font-medium mb-1">Email</h4>
             <p className="text-muted-foreground">
-              <a href="mailto:info@aestheticmd.com" className="hover:text-primary transition-colors">
+              <a href="mailto:Denismrkv4@gmail.com" className="hover:text-primary transition-colors">
                 Denismrkv4@gmail.com
               </a>
             </p>
