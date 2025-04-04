@@ -25,19 +25,6 @@ const Index = () => {
   const location = useLocation();
   const isRussianVersion = location.pathname.includes('/alternative');
 
-  // Set page titles and metadata directly
-  useEffect(() => {
-    if (isRussianVersion) {
-      document.title = "Пластический хирург в Украине Денис Маркович";
-      document.querySelector('meta[name="description"]')?.setAttribute('content', 
-        'Выполняю все виды пластических операций: маммопластику, блефаропластику, ринопластику, липосакцию, абдоминопластику. Пластический хирург: Львов, Днепр, Запорожье, Киев, Харьков.');
-    } else {
-      document.title = "Пластичний хірург в Україні Денис Маркович";
-      document.querySelector('meta[name="description"]')?.setAttribute('content', 
-        'Виконую всі види пластичних операцій: мамопластику, блефаропластику, ринопластику, ліпосакцію, абдомінопластику. Пластичний хірург: Львів, Дніпро, Запоріжжя, Київ, Харків.');
-    }
-  }, [isRussianVersion]);
-
   // Smooth scroll to section when URL contains hash
   useEffect(() => {
     const hash = window.location.hash;

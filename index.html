@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="uk">
   <head>
@@ -21,6 +22,21 @@
       })(window,document,'script','dataLayer','GTM-T2MGBJW2');
     </script>
     <!-- End Google Tag Manager -->
+    
+    <!-- Set initial language and title based on path -->
+    <script>
+      // Initial language setup
+      if (window.location.pathname.includes('/alternative')) {
+        document.documentElement.lang = 'ru';
+        document.title = "Пластический хирург в Украине Денис Маркович";
+        
+        // Update meta description for Russian
+        var metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc) {
+          metaDesc.content = 'Выполняю все виды пластических операций: маммопластику, блефаропластику, ринопластику, липосакцию, абдоминопластику. Пластический хирург: Львов, Днепр, Запорожье, Киев, Харьков.';
+        }
+      }
+    </script>
     
     <!-- Preload critical assets -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
