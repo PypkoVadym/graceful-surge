@@ -10,7 +10,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({ isRussianVersion }) => {
     // Get the base URL without path
     const baseUrl = window.location.origin;
     const ukLink = `${baseUrl}/`;
-    const ruLink = `${baseUrl}/alternative`;
+    const ruLink = `${baseUrl}/ru`;
     
     // Set the document title based on the language
     document.title = isRussianVersion 

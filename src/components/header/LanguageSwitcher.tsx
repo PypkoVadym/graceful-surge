@@ -34,8 +34,8 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ isMobile = false })
     };
   }, []);
 
-  // Determine if we're on the alternative (Russian) page
-  const isAlternativePage = window.location.pathname.includes('/alternative');
+  // Determine if we're on the Russian page
+  const isRussianPage = window.location.pathname.includes('/ru');
 
   return (
     <div className={cn("relative", isMobile ? "mt-4" : "")} ref={dropdownRef}>
@@ -45,13 +45,13 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ isMobile = false })
         aria-expanded={isOpen}
         aria-label="Змінити мову"
       >
-        <span className="mr-1">{isAlternativePage ? 'RU' : 'UA'}</span>
+        <span className="mr-1">{isRussianPage ? 'RU' : 'UA'}</span>
         <ChevronDown size={16} className={cn("transition-transform", isOpen ? "rotate-180" : "")} />
       </button>
 
       {isOpen && (
         <div className="absolute z-50 top-full mt-1 bg-white rounded-md shadow-lg border border-gray-100 overflow-hidden">
-          {isAlternativePage ? (
+          {isRussianPage ? (
             <Link 
               to="/" 
               className="block px-4 py-2 text-sm hover:bg-gray-100"
@@ -61,7 +61,7 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ isMobile = false })
             </Link>
           ) : (
             <Link 
-              to="/alternative" 
+              to="/ru" 
               className="block px-4 py-2 text-sm hover:bg-gray-100"
               onClick={closeDropdown}
             >

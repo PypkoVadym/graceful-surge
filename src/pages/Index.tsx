@@ -23,7 +23,7 @@ import SEOHead from '../components/SEOHead';
 
 const Index = () => {
   const location = useLocation();
-  const isRussianVersion = location.pathname.includes('/alternative');
+  const isRussianVersion = location.pathname.includes('/ru');
 
   // Apply SEO changes as soon as possible
   useEffect(() => {

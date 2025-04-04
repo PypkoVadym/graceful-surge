@@ -17,7 +17,7 @@
     
     <!-- Hreflang tags for language alternates -->
     <link rel="alternate" hreflang="uk" href="https://denysmarcovych.com/" />
-    <link rel="alternate" hreflang="ru" href="https://denysmarcovych.com/alternative" />
+    <link rel="alternate" hreflang="ru" href="https://denysmarcovych.com/ru" />
     <link rel="alternate" hreflang="x-default" href="https://denysmarcovych.com/" />
 
     <!-- Google Tag Manager -->
@@ -34,7 +34,7 @@
     <script>
       // Set the correct title and metadata based on the current path
       (function() {
-        var isRussianVersion = window.location.pathname.includes('/alternative');
+        var isRussianVersion = window.location.pathname.includes('/ru');
         
         if (isRussianVersion) {
           // Set Russian page metadata
@@ -49,10 +49,10 @@
           
           // Update canonical and og:url
           var canonical = document.querySelector('link[rel="canonical"]');
-          if (canonical) canonical.href = window.location.origin + '/alternative';
+          if (canonical) canonical.href = window.location.origin + '/ru';
           
           var ogUrl = document.querySelector('meta[property="og:url"]');
-          if (ogUrl) ogUrl.content = window.location.origin + '/alternative';
+          if (ogUrl) ogUrl.content = window.location.origin + '/ru';
           
           // Update og:locale
           var ogLocale = document.querySelector('meta[property="og:locale"]');
