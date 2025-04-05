@@ -3,8 +3,9 @@ import { createRoot } from 'react-dom/client'
 import App from './App.tsx'
 import './index.css'
 import ResourceOptimizer from './components/performance/ResourceOptimizer.tsx'
+import { HelmetProvider } from 'react-helmet-async';
 
-// Remove the spinner when React is loaded
+// Remove the preload spinner when React is loaded
 const removePreloadSpinner = () => {
   const spinner = document.getElementById('preload-spinner');
   if (spinner) {
@@ -16,9 +17,11 @@ const removePreloadSpinner = () => {
 };
 
 createRoot(document.getElementById("root")!).render(
-  <ResourceOptimizer>
-    <App />
-  </ResourceOptimizer>
+  <HelmetProvider>
+    <ResourceOptimizer>
+      <App />
+    </ResourceOptimizer>
+  </HelmetProvider>
 );
 
 // Remove spinner when React has loaded
