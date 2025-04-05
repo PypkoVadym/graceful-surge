@@ -9,24 +9,17 @@ import TestimonialsSectionRu from '../components/russian/TestimonialsSectionRu';
 import ClinicSectionRu from '../components/russian/ClinicSectionRu';
 import ContactSectionRu from '../components/russian/ContactSectionRu';
 import SEOHead from '../components/SEOHead';
+import { Helmet } from 'react-helmet-async';
 
 const HomeRU = () => {
   return (
-    <div className="min-h-screen">
-      {/* Add SEO Head with Russian language attributes */}
-      <SEOHead isRussianVersion={true} />
-      
-      <Header />
-      <main>
-        <HeroSectionRu />
-        <AboutSectionRu />
-        <ServicesSectionRu />
-        <TestimonialsSectionRu />
-        <ClinicSectionRu />
-        <ContactSectionRu />
-      </main>
-      <Footer />
-    </div>
+    <>
+      <Helmet>
+        <title>ыыыыы</title>
+        <html lang="ru" />
+      </Helmet>
+      <h1>ЫЫЫЫ</h1>
+    </>
   );
 };
 
