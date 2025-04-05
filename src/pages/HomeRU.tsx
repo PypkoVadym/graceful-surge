@@ -14,11 +14,17 @@ import { Helmet } from 'react-helmet-async';
 const HomeRU = () => {
   return (
     <>
-      <Helmet>
-        <title>ыыыыы</title>
-        <html lang="ru" />
-      </Helmet>
-      <h1>ЫЫЫЫ</h1>
+      <SEOHead isRussianVersion={true} />
+      <Header />
+      <main>
+        <HeroSectionRu />
+        <AboutSectionRu />
+        <ServicesSectionRu />
+        <TestimonialsSectionRu />
+        <ClinicSectionRu />
+        <ContactSectionRu />
+      </main>
+      <Footer />
     </>
   );
 };
