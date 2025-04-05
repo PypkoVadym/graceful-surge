@@ -13,13 +13,6 @@ import TermsOfUse from "./pages/TermsOfUse";
 import ThankYou from "./pages/ThankYou";
 import ReactDOM from "react-dom";
 
-ReactDOM.render(
-  <HelmetProvider>
-    <App />
-  </HelmetProvider>,
-  document.getElementById('root')
-);
-
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -40,6 +33,14 @@ const App = () => (
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
+);
+
+// Move this ReactDOM.render call to after App is defined
+ReactDOM.render(
+  <HelmetProvider>
+    <App />
+  </HelmetProvider>,
+  document.getElementById('root')
 );
 
 export default App;
