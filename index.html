@@ -1,3 +1,4 @@
+
 <!-- index.html - For initial load and non-JS crawlers -->
 <!DOCTYPE html>
 <html lang="uk">
@@ -31,50 +32,34 @@
     
     <!-- Initial language/metadata setup for baseline SEO and non-JS users -->
     <script>
-      (function () {
-        // Check if the current path is for the Russian version
-        const isRussianVersion = window.location.pathname.includes('/ru');
-
-        // Update the HTML `lang` attribute
-        document.documentElement.lang = isRussianVersion ? 'ru' : 'uk';
-
-        // Update the page title
-        document.title = isRussianVersion
-          ? 'Пластический хирург в Украине Денис Маркович'
-          : 'Пластичний хірург в Україні Денис Маркович';
-
-        // Update the meta description
-        const metaDesc = document.querySelector('meta[name="description"]');
-        if (metaDesc) {
-          metaDesc.content = isRussianVersion
-            ? 'Выполняю все виды пластических операций: маммопластику, блефаропластику, ринопластику, липосакцию, абдоминопластику. Пластический хирург: Львов, Днепр, Запорожье, Киев, Харьков.'
-            : 'Виконую всі види пластичних операцій: мамопластику, блефаропластику, ринопластику, ліпосакцію, абдомінопластику. Пластичний хірург: Львів, Дніпро, Запоріжжя, Київ, Харків.';
-        }
-
-        // Update the canonical link
-        const canonical = document.querySelector('link[rel="canonical"]');
-        if (canonical) {
-          canonical.href = isRussianVersion
-            ? 'https://denysmarcovych.com/ru'
-            : 'https://denysmarcovych.com/';
-        }
-
-        // Update Open Graph metadata
-        const ogUrl = document.querySelector('meta[property="og:url"]');
-        if (ogUrl) {
-          ogUrl.content = isRussianVersion
-            ? 'https://denysmarcovych.com/ru'
-            : 'https://denysmarcovych.com/';
-        }
-
-        const ogLocale = document.querySelector('meta[property="og:locale"]');
-        if (ogLocale) {
-          ogLocale.content = isRussianVersion ? 'ru_RU' : 'uk_UA';
-        }
-
-        const ogLocaleAlt = document.querySelector('meta[property="og:locale:alternate"]');
-        if (ogLocaleAlt) {
-          ogLocaleAlt.content = isRussianVersion ? 'uk_UA' : 'ru_RU';
+      // Set the correct title and metadata based on the current path
+      (function() {
+        var isRussianVersion = window.location.pathname.includes('/ru');
+        
+        if (isRussianVersion) {
+          // Set Russian page metadata
+          document.documentElement.lang = 'ru';
+          document.title = "Пластический хирург в Украине Денис Маркович";
+          
+          // Update meta tags
+          var metaDesc = document.querySelector('meta[name="description"]');
+          if (metaDesc) {
+            metaDesc.content = 'Выполняю все виды пластических операций: маммопластику, блефаропластику, ринопластику, липосакцию, абдоминопластику. Пластический хирург: Львов, Днепр, Запорожье, Киев, Харьков.';
+          }
+          
+          // Update canonical and og:url
+          var canonical = document.querySelector('link[rel="canonical"]');
+          if (canonical) canonical.href = window.location.origin + '/ru';
+          
+          var ogUrl = document.querySelector('meta[property="og:url"]');
+          if (ogUrl) ogUrl.content = window.location.origin + '/ru';
+          
+          // Update og:locale
+          var ogLocale = document.querySelector('meta[property="og:locale"]');
+          if (ogLocale) ogLocale.content = 'ru_RU';
+          
+          var ogLocaleAlt = document.querySelector('meta[property="og:locale:alternate"]');
+          if (ogLocaleAlt) ogLocaleAlt.content = 'uk_UA';
         }
       })();
     </script>
