@@ -14,8 +14,8 @@ const SEOHead: React.FC<SEOHeadProps> = ({ isRussianVersion }) => {
     
     // Set the document title based on the language
     document.title = isRussianVersion 
-      ? "Пластический хирург в Украине Бодя Ярош"
-      : "Пластичний хірург в Україні Бодя Ярош";
+      ? "Пластический хирург в Украине Денис Маркович"
+      : "Пластичний хірург в Україні Денис Маркович";
     
     console.log("Setting title to:", isRussianVersion ? "Russian" : "Ukrainian", document.title);
 
