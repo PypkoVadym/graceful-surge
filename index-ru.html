@@ -1,0 +1,102 @@
+
+<!-- index.html - For initial load and non-JS crawlers -->
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Default Ukrainian title -->
+    <title>ыыыыыы</title>
+    <meta name="description" content="ыыыыыыыыыыы" />
+    <meta name="author" content="Денис Маркович" />
+    <meta property="og:image" content="https://i.imgur.com/NX4UBTe.jpeg" />
+    <meta property="og:locale" content="uk_UA" />
+    <meta property="og:locale:alternate" content="ru_RU" />
+    <meta property="og:url" content="https://denysmarcovych.com/" />
+    <link rel="canonical" href="https://denysmarcovych.com/" />
+    
+    <!-- Hreflang tags for language alternates -->
+    <link rel="alternate" hreflang="uk" href="https://denysmarcovych.com/" />
+    <link rel="alternate" hreflang="ru" href="https://denysmarcovych.com/ru" />
+    <link rel="alternate" hreflang="x-default" href="https://denysmarcovych.com/" />
+
+    <!-- Google Tag Manager -->
+    <script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-T2MGBJW2');
+    </script>
+    <!-- End Google Tag Manager -->
+    
+    <!-- Initial language/metadata setup for baseline SEO and non-JS users -->
+    <script>
+      // Set the correct title and metadata based on the current path
+      (function() {
+        var isRussianVersion = window.location.pathname.includes('/ru');
+        
+        if (isRussianVersion) {
+          // Set Russian page metadata
+          document.documentElement.lang = 'ru';
+          document.title = "Пластический хирург в Украине Денис Маркович";
+          
+          // Update meta tags
+          var metaDesc = document.querySelector('meta[name="description"]');
+          if (metaDesc) {
+            metaDesc.content = 'Выполняю все виды пластических операций: маммопластику, блефаропластику, ринопластику, липосакцию, абдоминопластику. Пластический хирург: Львов, Днепр, Запорожье, Киев, Харьков.';
+          }
+          
+          // Update canonical and og:url
+          var canonical = document.querySelector('link[rel="canonical"]');
+          if (canonical) canonical.href = window.location.origin + '/ru';
+          
+          var ogUrl = document.querySelector('meta[property="og:url"]');
+          if (ogUrl) ogUrl.content = window.location.origin + '/ru';
+          
+          // Update og:locale
+          var ogLocale = document.querySelector('meta[property="og:locale"]');
+          if (ogLocale) ogLocale.content = 'ru_RU';
+          
+          var ogLocaleAlt = document.querySelector('meta[property="og:locale:alternate"]');
+          if (ogLocaleAlt) ogLocaleAlt.content = 'uk_UA';
+        }
+      })();
+    </script>
+    
+    <!-- Rest of your head content -->
+    <!-- ... -->
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T2MGBJW2"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Preload spinner -->
+    <div class="preload-spinner" id="preload-spinner">
+      <div class="spinner"></div>
+    </div>
+    
+    <div id="root"></div>
+    
+    <!-- Your scripts -->
+    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+    <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Preload removal script -->
+    <script>
+      window.addEventListener('load', function() {
+        const spinner = document.getElementById('preload-spinner');
+        if (spinner) {
+          spinner.style.opacity = '0';
+          setTimeout(() => {
+            spinner.style.visibility = 'hidden';
+          }, 500);
+        }
+      });
+    </script>
+  </body>
+</html>
