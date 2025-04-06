@@ -27,7 +27,7 @@ export default defineConfig(({ mode }) => ({
         main: path.resolve(__dirname, 'index.html'),
         
         // Language-specific files (subfolders)
-        ua: path.resolve(__dirname, 'index-ru.html'),
+        ru: path.resolve(__dirname, 'index-ru.html'),
       },
       output: {
         // Default index.html (at the root level)
