@@ -59,7 +59,7 @@ const HeroSection = () => {
             />
             <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-lg animate-scale-in">
               <p className="text-sm font-medium">Денис Маркович</p>
-              <p className="text-xs text-muted-foreground">Пластичний космонавт</p>
+              <p className="text-xs text-muted-foreground">Пластичний хірург</p>
             </div>
           </div>
         </div>
