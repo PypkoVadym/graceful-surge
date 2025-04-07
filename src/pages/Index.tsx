@@ -44,38 +44,38 @@ const Index = () => {
     }
   }, []);
 
-  // return (
-  //   <div className="min-h-screen">
-  //     {/* Add SEO Head with language attributes */}
-  //     <SEOHead isRussianVersion={isRussianVersion} />
+  return (
+    <div className="min-h-screen">
+      {/* Add SEO Head with language attributes */}
+      <SEOHead isRussianVersion={isRussianVersion} />
       
-  //     {isRussianVersion ? <HeaderRu /> : <Header />}
-  //     <main>
-  //       {isRussianVersion ? (
-  //         // Russian content
-  //         <>
-  //           <HeroSectionRu />
-  //           <AboutSectionRu />
-  //           <ServicesSectionRu />
-  //           <TestimonialsSectionRu />
-  //           <ClinicSectionRu />
-  //           <ContactSectionRu />
-  //         </>
-  //       ) : (
-  //         // Ukrainian content
-  //         <>
-  //           <HeroSection />
-  //           <AboutSection />
-  //           <ServicesSection />
-  //           <TestimonialsSection />
-  //           <ClinicSection />
-  //           <ContactSection />
-  //         </>
-  //       )}
-  //     </main>
-  //     {isRussianVersion ? <FooterRu /> : <Footer />}
-  //   </div>
-  // );
+      {isRussianVersion ? <HeaderRu /> : <Header />}
+      <main>
+        {isRussianVersion ? (
+          // Russian content
+          <>
+            <HeroSectionRu />
+            <AboutSectionRu />
+            <ServicesSectionRu />
+            <TestimonialsSectionRu />
+            <ClinicSectionRu />
+            <ContactSectionRu />
+          </>
+        ) : (
+          // Ukrainian content
+          <>
+            <HeroSection />
+            <AboutSection />
+            <ServicesSection />
+            <TestimonialsSection />
+            <ClinicSection />
+            <ContactSection />
+          </>
+        )}
+      </main>
+      {isRussianVersion ? <FooterRu /> : <Footer />}
+    </div>
+  );
 };
 
 export default Index;
