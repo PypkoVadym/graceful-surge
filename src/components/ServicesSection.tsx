@@ -2,20 +2,15 @@
 import React from 'react';
 import SectionHeading from './ui/SectionHeading';
 import ImageSlider from './ui/ImageSlider';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Check } from 'lucide-react';
 import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell } from './ui/table';
+import { Separator } from './ui/separator';
 
 const ServicesSection = () => {
   // Sample service data
   const breastServices = {
     title: "Процедури для грудей (мамопластика)",
     description: "Сучасні методи корекції форми грудей, включно з пластичним ліфтингом, підняттям та омолодженням грудей, дозволяють досягти бажаного результату завдяки індивідуально підібраним підходам.",
-    details: [
-      "Збільшення грудей",
-      "Підтяжка грудей (мастопексія)",
-      "Зменшення грудей",
-      "Реконструкція грудей"
-    ],
     prices: [
       {procedure: "Збільшення грудей", price: "від 120000 грн"},
       {procedure: "Підтяжка грудей (мастопексія)", price: "від 90000 грн"},
@@ -32,13 +27,6 @@ const ServicesSection = () => {
   const facialServices = {
     title: "Процедури для обличчя",
     description: "Інноваційні методики спрямовані на омолодження погляду, ефективне усунення «мішків» під очима, а також включають пластику носа — сучасну операцію на носі, що допомагає гармонізувати риси обличчя та підкреслити природну красу.",
-    details: [
-      "Ринопластика (естетична і функціональна)",
-      "Пластика повік (блефаропластика)",
-      "Підтяжка обличчя та шиї",
-      "Відновлення форми обличчя (ліпофілінг)",
-      "Безопераційне омолодження обличчя"
-    ],
     prices: [
       {procedure: "Ринопластика (естетична і функціональна)", price: "від 70000 грн"},
       {procedure: "Пластика повік (блефаропластика)", price: "від 40000 грн"},
@@ -56,13 +44,6 @@ const ServicesSection = () => {
   const bodyServices = {
     title: "Контурна пластика тіла",
     description: "Корекція контурів тіла, пересадка жиру, пластика живота чи видалення зайвої шкіри — у нас є рішення, що відповідає саме вашому баченню ідеального тіла.",
-    details: [
-      "Ліпосакція та скульптурування тіла",
-      "Абдомінопластика",
-      "RF-lifting (створення нового колагену)",
-      "Відновлення живота після пологів",
-      "Контурна пластика після схуднення"
-    ],
     prices: [
       {procedure: "Ліпосакція та скульптурування тіла", price: "від 85000 грн"},
       {procedure: "Абдомінопластика", price: "від 95000 грн"},
@@ -95,28 +76,22 @@ const ServicesSection = () => {
             <h3 className="text-2xl md:text-3xl font-semibold mb-4">{facialServices.title}</h3>
             <p className="text-muted-foreground mb-6">{facialServices.description}</p>
             
-            <ul className="space-y-3 mb-6">
-              {facialServices.details.map((item, index) => (
-                <li key={index} className="flex items-start">
-                  <span className="inline-flex items-center justify-center w-5 h-5 bg-primary rounded-full text-white text-xs mr-3 mt-0.5">✓</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-            
-            <div className="mb-6 overflow-hidden rounded-lg border">
+            <div className="mb-6 overflow-hidden rounded-lg border bg-white shadow-sm">
               <Table>
-                <TableHeader>
+                <TableHeader className="bg-muted">
                   <TableRow>
-                    <TableHead className="font-medium">Процедура</TableHead>
-                    <TableHead className="text-right font-medium">Вартість</TableHead>
+                    <TableHead className="font-semibold text-foreground w-2/3">Процедура</TableHead>
+                    <TableHead className="text-right font-semibold text-foreground">Вартість</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
                   {facialServices.prices.map((price, index) => (
-                    <TableRow key={index}>
-                      <TableCell className="font-medium">{price.procedure}</TableCell>
-                      <TableCell className="text-right">{price.price}</TableCell>
+                    <TableRow key={index} className={index % 2 === 0 ? "bg-white" : "bg-muted/30"}>
+                      <TableCell className="font-medium flex items-center gap-2">
+                        <Check size={16} className="text-primary shrink-0" />
+                        {price.procedure}
+                      </TableCell>
+                      <TableCell className="text-right font-semibold">{price.price}</TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
@@ -140,6 +115,8 @@ const ServicesSection = () => {
           </div>
         </div>
         
+        <Separator className="my-8" />
+        
         {/* Service 2: Body Contouring */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-24 animate-fade-in">
           <div className="order-2 lg:order-1 animate-scale-in">
@@ -157,28 +134,22 @@ const ServicesSection = () => {
             <h3 className="text-2xl md:text-3xl font-semibold mb-4">{bodyServices.title}</h3>
             <p className="text-muted-foreground mb-6">{bodyServices.description}</p>
             
-            <ul className="space-y-3 mb-6">
-              {bodyServices.details.map((item, index) => (
-                <li key={index} className="flex items-start">
-                  <span className="inline-flex items-center justify-center w-5 h-5 bg-primary rounded-full text-white text-xs mr-3 mt-0.5">✓</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-            
-            <div className="mb-6 overflow-hidden rounded-lg border">
+            <div className="mb-6 overflow-hidden rounded-lg border bg-white shadow-sm">
               <Table>
-                <TableHeader>
+                <TableHeader className="bg-muted">
                   <TableRow>
-                    <TableHead className="font-medium">Процедура</TableHead>
-                    <TableHead className="text-right font-medium">Вартість</TableHead>
+                    <TableHead className="font-semibold text-foreground w-2/3">Процедура</TableHead>
+                    <TableHead className="text-right font-semibold text-foreground">Вартість</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
                   {bodyServices.prices.map((price, index) => (
-                    <TableRow key={index}>
-                      <TableCell className="font-medium">{price.procedure}</TableCell>
-                      <TableCell className="text-right">{price.price}</TableCell>
+                    <TableRow key={index} className={index % 2 === 0 ? "bg-white" : "bg-muted/30"}>
+                      <TableCell className="font-medium flex items-center gap-2">
+                        <Check size={16} className="text-primary shrink-0" />
+                        {price.procedure}
+                      </TableCell>
+                      <TableCell className="text-right font-semibold">{price.price}</TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
@@ -194,6 +165,8 @@ const ServicesSection = () => {
           </div>
         </div>
         
+        <Separator className="my-8" />
+        
         {/* Service 3: Breast Procedures */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center animate-fade-in">
           <div>
@@ -203,28 +176,22 @@ const ServicesSection = () => {
             <h3 className="text-2xl md:text-3xl font-semibold mb-4">{breastServices.title}</h3>
             <p className="text-muted-foreground mb-6">{breastServices.description}</p>
             
-            <ul className="space-y-3 mb-6">
-              {breastServices.details.map((item, index) => (
-                <li key={index} className="flex items-start">
-                  <span className="inline-flex items-center justify-center w-5 h-5 bg-primary rounded-full text-white text-xs mr-3 mt-0.5">✓</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-            
-            <div className="mb-6 overflow-hidden rounded-lg border">
+            <div className="mb-6 overflow-hidden rounded-lg border bg-white shadow-sm">
               <Table>
-                <TableHeader>
+                <TableHeader className="bg-muted">
                   <TableRow>
-                    <TableHead className="font-medium">Процедура</TableHead>
-                    <TableHead className="text-right font-medium">Вартість</TableHead>
+                    <TableHead className="font-semibold text-foreground w-2/3">Процедура</TableHead>
+                    <TableHead className="text-right font-semibold text-foreground">Вартість</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
                   {breastServices.prices.map((price, index) => (
-                    <TableRow key={index}>
-                      <TableCell className="font-medium">{price.procedure}</TableCell>
-                      <TableCell className="text-right">{price.price}</TableCell>
+                    <TableRow key={index} className={index % 2 === 0 ? "bg-white" : "bg-muted/30"}>
+                      <TableCell className="font-medium flex items-center gap-2">
+                        <Check size={16} className="text-primary shrink-0" />
+                        {price.procedure}
+                      </TableCell>
+                      <TableCell className="text-right font-semibold">{price.price}</TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
