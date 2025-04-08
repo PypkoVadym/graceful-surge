@@ -18,7 +18,17 @@ const ServicesSection = () => {
           centered={true}
         />
         
-        {/* Service 1: Facial Procedures */}
+        {/* Service 1: Breast Procedures */}
+        <BreastService 
+          title={breastServices.title}
+          description={breastServices.description}
+          prices={breastServices.prices}
+          images={breastServices.images}
+        />
+        
+        <Separator className="my-8" />
+        
+        {/* Service 2: Facial Procedures */}
         <FacialService 
           title={facialServices.title}
           description={facialServices.description}
@@ -28,22 +38,12 @@ const ServicesSection = () => {
         
         <Separator className="my-8" />
         
-        {/* Service 2: Body Contouring */}
+        {/* Service 3: Body Contouring */}
         <BodyService 
           title={bodyServices.title}
           description={bodyServices.description}
           prices={bodyServices.prices}
           images={bodyServices.images}
-        />
-        
-        <Separator className="my-8" />
-        
-        {/* Service 3: Breast Procedures */}
-        <BreastService 
-          title={breastServices.title}
-          description={breastServices.description}
-          prices={breastServices.prices}
-          images={breastServices.images}
         />
       </div>
     </section>
