@@ -1,7 +1,9 @@
+
 import React from 'react';
 import SectionHeading from './ui/SectionHeading';
 import ImageSlider from './ui/ImageSlider';
 import { ArrowRight } from 'lucide-react';
+import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell } from './ui/table';
 
 const ServicesSection = () => {
   // Sample service data
@@ -13,6 +15,12 @@ const ServicesSection = () => {
       "Підтяжка грудей (мастопексія)",
       "Зменшення грудей",
       "Реконструкція грудей"
+    ],
+    prices: [
+      {procedure: "Збільшення грудей", price: "від 120000 грн"},
+      {procedure: "Підтяжка грудей (мастопексія)", price: "від 90000 грн"},
+      {procedure: "Зменшення грудей", price: "від 100000 грн"},
+      {procedure: "Реконструкція грудей", price: "від 150000 грн"}
     ],
     images: [
       "/images/mamo1.jpg",
@@ -31,6 +39,13 @@ const ServicesSection = () => {
       "Відновлення форми обличчя (ліпофілінг)",
       "Безопераційне омолодження обличчя"
     ],
+    prices: [
+      {procedure: "Ринопластика (естетична і функціональна)", price: "від 70000 грн"},
+      {procedure: "Пластика повік (блефаропластика)", price: "від 40000 грн"},
+      {procedure: "Підтяжка обличчя та шиї", price: "від 110000 грн"},
+      {procedure: "Відновлення форми обличчя (ліпофілінг)", price: "від 60000 грн"},
+      {procedure: "Безопераційне омолодження обличчя", price: "від 15000 грн"}
+    ],
     images: [
       "https://i.imgur.com/bBbQdor.jpeg",
       "https://i.imgur.com/Uxnfrto.jpeg",
@@ -47,6 +62,13 @@ const ServicesSection = () => {
       "RF-lifting (створення нового колагену)",
       "Відновлення живота після пологів",
       "Контурна пластика після схуднення"
+    ],
+    prices: [
+      {procedure: "Ліпосакція та скульптурування тіла", price: "від 85000 грн"},
+      {procedure: "Абдомінопластика", price: "від 95000 грн"},
+      {procedure: "RF-lifting (створення нового колагену)", price: "від 30000 грн"},
+      {procedure: "Відновлення живота після пологів", price: "від 110000 грн"},
+      {procedure: "Контурна пластика після схуднення", price: "від 80000 грн"}
     ],
     images: [
       "https://i.imgur.com/AEqzc88.jpeg",
@@ -81,6 +103,25 @@ const ServicesSection = () => {
                 </li>
               ))}
             </ul>
+            
+            <div className="mb-6 overflow-hidden rounded-lg border">
+              <Table>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead className="font-medium">Процедура</TableHead>
+                    <TableHead className="text-right font-medium">Вартість</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {facialServices.prices.map((price, index) => (
+                    <TableRow key={index}>
+                      <TableCell className="font-medium">{price.procedure}</TableCell>
+                      <TableCell className="text-right">{price.price}</TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </div>
             
             <button 
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
@@ -125,6 +166,25 @@ const ServicesSection = () => {
               ))}
             </ul>
             
+            <div className="mb-6 overflow-hidden rounded-lg border">
+              <Table>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead className="font-medium">Процедура</TableHead>
+                    <TableHead className="text-right font-medium">Вартість</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {bodyServices.prices.map((price, index) => (
+                    <TableRow key={index}>
+                      <TableCell className="font-medium">{price.procedure}</TableCell>
+                      <TableCell className="text-right">{price.price}</TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </div>
+            
             <button 
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               className="inline-flex items-center text-primary font-medium hover:underline"
@@ -151,6 +211,25 @@ const ServicesSection = () => {
                 </li>
               ))}
             </ul>
+            
+            <div className="mb-6 overflow-hidden rounded-lg border">
+              <Table>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead className="font-medium">Процедура</TableHead>
+                    <TableHead className="text-right font-medium">Вартість</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {breastServices.prices.map((price, index) => (
+                    <TableRow key={index}>
+                      <TableCell className="font-medium">{price.procedure}</TableCell>
+                      <TableCell className="text-right">{price.price}</TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </div>
             
             <button 
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
