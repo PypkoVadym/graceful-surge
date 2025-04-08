@@ -30,7 +30,7 @@ export const facialServices: ServiceData = {
     {procedure: "Пластика век (блефаропластика)", price: "от 1300 €"},
     {procedure: "Подтяжка лица и шеи", price: "от 8000 €"},
     {procedure: "Восстановление формы лица (липофилинг)", price: "от 800 €"},
-    {procedure: "Безоперационное омоложение лица (1 зона)", price: "от 200 €"}
+    {procedure: "Шлифовка лица (1 зона)", price: "от 200 €"}
   ],
   images: [
     "https://i.imgur.com/bBbQdor.jpeg",
