@@ -50,9 +50,9 @@ const ServicesSectionRu = () => {
       "Реконструкция груди"
     ],
     images: [
-      "/images/mamo 1.jpg",
-      "/images/mamo 2.jpg",
-      "/images/mamo 3.jpg"
+      "/images/mamo1.jpg",
+      "/images/mamo2.jpg",
+      "/images/mamo3.jpg"
     ]
   };
 
