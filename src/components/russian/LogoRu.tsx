@@ -8,9 +8,7 @@ interface LogoRuProps {
 const LogoRu: React.FC<LogoRuProps> = ({ onClick }) => {
   return (
     <div className="flex items-center">
-      <a 
-        href="#" 
-        className="text-2xl font-display font-semibold tracking-tight"
+      <a className="text-2xl font-display font-semibold tracking-tight"
         onClick={onClick}
       >
         <span className="text-primary">Денис</span>Маркович
