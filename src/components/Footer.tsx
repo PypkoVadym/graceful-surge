@@ -15,7 +15,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Logo & About */}
           <div className="space-y-4">
-            <a href="#" className="text-2xl font-display font-semibold tracking-tight inline-block">
+            <a className="text-2xl font-display font-semibold tracking-tight inline-block">
               <span className="text-primary">Денис</span>Маркович
             </a>
             <p className="text-muted-foreground text-sm">
