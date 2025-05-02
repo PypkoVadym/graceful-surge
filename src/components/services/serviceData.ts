@@ -50,6 +50,6 @@ export const bodyServices: ServiceData = {
   ],
   images: [
     "https://i.imgur.com/AEqzc88.jpeg",
-    "/images/lipo1.jpg"
+    //"/images/lipo1.jpg"
   ]
 };
