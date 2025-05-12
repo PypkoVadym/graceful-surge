@@ -35,16 +35,6 @@ const ServicesSectionRu = () => {
           prices={facialServices.prices}
           images={facialServices.images}
         />
-        
-        <Separator className="my-8" />
-        
-        {/* Service 3: Body Contouring */}
-        <BodyServiceRu 
-          title={bodyServices.title}
-          description={bodyServices.description}
-          prices={bodyServices.prices}
-          images={bodyServices.images}
-        />
       </div>
     </section>
   );
