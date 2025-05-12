@@ -1,8 +1,8 @@
 
 import React from 'react';
 import ImageSlider from '../ui/ImageSlider';
-import { ServicePrice } from './ServiceTable';
-import ServiceTable from './ServiceTable';
+import { ServicePrice } from './ServiceBulletList';
+import ServiceBulletList from './ServiceBulletList';
 import ConsultationButton from './ConsultationButton';
 
 interface BreastServiceProps {
@@ -22,7 +22,7 @@ const BreastService = ({ title, description, prices, images }: BreastServiceProp
         <h3 className="text-2xl md:text-3xl font-semibold mb-4">{title}</h3>
         <p className="text-muted-foreground mb-6">{description}</p>
         
-        <ServiceTable prices={prices} />
+        <ServiceBulletList prices={prices} />
         
         <ConsultationButton />
       </div>

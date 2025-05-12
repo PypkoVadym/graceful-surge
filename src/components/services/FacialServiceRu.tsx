@@ -1,8 +1,8 @@
 
 import React from 'react';
 import ImageSlider from '../ui/ImageSlider';
-import { ServicePrice } from './ServiceTableRu';
-import ServiceTableRu from './ServiceTableRu';
+import { ServicePrice } from './ServiceBulletListRu';
+import ServiceBulletListRu from './ServiceBulletListRu';
 import ConsultationButtonRu from './ConsultationButtonRu';
 
 interface FacialServiceProps {
@@ -30,7 +30,7 @@ const FacialServiceRu = ({ title, description, prices, images }: FacialServicePr
         <h3 className="text-2xl md:text-3xl font-semibold mb-4">{title}</h3>
         <p className="text-muted-foreground mb-6">{description}</p>
         
-        <ServiceTableRu prices={prices} />
+        <ServiceBulletListRu prices={prices} />
         
         <ConsultationButtonRu />
       </div>

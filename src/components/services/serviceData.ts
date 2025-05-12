@@ -30,6 +30,7 @@ export const facialServices: ServiceData = {
     {procedure: "Пластика повік (блефаропластика)", price: "від 1300 €"},
     {procedure: "Підтяжка обличчя та шиї", price: "від 8000 €"},
     {procedure: "Відновлення форми обличчя (ліпофілінг)", price: "від 800 €"},
+    {procedure: "Безопераційне омолодження обличчя", price: ""},
     {procedure: "Шліфування лазерем (1 зона)", price: "від 200 €"}
   ],
   images: [
