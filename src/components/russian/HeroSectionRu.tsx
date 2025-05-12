@@ -37,7 +37,7 @@ const HeroSectionRu = () => {
                 onClick={scrollToContact}
                 className="bg-primary hover:bg-primary/90 text-white rounded-full px-8 py-3 font-medium transition-all duration-300 shadow-md hover:shadow-lg"
               >
-                Записаться на консультацию <ArrowRight className="inline ml-2" size={16} />
+                Бесплатная консультация <ArrowRight className="inline ml-2" size={16} />
               </button>
               <button
                 onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}

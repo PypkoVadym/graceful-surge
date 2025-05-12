@@ -13,7 +13,7 @@ const ContactSectionRu = () => {
       <div className="container mx-auto px-4 md:px-6">
         <SectionHeading
           pretitle="Связаться с нами"
-          title="Запишитесь на бесплатную консультацию"
+          title="Запишитесь на бесплатную онлайн консультацию"
           description="Сделайте первый шаг к достижению ваших эстетических целей, записавшись на персональную бесплатную консультацию."
           centered={true}
         />

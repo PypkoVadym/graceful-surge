@@ -96,7 +96,7 @@ const ClinicSection = () => {
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               className="bg-white hover:bg-gray-50 text-foreground rounded-full px-8 py-3 font-medium transition-all duration-300 shadow-sm hover:shadow-md border border-gray-100"
             >
-              Записатися на консультацію
+              Безкоштовна консультація
             </button>
           </div>
           

@@ -64,7 +64,7 @@ const Footer = () => {
                   onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
-                  Зв'язатися з нами
+                  Безкоштовна консультація
                 </button>
               </li>
             </ul>

@@ -64,7 +64,7 @@ const FooterRu = () => {
                   onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
-                  Связаться с нами
+                  Бесплатная консультация
                 </button>
               </li>
             </ul>

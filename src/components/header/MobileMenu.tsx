@@ -61,7 +61,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
           onClick={() => scrollToSection('contact')}
           className="bg-primary text-white rounded-lg py-3 text-center font-medium mt-4"
         >
-          Зв'язатися з нами
+          Безкоштовна консультація
         </button>
         
         {/* Language Switcher - Mobile */}

@@ -8,7 +8,7 @@ const ConsultationButton = () => {
       onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
       className="inline-flex items-center text-primary font-medium hover:underline"
     >
-      Записатися на безкоштовну консультацію <ArrowRight className="ml-1" size={16} />
+      Записатися на безкоштовну онлайн консультацію <ArrowRight className="ml-1" size={16} />
     </button>
   );
 };

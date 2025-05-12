@@ -37,7 +37,7 @@ const DesktopNavigation: React.FC<DesktopNavigationProps> = ({ scrollToSection }
         onClick={() => scrollToSection('contact')}
         className="bg-primary hover:bg-primary/90 text-white rounded-full px-5 py-2 text-sm font-medium transition-colors"
       >
-        Зв'язатися з нами
+        Безкоштовна консультація
       </Button>
     </nav>
   );
