@@ -18,7 +18,7 @@ export const breastServices: ServiceData = {
   images: [
     "/images/mamo1.jpg",
     "/images/mamo2.jpg",
-    "/images/mamo3.jpg"
+    "/images/.jpg"
   ]
 };
 
@@ -49,7 +49,8 @@ export const bodyServices: ServiceData = {
     {procedure: "Боділіфтинг", price: ""}
   ],
   images: [
-    "https://i.imgur.com/AEqzc88.jpeg",
+   // "https://i.imgur.com/AEqzc88.jpeg",
+    "/images/lipo2.jpg"
     //"/images/lipo1.jpg"
   ]
 };

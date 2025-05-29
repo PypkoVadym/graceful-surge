@@ -49,7 +49,8 @@ export const bodyServices: ServiceData = {
     {procedure: "Бодилифтинг", price: ""}
   ],
   images: [
-    "https://i.imgur.com/AEqzc88.jpeg",
-    // "/images/lipo1.jpg"
+     // "https://i.imgur.com/AEqzc88.jpeg",
+     "/images/lipo2.jpg"
+     //"/images/lipo1.jpg"
   ]
 };
