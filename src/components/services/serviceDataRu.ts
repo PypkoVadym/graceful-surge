@@ -4,6 +4,7 @@ export interface ServiceData {
   description: string;
   prices: { procedure: string; price: string }[];
   images: string[];
+  redirectUrls?: string[]; // Added optional redirect URLs
 }
 
 export const breastServices: ServiceData = {
@@ -19,6 +20,11 @@ export const breastServices: ServiceData = {
     "/images/mamo1.jpg",
     "/images/mamo2.jpg",
     "/images/mamo3.jpg"
+  ],
+  redirectUrls: [
+    "#contact",
+    "#contact",
+    "#contact"
   ]
 };
 
@@ -36,6 +42,11 @@ export const facialServices: ServiceData = {
     "https://i.imgur.com/bBbQdor.jpeg",
     "https://i.imgur.com/Uxnfrto.jpeg",
     "https://i.imgur.com/RwsO9XW.jpeg"
+  ],
+  redirectUrls: [
+    "#contact",
+    "#contact",
+    "#contact"
   ]
 };
 
@@ -52,5 +63,8 @@ export const bodyServices: ServiceData = {
      // "https://i.imgur.com/AEqzc88.jpeg",
      "/images/lipo2.jpg"
      //"/images/lipo1.jpg"
+  ],
+  redirectUrls: [
+    "#contact"
   ]
 };

@@ -10,9 +10,26 @@ interface BreastServiceProps {
   description: string;
   prices: ServicePrice[];
   images: string[];
+  redirectUrls?: string[];
 }
 
-const BreastServiceRu = ({ title, description, prices, images }: BreastServiceProps) => {
+const BreastServiceRu = ({ title, description, prices, images, redirectUrls }: BreastServiceProps) => {
+  const handleImageClick = (imageIndex: number) => {
+    if (redirectUrls && redirectUrls[imageIndex]) {
+      const url = redirectUrls[imageIndex];
+      if (url.startsWith('#')) {
+        // Internal anchor link
+        const element = document.getElementById(url.substring(1));
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      } else {
+        // External link
+        window.open(url, '_blank');
+      }
+    }
+  };
+
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center animate-fade-in">
       <div>
@@ -32,6 +49,7 @@ const BreastServiceRu = ({ title, description, prices, images }: BreastServicePr
           images={images} 
           alt="увеличение груди, подтяжка груди, уменьшение груди"
           aspectRatio="wide"
+          onImageClick={handleImageClick}
         />
       </div>
     </div>

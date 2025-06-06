@@ -10,9 +10,26 @@ interface FacialServiceProps {
   description: string;
   prices: ServicePrice[];
   images: string[];
+  redirectUrls?: string[];
 }
 
-const FacialService = ({ title, description, prices, images }: FacialServiceProps) => {
+const FacialService = ({ title, description, prices, images, redirectUrls }: FacialServiceProps) => {
+  const handleImageClick = (imageIndex: number) => {
+    if (redirectUrls && redirectUrls[imageIndex]) {
+      const url = redirectUrls[imageIndex];
+      if (url.startsWith('#')) {
+        // Internal anchor link
+        const element = document.getElementById(url.substring(1));
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      } else {
+        // External link
+        window.open(url, '_blank');
+      }
+    }
+  };
+
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-24 animate-fade-in">
       <div className="order-2 lg:order-1 animate-scale-in">
@@ -20,6 +37,7 @@ const FacialService = ({ title, description, prices, images }: FacialServiceProp
           images={images} 
           alt="корекція верхніх повік, корекція нижніх повік, хірургія повік, вирівнювання носової перетинки"
           aspectRatio="wide"
+          onImageClick={handleImageClick}
         />
       </div>
       

@@ -24,6 +24,7 @@ const ServicesSection = () => {
           description={breastServices.description}
           prices={breastServices.prices}
           images={breastServices.images}
+          redirectUrls={breastServices.redirectUrls}
         />
         
         <Separator className="my-8" />
@@ -34,6 +35,7 @@ const ServicesSection = () => {
           description={facialServices.description}
           prices={facialServices.prices}
           images={facialServices.images}
+          redirectUrls={facialServices.redirectUrls}
         />
         
         <Separator className="my-8" />
@@ -44,6 +46,7 @@ const ServicesSection = () => {
           description={bodyServices.description}
           prices={bodyServices.prices}
           images={bodyServices.images}
+          redirectUrls={bodyServices.redirectUrls}
         />
       </div>
     </section>

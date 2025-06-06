@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
@@ -8,12 +7,12 @@ interface ImageSliderProps {
   images: string[];
   className?: string;
   aspectRatio?: 'square' | 'video' | 'wide' | 'portrait';
-  // Aspect ratio options: 'square', 'video', 'wide', 'portrait'
   autoplay?: boolean;
   interval?: number;
   width?: string;
   height?: string;
-  alt?: string; // Added alt property to the interface
+  alt?: string;
+  onImageClick?: (imageIndex: number) => void;
 }
 
 const ImageSlider = ({
@@ -24,7 +23,8 @@ const ImageSlider = ({
   interval = 5000,
   width,
   height,
-  alt = 'Image slide', // Added alt with a default value
+  alt = 'Image slide',
+  onImageClick,
 }: ImageSliderProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -64,7 +64,12 @@ const ImageSlider = ({
     }
   };
 
-  // Reset isLoaded when changing slides
+  const handleImageClick = () => {
+    if (onImageClick) {
+      onImageClick(currentIndex);
+    }
+  };
+
   useEffect(() => {
     setIsLoaded(imagesLoaded[currentIndex]);
   }, [currentIndex, imagesLoaded]);
@@ -95,6 +100,7 @@ const ImageSlider = ({
       className={cn(
         'relative overflow-hidden rounded-2xl group',
         !width && !height ? aspectRatioClass : '',
+        onImageClick ? 'cursor-pointer' : '',
         className
       )}
       onTouchStart={handleTouchStart}
@@ -103,6 +109,7 @@ const ImageSlider = ({
         width: width || '',
         height: height || '',
       }}
+      onClick={handleImageClick}
     >
       {images.map((image, index) => (
         <div
@@ -119,7 +126,7 @@ const ImageSlider = ({
           )} />
           <ImageOptimizer
             src={image}
-            alt={`${alt} ${index + 1}`} // Using the alt prop with index for better accessibility
+            alt={`${alt} ${index + 1}`}
             className="w-full h-full object-contain transition-transform duration-500 ease-out"
             priority={index === 0}
             onLoad={() => handleImageLoad(index)}
@@ -132,14 +139,20 @@ const ImageSlider = ({
       
       {/* Navigation Buttons */}
       <button 
-        onClick={goToPrevSlide}
+        onClick={(e) => {
+          e.stopPropagation();
+          goToPrevSlide();
+        }}
         className="absolute left-3 top-1/2 transform -translate-y-1/2 z-20 bg-white/80 text-primary p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
         aria-label="Previous slide"
       >
         <ChevronLeft size={20} />
       </button>
       <button 
-        onClick={goToNextSlide}
+        onClick={(e) => {
+          e.stopPropagation();
+          goToNextSlide();
+        }}
         className="absolute right-3 top-1/2 transform -translate-y-1/2 z-20 bg-white/80 text-primary p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
         aria-label="Next slide"
       >
@@ -151,7 +164,10 @@ const ImageSlider = ({
         {images.map((_, index) => (
           <button
             key={index}
-            onClick={() => setCurrentIndex(index)}
+            onClick={(e) => {
+              e.stopPropagation();
+              setCurrentIndex(index);
+            }}
             className={cn(
               'w-2 h-2 rounded-full transition-all duration-300',
               currentIndex === index ? 'bg-primary w-4' : 'bg-white/60'

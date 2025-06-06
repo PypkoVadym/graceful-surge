@@ -10,9 +10,26 @@ interface BodyServiceProps {
   description: string;
   prices: ServicePrice[];
   images: string[];
+  redirectUrls?: string[];
 }
 
-const BodyService = ({ title, description, prices, images }: BodyServiceProps) => {
+const BodyService = ({ title, description, prices, images, redirectUrls }: BodyServiceProps) => {
+  const handleImageClick = (imageIndex: number) => {
+    if (redirectUrls && redirectUrls[imageIndex]) {
+      const url = redirectUrls[imageIndex];
+      if (url.startsWith('#')) {
+        // Internal anchor link
+        const element = document.getElementById(url.substring(1));
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      } else {
+        // External link
+        window.open(url, '_blank');
+      }
+    }
+  };
+
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-24 animate-fade-in">
       <div>
@@ -32,6 +49,7 @@ const BodyService = ({ title, description, prices, images }: BodyServiceProps) =
           images={images} 
           alt="корекція форми тіла, ліпосакція, моделювання тіла"
           aspectRatio="wide"
+          onImageClick={handleImageClick}
         />
       </div>
     </div>
