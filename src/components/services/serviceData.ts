@@ -22,9 +22,9 @@ export const breastServices: ServiceData = {
     "/images/.jpg"
   ],
   redirectUrls: [
-    "#contact",
-    "#contact", 
-    "#contact"
+    "https://www.instagram.com/markovych_work/",
+    "https://www.instagram.com/markovych_work/", 
+    "https://www.instagram.com/markovych_work/"
   ]
 };
 
@@ -44,9 +44,9 @@ export const facialServices: ServiceData = {
     "https://i.imgur.com/RwsO9XW.jpeg"
   ],
   redirectUrls: [
-    "#contact",
-    "#contact",
-    "#contact"
+    "https://www.instagram.com/markovych_work/",
+    "https://www.instagram.com/markovych_work/",
+    "https://www.instagram.com/markovych_work/"
   ]
 };
 
@@ -65,6 +65,6 @@ export const bodyServices: ServiceData = {
     //"/images/lipo1.jpg"
   ],
   redirectUrls: [
-    "#contact"
+    "https://www.instagram.com/markovych_work/"
   ]
 };
